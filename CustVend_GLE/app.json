@@ -1,0 +1,26 @@
+{
+  "id": "d3f1f77b-ef59-4c8e-9172-995704a81aed",
+  "name": "CustVend_GLE",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://CustVend_GLE.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
