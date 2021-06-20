@@ -1,0 +1,19 @@
+{
+  "id": "28f2eef7-30a2-44ac-a5a5-a291fc95708f",
+  "name": "ItemVendorCustomer JobQueue",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

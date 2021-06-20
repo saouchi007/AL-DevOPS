@@ -1,0 +1,26 @@
+{
+  "id": "090bdb4b-86d6-4a7b-b04b-37ce2f2fd44e",
+  "name": "Cust_Vend_SourceName_flowfield",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Cust_Vend_SourceName_flowfield.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

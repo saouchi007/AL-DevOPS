@@ -1,0 +1,26 @@
+{
+  "id": "20e1cc72-b6be-4445-b574-3182b17a0a84",
+  "name": "ExcelExport",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ExcelExport.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

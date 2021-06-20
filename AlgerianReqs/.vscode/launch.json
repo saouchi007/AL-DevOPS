@@ -1,0 +1,21 @@
+{
+    "version": "06.04.21",
+    "configurations": [
+        {
+            "name": "Saouchi Ilyes",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://172.17.164.178/",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 50101,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+        }
+    ]
+}

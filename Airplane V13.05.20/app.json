@@ -1,0 +1,19 @@
+{
+  "id": "7fdbf9e8-b2dc-4b7c-afb8-4c075ee42473",
+  "name": "Airplane V13.05.20",
+  "publisher": "Saouchi",
+  "version": "13.05.20.0",
+  "brief": "",
+  "description": "Demo Project",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

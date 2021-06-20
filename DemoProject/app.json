@@ -1,0 +1,19 @@
+{
+  "id": "66d4886e-bcd2-4ccb-b0e8-df0dbd25d919",
+  "name": "DemoProject",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "86f56200-4e56-4a18-bc77-8e9671600b14",
+  "name": "iTemsRerport",
+  "publisher": "Saouci Ilyes",
+  "version": "05.19.20.1",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

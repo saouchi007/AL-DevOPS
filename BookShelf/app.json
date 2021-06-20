@@ -1,0 +1,19 @@
+{
+  "id": "cdff9eee-8855-4b01-a9d7-23c99b03e93f",
+  "name": "Book Shelf",
+  "publisher": "Saouchi Corp",
+  "version": "11.06.20.20",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

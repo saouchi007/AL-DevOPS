@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="GLAccountNo_GLEntry">
+          <DataField>GLAccountNo_GLEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_GLEntry">
+          <DataField>PostingDate_GLEntry</DataField>
+        </Field>
+        <Field Name="Description_GLEntry">
+          <DataField>Description_GLEntry</DataField>
+        </Field>
+        <Field Name="Amount_GLEntry">
+          <DataField>Amount_GLEntry</DataField>
+        </Field>
+        <Field Name="Amount_GLEntryFormat">
+          <DataField>Amount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntry">
+          <DataField>DebitAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntryFormat">
+          <DataField>DebitAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntry">
+          <DataField>CreditAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntryFormat">
+          <DataField>CreditAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="Name_CompanyInformation">
+          <DataField>Name_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Address_CompanyInformation">
+          <DataField>Address_CompanyInformation</DataField>
+        </Field>
+        <Field Name="CISD_CompanyInformation">
+          <DataField>CISD_CompanyInformation</DataField>
+        </Field>
+        <Field Name="RegistrationNo_CompanyInformation">
+          <DataField>RegistrationNo_CompanyInformation</DataField>
+        </Field>
+        <Field Name="BDate">
+          <DataField>BDate</DataField>
+        </Field>
+        <Field Name="GWMtBrut">
+          <DataField>GWMtBrut</DataField>
+        </Field>
+        <Field Name="GWMtBrutFormat">
+          <DataField>GWMtBrutFormat</DataField>
+        </Field>
+        <Field Name="GWAmort">
+          <DataField>GWAmort</DataField>
+        </Field>
+        <Field Name="GWAmortFormat">
+          <DataField>GWAmortFormat</DataField>
+        </Field>
+        <Field Name="GWNet">
+          <DataField>GWNet</DataField>
+        </Field>
+        <Field Name="GWNetFormat">
+          <DataField>GWNetFormat</DataField>
+        </Field>
+        <Field Name="GWNet_1">
+          <DataField>GWNet_1</DataField>
+        </Field>
+        <Field Name="GWNet_1Format">
+          <DataField>GWNet_1Format</DataField>
+        </Field>
+        <Field Name="IAMtBrut_20_207">
+          <DataField>IAMtBrut_20_207</DataField>
+        </Field>
+        <Field Name="IAMtBrut_20_207Format">
+          <DataField>IAMtBrut_20_207Format</DataField>
+        </Field>
+        <Field Name="IAAmort">
+          <DataField>IAAmort</DataField>
+        </Field>
+        <Field Name="IAAmortFormat">
+          <DataField>IAAmortFormat</DataField>
+        </Field>
+        <Field Name="IANet">
+          <DataField>IANet</DataField>
+        </Field>
+        <Field Name="IANetFormat">
+          <DataField>IANetFormat</DataField>
+        </Field>
+        <Field Name="IANet_1">
+          <DataField>IANet_1</DataField>
+        </Field>
+        <Field Name="IANet_1Format">
+          <DataField>IANet_1Format</DataField>
+        </Field>
+        <Field Name="TATerMtBrut">
+          <DataField>TATerMtBrut</DataField>
+        </Field>
+        <Field Name="TATerMtBrutFormat">
+          <DataField>TATerMtBrutFormat</DataField>
+        </Field>
+        <Field Name="TABuildMtBrut">
+          <DataField>TABuildMtBrut</DataField>
+        </Field>
+        <Field Name="TABuildMtBrutFormat">
+          <DataField>TABuildMtBrutFormat</DataField>
+        </Field>
+        <Field Name="TABuildMtAmort">
+          <DataField>TABuildMtAmort</DataField>
+        </Field>
+        <Field Name="TABuildMtAmortFormat">
+          <DataField>TABuildMtAmortFormat</DataField>
+        </Field>
+        <Field Name="TAMiscMtBrut">
+          <DataField>TAMiscMtBrut</DataField>
+        </Field>
+        <Field Name="TAMiscMtBrutFormat">
+          <DataField>TAMiscMtBrutFormat</DataField>
+        </Field>
+        <Field Name="TAMiscMtAmort">
+          <DataField>TAMiscMtAmort</DataField>
+        </Field>
+        <Field Name="TAMiscMtAmortFormat">
+          <DataField>TAMiscMtAmortFormat</DataField>
+        </Field>
+        <Field Name="TAConceBrut">
+          <DataField>TAConceBrut</DataField>
+        </Field>
+        <Field Name="TAConceBrutFormat">
+          <DataField>TAConceBrutFormat</DataField>
+        </Field>
+        <Field Name="TAConceAmort">
+          <DataField>TAConceAmort</DataField>
+        </Field>
+        <Field Name="TAConceAmortFormat">
+          <DataField>TAConceAmortFormat</DataField>
+        </Field>
+        <Field Name="AUCMtBrut_23">
+          <DataField>AUCMtBrut_23</DataField>
+        </Field>
+        <Field Name="AUCMtBrut_23Format">
+          <DataField>AUCMtBrut_23Format</DataField>
+        </Field>
+        <Field Name="AUCAmort_293">
+          <DataField>AUCAmort_293</DataField>
+        </Field>
+        <Field Name="AUCAmort_293Format">
+          <DataField>AUCAmort_293Format</DataField>
+        </Field>
+        <Field Name="AUCNet">
+          <DataField>AUCNet</DataField>
+        </Field>
+        <Field Name="AUCNetFormat">
+          <DataField>AUCNetFormat</DataField>
+        </Field>
+        <Field Name="AUCNet_1">
+          <DataField>AUCNet_1</DataField>
+        </Field>
+        <Field Name="AUCNet_1Format">
+          <DataField>AUCNet_1Format</DataField>
+        </Field>
+        <Field Name="TABuildNet">
+          <DataField>TABuildNet</DataField>
+        </Field>
+        <Field Name="TABuildNetFormat">
+          <DataField>TABuildNetFormat</DataField>
+        </Field>
+        <Field Name="TABuildNet_1">
+          <DataField>TABuildNet_1</DataField>
+        </Field>
+        <Field Name="TABuildNet_1Format">
+          <DataField>TABuildNet_1Format</DataField>
+        </Field>
+        <Field Name="TAMiscNet">
+          <DataField>TAMiscNet</DataField>
+        </Field>
+        <Field Name="TAMiscNetFormat">
+          <DataField>TAMiscNetFormat</DataField>
+        </Field>
+        <Field Name="TAMiscNet_1">
+          <DataField>TAMiscNet_1</DataField>
+        </Field>
+        <Field Name="TAMiscNet_1Format">
+          <DataField>TAMiscNet_1Format</DataField>
+        </Field>
+        <Field Name="TAConceNet">
+          <DataField>TAConceNet</DataField>
+        </Field>
+        <Field Name="TAConceNetFormat">
+          <DataField>TAConceNetFormat</DataField>
+        </Field>
+        <Field Name="TAConceNet_1">
+          <DataField>TAConceNet_1</DataField>
+        </Field>
+        <Field Name="TAConceNet_1Format">
+          <DataField>TAConceNet_1Format</DataField>
+        </Field>
+        <Field Name="IEMtBrut">
+          <DataField>IEMtBrut</DataField>
+        </Field>
+        <Field Name="IEMtBrutFormat">
+          <DataField>IEMtBrutFormat</DataField>
+        </Field>
+        <Field Name="IEAmort">
+          <DataField>IEAmort</DataField>
+        </Field>
+        <Field Name="IEAmortFormat">
+          <DataField>IEAmortFormat</DataField>
+        </Field>
+        <Field Name="IEMt_Net">
+          <DataField>IEMt_Net</DataField>
+        </Field>
+        <Field Name="IEMt_NetFormat">
+          <DataField>IEMt_NetFormat</DataField>
+        </Field>
+        <Field Name="IEMt_Net_1">
+          <DataField>IEMt_Net_1</DataField>
+        </Field>
+        <Field Name="IEMt_Net_1Format">
+          <DataField>IEMt_Net_1Format</DataField>
+        </Field>
+        <Field Name="PIRRMtBrut">
+          <DataField>PIRRMtBrut</DataField>
+        </Field>
+        <Field Name="PIRRMtBrutFormat">
+          <DataField>PIRRMtBrutFormat</DataField>
+        </Field>
+        <Field Name="PIRRNet">
+          <DataField>PIRRNet</DataField>
+        </Field>
+        <Field Name="PIRRNetFormat">
+          <DataField>PIRRNetFormat</DataField>
+        </Field>
+        <Field Name="PIRRNet_1">
+          <DataField>PIRRNet_1</DataField>
+        </Field>
+        <Field Name="PIRRNet_1Format">
+          <DataField>PIRRNet_1Format</DataField>
+        </Field>
+        <Field Name="IEMiscMtBrut_271_272_273">
+          <DataField>IEMiscMtBrut_271_272_273</DataField>
+        </Field>
+        <Field Name="IEMiscMtBrut_271_272_273Format">
+          <DataField>IEMiscMtBrut_271_272_273Format</DataField>
+        </Field>
+        <Field Name="IEMiscNet_271_272_273">
+          <DataField>IEMiscNet_271_272_273</DataField>
+        </Field>
+        <Field Name="IEMiscNet_271_272_273Format">
+          <DataField>IEMiscNet_271_272_273Format</DataField>
+        </Field>
+        <Field Name="IEMiscNet_1_271_272_273">
+          <DataField>IEMiscNet_1_271_272_273</DataField>
+        </Field>
+        <Field Name="IEMiscNet_1_271_272_273Format">
+          <DataField>IEMiscNet_1_271_272_273Format</DataField>
+        </Field>
+        <Field Name="LTFAMtBrut_274_275_276">
+          <DataField>LTFAMtBrut_274_275_276</DataField>
+        </Field>
+        <Field Name="LTFAMtBrut_274_275_276Format">
+          <DataField>LTFAMtBrut_274_275_276Format</DataField>
+        </Field>
+        <Field Name="LTFAAmort_274_275_276">
+          <DataField>LTFAAmort_274_275_276</DataField>
+        </Field>
+        <Field Name="LTFAAmort_274_275_276Format">
+          <DataField>LTFAAmort_274_275_276Format</DataField>
+        </Field>
+        <Field Name="LTFNet_274_275_276">
+          <DataField>LTFNet_274_275_276</DataField>
+        </Field>
+        <Field Name="LTFNet_274_275_276Format">
+          <DataField>LTFNet_274_275_276Format</DataField>
+        </Field>
+        <Field Name="LTFNet_1_274_275_276">
+          <DataField>LTFNet_1_274_275_276</DataField>
+        </Field>
+        <Field Name="LTFNet_1_274_275_276Format">
+          <DataField>LTFNet_1_274_275_276Format</DataField>
+        </Field>
+        <Field Name="GTCurrentAssets">
+          <DataField>GTCurrentAssets</DataField>
+        </Field>
+        <Field Name="GTCurrentAssetsFormat">
+          <DataField>GTCurrentAssetsFormat</DataField>
+        </Field>
+        <Field Name="TotalAmort">
+          <DataField>TotalAmort</DataField>
+        </Field>
+        <Field Name="TotalAmortFormat">
+          <DataField>TotalAmortFormat</DataField>
+        </Field>
+        <Field Name="TotalNet">
+          <DataField>TotalNet</DataField>
+        </Field>
+        <Field Name="TotalNetFormat">
+          <DataField>TotalNetFormat</DataField>
+        </Field>
+        <Field Name="TotalNet_1">
+          <DataField>TotalNet_1</DataField>
+        </Field>
+        <Field Name="TotalNet_1Format">
+          <DataField>TotalNet_1Format</DataField>
+        </Field>
+        <Field Name="InWIPMtBrut_30_38">
+          <DataField>InWIPMtBrut_30_38</DataField>
+        </Field>
+        <Field Name="InWIPMtBrut_30_38Format">
+          <DataField>InWIPMtBrut_30_38Format</DataField>
+        </Field>
+        <Field Name="InWIPAmort_39">
+          <DataField>InWIPAmort_39</DataField>
+        </Field>
+        <Field Name="InWIPAmort_39Format">
+          <DataField>InWIPAmort_39Format</DataField>
+        </Field>
+        <Field Name="InWIP_Net">
+          <DataField>InWIP_Net</DataField>
+        </Field>
+        <Field Name="InWIP_NetFormat">
+          <DataField>InWIP_NetFormat</DataField>
+        </Field>
+        <Field Name="InWIP_Net_1">
+          <DataField>InWIP_Net_1</DataField>
+        </Field>
+        <Field Name="InWIP_Net_1Format">
+          <DataField>InWIP_Net_1Format</DataField>
+        </Field>
+        <Field Name="TATerNet">
+          <DataField>TATerNet</DataField>
+        </Field>
+        <Field Name="TATerNetFormat">
+          <DataField>TATerNetFormat</DataField>
+        </Field>
+        <Field Name="TATerNet_1">
+          <DataField>TATerNet_1</DataField>
+        </Field>
+        <Field Name="TATerNet_1Format">
+          <DataField>TATerNet_1Format</DataField>
+        </Field>
+        <Field Name="ClientsMtBrut_41_419">
+          <DataField>ClientsMtBrut_41_419</DataField>
+        </Field>
+        <Field Name="ClientsMtBrut_41_419Format">
+          <DataField>ClientsMtBrut_41_419Format</DataField>
+        </Field>
+        <Field Name="ClientsAmort_491">
+          <DataField>ClientsAmort_491</DataField>
+        </Field>
+        <Field Name="ClientsAmort_491Format">
+          <DataField>ClientsAmort_491Format</DataField>
+        </Field>
+        <Field Name="Clients_Net">
+          <DataField>Clients_Net</DataField>
+        </Field>
+        <Field Name="Clients_NetFormat">
+          <DataField>Clients_NetFormat</DataField>
+        </Field>
+        <Field Name="Clients_Net_1">
+          <DataField>Clients_Net_1</DataField>
+        </Field>
+        <Field Name="Clients_Net_1Format">
+          <DataField>Clients_Net_1Format</DataField>
+        </Field>
+        <Field Name="MiscDrMtBrut_Net">
+          <DataField>MiscDrMtBrut_Net</DataField>
+        </Field>
+        <Field Name="MiscDrMtBrut_NetFormat">
+          <DataField>MiscDrMtBrut_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscDrAmort_495_496_Net">
+          <DataField>MiscDrAmort_495_496_Net</DataField>
+        </Field>
+        <Field Name="MiscDrAmort_495_496_NetFormat">
+          <DataField>MiscDrAmort_495_496_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscDr_Net">
+          <DataField>MiscDr_Net</DataField>
+        </Field>
+        <Field Name="MiscDr_NetFormat">
+          <DataField>MiscDr_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscDr_Net_1">
+          <DataField>MiscDr_Net_1</DataField>
+        </Field>
+        <Field Name="MiscDr_Net_1Format">
+          <DataField>MiscDr_Net_1Format</DataField>
+        </Field>
+        <Field Name="TaxImpMtBrut_444_445_447_Net">
+          <DataField>TaxImpMtBrut_444_445_447_Net</DataField>
+        </Field>
+        <Field Name="TaxImpMtBrut_444_445_447_NetFormat">
+          <DataField>TaxImpMtBrut_444_445_447_NetFormat</DataField>
+        </Field>
+        <Field Name="TaxImpAmort_Net">
+          <DataField>TaxImpAmort_Net</DataField>
+        </Field>
+        <Field Name="TaxImpAmort_NetFormat">
+          <DataField>TaxImpAmort_NetFormat</DataField>
+        </Field>
+        <Field Name="TaxImp_Net">
+          <DataField>TaxImp_Net</DataField>
+        </Field>
+        <Field Name="TaxImp_NetFormat">
+          <DataField>TaxImp_NetFormat</DataField>
+        </Field>
+        <Field Name="TaxImp_Net_1">
+          <DataField>TaxImp_Net_1</DataField>
+        </Field>
+        <Field Name="TaxImp_Net_1Format">
+          <DataField>TaxImp_Net_1Format</DataField>
+        </Field>
+        <Field Name="MiscCurAsMtBrut_Dr_48_Net">
+          <DataField>MiscCurAsMtBrut_Dr_48_Net</DataField>
+        </Field>
+        <Field Name="MiscCurAsMtBrut_Dr_48_NetFormat">
+          <DataField>MiscCurAsMtBrut_Dr_48_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscCurAsAmort_Net">
+          <DataField>MiscCurAsAmort_Net</DataField>
+        </Field>
+        <Field Name="MiscCurAsAmort_NetFormat">
+          <DataField>MiscCurAsAmort_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscCurAs_Net">
+          <DataField>MiscCurAs_Net</DataField>
+        </Field>
+        <Field Name="MiscCurAs_NetFormat">
+          <DataField>MiscCurAs_NetFormat</DataField>
+        </Field>
+        <Field Name="MiscCurAs_Net_1">
+          <DataField>MiscCurAs_Net_1</DataField>
+        </Field>
+        <Field Name="MiscCurAs_Net_1Format">
+          <DataField>MiscCurAs_Net_1Format</DataField>
+        </Field>
+        <Field Name="InvFinAsMtBrut_Net">
+          <DataField>InvFinAsMtBrut_Net</DataField>
+        </Field>
+        <Field Name="InvFinAsMtBrut_NetFormat">
+          <DataField>InvFinAsMtBrut_NetFormat</DataField>
+        </Field>
+        <Field Name="InvFinAsAmort_Net">
+          <DataField>InvFinAsAmort_Net</DataField>
+        </Field>
+        <Field Name="InvFinAsAmort_NetFormat">
+          <DataField>InvFinAsAmort_NetFormat</DataField>
+        </Field>
+        <Field Name="InvFinAs_Net">
+          <DataField>InvFinAs_Net</DataField>
+        </Field>
+        <Field Name="InvFinAs_NetFormat">
+          <DataField>InvFinAs_NetFormat</DataField>
+        </Field>
+        <Field Name="InvFinAs_Net_1">
+          <DataField>InvFinAs_Net_1</DataField>
+        </Field>
+        <Field Name="InvFinAs_Net_1Format">
+          <DataField>InvFinAs_Net_1Format</DataField>
+        </Field>
+        <Field Name="CasFlowMtBrut_Net">
+          <DataField>CasFlowMtBrut_Net</DataField>
+        </Field>
+        <Field Name="CasFlowMtBrut_NetFormat">
+          <DataField>CasFlowMtBrut_NetFormat</DataField>
+        </Field>
+        <Field Name="CasFlowAmort_59_Net">
+          <DataField>CasFlowAmort_59_Net</DataField>
+        </Field>
+        <Field Name="CasFlowAmort_59_NetFormat">
+          <DataField>CasFlowAmort_59_NetFormat</DataField>
+        </Field>
+        <Field Name="CasFlow_Net">
+          <DataField>CasFlow_Net</DataField>
+        </Field>
+        <Field Name="CasFlow_NetFormat">
+          <DataField>CasFlow_NetFormat</DataField>
+        </Field>
+        <Field Name="CasFlow_Net_1">
+          <DataField>CasFlow_Net_1</DataField>
+        </Field>
+        <Field Name="CasFlow_Net_1Format">
+          <DataField>CasFlow_Net_1Format</DataField>
+        </Field>
+        <Field Name="CurAssGrandTotal">
+          <DataField>CurAssGrandTotal</DataField>
+        </Field>
+        <Field Name="CurAssGrandTotalFormat">
+          <DataField>CurAssGrandTotalFormat</DataField>
+        </Field>
+        <Field Name="CurAssAmortTotal">
+          <DataField>CurAssAmortTotal</DataField>
+        </Field>
+        <Field Name="CurAssAmortTotalFormat">
+          <DataField>CurAssAmortTotalFormat</DataField>
+        </Field>
+        <Field Name="CurAssNetTotal">
+          <DataField>CurAssNetTotal</DataField>
+        </Field>
+        <Field Name="CurAssNetTotalFormat">
+          <DataField>CurAssNetTotalFormat</DataField>
+        </Field>
+        <Field Name="CurAssNet_1_Total">
+          <DataField>CurAssNet_1_Total</DataField>
+        </Field>
+        <Field Name="CurAssNet_1_TotalFormat">
+          <DataField>CurAssNet_1_TotalFormat</DataField>
+        </Field>
+        <Field Name="AssetsGrandTotal">
+          <DataField>AssetsGrandTotal</DataField>
+        </Field>
+        <Field Name="AssetsGrandTotalFormat">
+          <DataField>AssetsGrandTotalFormat</DataField>
+        </Field>
+        <Field Name="AssetsAmort">
+          <DataField>AssetsAmort</DataField>
+        </Field>
+        <Field Name="AssetsAmortFormat">
+          <DataField>AssetsAmortFormat</DataField>
+        </Field>
+        <Field Name="AssetsNet">
+          <DataField>AssetsNet</DataField>
+        </Field>
+        <Field Name="AssetsNetFormat">
+          <DataField>AssetsNetFormat</DataField>
+        </Field>
+        <Field Name="AssetsNet_1">
+          <DataField>AssetsNet_1</DataField>
+        </Field>
+        <Field Name="AssetsNet_1Format">
+          <DataField>AssetsNet_1Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

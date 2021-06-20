@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="AlgerianReqs">
+    <body>
+      <group id="body">
+        <trans-unit id="Page 3863440606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AdditionalSearchTerms</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AdditionalSearchTerms - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3863440606 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
+          <source>saouchi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AdditionalSearchTerms - Property AdditionalSearchTerms</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3758417125 - Control 3780233856 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>To insert customer registration for the customer</source>
+         <target state="">Alpha</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension AlegrianCustomerCard - Control Commerce Registration - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3758417125 - Control 4022101652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>To insert fiscal indentification for the customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension AlegrianCustomerCard - Control Fiscal Identification - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1980007246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3321822267">
+          <source>Demande achat</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQ_Linde_Update - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1980007246 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3321822267">
+          <source>Demande achat</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQ_Linde_Update - Property AdditionalSearchTerms</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3783201589 - Field 3780233856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Commerce Registration</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension AlgerianCustomerCard - Field Commerce Registration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3783201589 - Field 4022101652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Fiscal Identification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension AlgerianCustomerCard - Field Fiscal Identification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3783201589 - Field 3525339915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Statistical Identification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension AlgerianCustomerCard - Field Statistical Identification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3783201589 - Field 4057402361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Taxing Identification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension AlgerianCustomerCard - Field Taxing Identification - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

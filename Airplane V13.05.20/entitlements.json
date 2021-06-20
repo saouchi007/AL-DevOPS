@@ -1,0 +1,56 @@
+﻿{
+  "MembershipEntitlements": [
+    {
+      "Id": "bdb6dc24-70b6-4170-97eb-e677428712a8",
+      "SetId": "Airplane V13.05.20",
+      "EntitlementType": 0
+    }
+  ],
+  "EntitlementSets": [
+    {
+      "SetId": "Airplane V13.05.20",
+      "Entitlements": [
+        {
+          "ObjectType": 0,
+          "ObjectIdRangeStart": 50100,
+          "ObjectIdRangeEnd": 50100,
+          "Read": 1,
+          "Insert": 1,
+          "Modify": 1,
+          "Delete": 1,
+          "Execute": 0
+        },
+        {
+          "ObjectType": 1,
+          "ObjectIdRangeStart": 50100,
+          "ObjectIdRangeEnd": 50100,
+          "Read": 0,
+          "Insert": 0,
+          "Modify": 0,
+          "Delete": 0,
+          "Execute": 1
+        },
+        {
+          "ObjectType": 3,
+          "ObjectIdRangeStart": 50777,
+          "ObjectIdRangeEnd": 50777,
+          "Read": 0,
+          "Insert": 0,
+          "Modify": 0,
+          "Delete": 0,
+          "Execute": 1
+        },
+        {
+          "ObjectType": 8,
+          "ObjectIdRangeStart": 50100,
+          "ObjectIdRangeEnd": 50100,
+          "Read": 0,
+          "Insert": 0,
+          "Modify": 0,
+          "Delete": 0,
+          "Execute": 1
+        }
+      ]
+    }
+  ]
+}
