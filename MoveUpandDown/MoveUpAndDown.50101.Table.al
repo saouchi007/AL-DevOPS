@@ -5,7 +5,7 @@ tableextension 50101 MoveUpandDown extends "Sales Line"
         field(50100; LinePosition; Integer)
         {
             DataClassification = CustomerContent;
-            Caption = 'Line N°';
+            Caption = 'Line Position';
         }
     }
 
