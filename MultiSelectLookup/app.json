@@ -1,0 +1,26 @@
+{
+  "id": "bba2b204-2aa3-41e9-ae27-0ce3585660c4",
+  "name": "MultiSelectLookup",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://MultiSelectLookup.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
