@@ -1,0 +1,23 @@
+<Package xmlns="http://schemas.microsoft.com/navx/2015/manifest">
+  <App Id="3efc3ee6-5cf2-4d13-8c4d-d849a8b347fe" Name="Michelin Commercial Agencies Core Model" Publisher="Michelin" Brief="http://www.michelin.com" Description="Core Model Features for Michelin Commercial Agencies" Version="1.18.277.1" CompatibilityId="0.0.0.0" PrivacyStatement="http://www.michelin.com" ApplicationInsightsKey="00000000-0000-0000-0000-000000000000" EULA="http://www.michelin.com" Help="http://www.michelin.com" HelpBaseUrl="" ContextSensitiveHelpUrl="http://www.michelin.com" Url="http://www.michelin.com" Logo="/logo/mica.png" Platform="18.0.0.0" Application="18.0.0.0" Runtime="7.0" Target="OnPrem" ShowMyCode="False" />
+  <IdRanges>
+    <IdRange MinObjectId="80000" MaxObjectId="89999" />
+  </IdRanges>
+  <Dependencies>
+    <Dependency Id="530176f7-9f0d-467b-8b30-a321d5d4b59d" Name="Sana Commerce (RoW) - On Premises" Publisher="Sana Commerce" MinVersion="10.0.9.2" CompatibilityId="0.0.0.0" />
+  </Dependencies>
+  <InternalsVisibleTo />
+  <ScreenShots />
+  <SupportedLocales>
+    <SupportedLocale Local="es-ES" />
+    <SupportedLocale Local="es-ES_tradnl" />
+  </SupportedLocales>
+  <Features>
+    <Feature>TRANSLATIONFILE</Feature>
+  </Features>
+  <PreprocessorSymbols>
+    <PreprocessorSymbol Name="OnPremise" />
+  </PreprocessorSymbols>
+  <SuppressWarnings />
+  <KeyVaultUrls />
+</Package>

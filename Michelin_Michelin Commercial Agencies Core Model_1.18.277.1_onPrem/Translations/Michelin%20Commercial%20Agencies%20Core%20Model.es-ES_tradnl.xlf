@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="es-ES_tradnl" original="Michelin Commercial Agencies Core Model">
+    <body>
+      <group id="body">
+        <trans-unit id="Report 1408019844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statement Custom</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2236364908" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance Due</source>
+          <target state="translated">Saldo Vencido</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BalanceDueLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1931799952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account No.</source>
+          <target state="translated">Cuenta Bancaria No.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BankAccNo_CompanyInfoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3144910853" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank</source>
+          <target state="translated">Banco</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BankName_CompanyInfoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 106401415" size-unit="char" translate="yes" xml:space="preserve">
+          <source>..before</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType beforeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3335223120" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BIC</source>
+          <target state="translated">Código BIC</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BICCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 159342192" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date must have a value.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BlankEndDateErr</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1460927981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date must have a value.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BlankStartDateErr</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1908025102" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thank you for your business. Your statement is attached to this message.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType BodyLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1643240868" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entries %1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c001Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 4207303109" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue Entries %1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c002Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 4239358982" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statement </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType C003Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 510243680" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Multicurrency Application</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c005Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3795463169" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Discount</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c006Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3663966754" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rounding</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c007Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1882853835" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify the Aging Band Period Length.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c008Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2149045836" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify Aging Band Ending Date.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c010Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3343986155" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Summary by %1 (%2 by %3)</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c011Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3165679438" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period Length is out of range.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c012Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3618289133" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c013Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1016048648" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Application Writeoffs</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c014Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 143161816" size-unit="char" translate="yes" xml:space="preserve">
+          <source>-%1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2">Negating the period length: %1 is the period length</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType c036Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2771379227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sincerely</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType ClosingLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2377105323" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CompanyInfoEmailCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2869507195" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Home Page</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CompanyInfoHomepageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3383796882" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <target state="translated">Divisa</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CurrencyCodeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 684809554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <target state="translated">Página</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CurrReportPageNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3136279037" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance</source>
+          <target state="translated">Saldo</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CustBalanceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2465626047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Statement</source>
+          <target state="translated">EXTRACTO DE CLIENTE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType CustomerStatementCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3742369262" size-unit="char" translate="yes" xml:space="preserve">
+          <source> - </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType DashCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3112881028" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <target state="translated">Fecha de Generación</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType DocDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 58467362" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <target state="translated">Fecha de Vencimiento</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType DueDate_CustLedgEntry2CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3982372241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType EndDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3655449964" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giro No.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType GiroNo_CompanyInfoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 514421613" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hello</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType GreetingLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 416272378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IBAN</source>
+          <target state="translated">Código IBAN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType IBANLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 1425767327" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This statement shows all open items until %1.</source>
+          <target state="translated">Este extracto presenta las transacciones registradas hasta el %1.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType InfoMsgLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3303928736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statement No.</source>
+          <target state="translated">Extracto No.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType LastStatmntNo_CustCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3983605295" size-unit="char" translate="yes" xml:space="preserve">
+          <source> &gt; </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType LessCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2425364875" size-unit="char" translate="yes" xml:space="preserve">
+          <source> &lt; </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType MoreCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3162110670" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <target state="translated">Cliente No.:</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType No1_CustCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 4231693433" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amount</source>
+          <target state="translated">Valor Inicial</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType OriginalAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2512069321" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone No.</source>
+          <target state="translated">Teléfono</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType PhoneNo_CompanyInfoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3401669194" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Fecha de Registro</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType PostDate_DtldCustLedgEntriesCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 280857303" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amount</source>
+          <target state="translated">Valor Pendiente</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType RemaigningAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 2209068532" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType StartDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3956382959" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start date must be earlier than End date.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType StartDateLaterTheEndDateErr</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 698237251" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statement</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType StatementCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 3102655787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType Total_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - NamedType 276525116" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - NamedType VATRegNo_CompanyInfoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3843728681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aging Band</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Aging Band - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 1031320896 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the aging band will be calculated from the due date or from the posting date.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control AgingBandby - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 1031320896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aging Band by</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control AgingBandby - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 1031320896 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control AgingBandby - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 4278445754 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the length of each of the four periods in the aging band, for example, enter "1M" for one month. The most recent period will end on the last day of the period in the Date Filter field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control AgingBandPeriodLengt - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 4278445754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aging Band Period Length</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control AgingBandPeriodLengt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 4178264437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want an aging band to be included in the document. If you place a check mark here, you must also fill in the Aging Band Period Length and Aging Band by fields.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAgingBand - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 4178264437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include Aging Band</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAgingBand - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2649176925 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date to which the report or batch job processes information.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2649176925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control End Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3349558288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Include - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 686806962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want entries displayed for customers that have a balance at the end of the selected period.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAllCustomerswithBalance - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 686806962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include All Customers with a Balance</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAllCustomerswithBalance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2059574099 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want entries displayed for customers that have ledger entries at the end of the selected period.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAllCustomerswithLE - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2059574099 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include All Customers with Ledger Entries</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeAllCustomerswithLE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3207698022 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to include only open entries in the report.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeOpenEntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3207698022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include Only Open Entries</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeOpenEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3414096222 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to include reversed entries in the report.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeReversedEntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3414096222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include Reversed Entries</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeReversedEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2809948940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to include unapplied entries in the report.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeUnappliedEntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2809948940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include Unapplied Entries</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control IncludeUnappliedEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that interactions with the contact are logged.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control LogInteraction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Log Interaction</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control LogInteraction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 120518645 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want overdue entries to be shown separately for each currency.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ShowOverdueEntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 120518645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Overdue Entries</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ShowOverdueEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 474480784 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date from which the report or batch job processes information.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Start Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2092947929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Output Options</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control Output Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2089092709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how to output the report, such as Print or Excel.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ChosenOutput - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 2089092709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chosen Output</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ChosenOutput - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 506008736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Options</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control EmailOptions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3593006799 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to print remaining statements.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control PrintMissingAddresses - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3593006799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print remaining statements</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control PrintMissingAddresses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3039415211 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the output of the scheduled report, such as PDF or Word.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ReportOutput - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3039415211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Output</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ReportOutput - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1408019844 - Control 3039415211 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print,Preview,Word,PDF,Email,XML - RDLC layouts only</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report MICA StatementCustom - Control ReportOutput - Property OptionCaption</note>
+        </trans-unit>
+        </group>
+    </body>
+  </file>
+</xliff>

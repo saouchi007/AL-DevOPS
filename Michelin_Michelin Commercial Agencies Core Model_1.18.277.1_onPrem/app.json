@@ -1,0 +1,26 @@
+{
+  "id": "686d0e07-63dc-45f3-8a2f-c91f26ed2d0d",
+  "name": "Michelin_Michelin Commercial Agencies Core Model_1.18.277.1_onPrem",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 85149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Michelin_MichelinCommercialAgenciesCoreModel_1.18.277.1_onPrem.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
