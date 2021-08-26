@@ -23,6 +23,8 @@ pageextension 50100 CustExt extends "Customer Card"
         }
 
     }
+    // Unlock feature is added as an action button rather than a field 
+    //because otherwise the card would remain locked (Locked = True in the table would be saved and all fields on the card would be locked)
     actions
     {
         addbefore(Dimensions)
@@ -53,4 +55,10 @@ pageextension 50100 CustExt extends "Customer Card"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        if Rec.Locked then begin
+            CurrPage.Editable := false;
+        end;
+    end;
 }
