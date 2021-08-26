@@ -1,0 +1,26 @@
+{
+  "id": "0db88e9f-bd18-489e-b0ea-e36df3cd5408",
+  "name": "NonEditable_RealTime",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://NonEditable_RealTime.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
