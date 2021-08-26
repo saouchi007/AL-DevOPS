@@ -1,0 +1,26 @@
+{
+  "id": "fa446573-b5f1-4ed0-be4b-16059118139b",
+  "name": "UTC",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://UTC.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
