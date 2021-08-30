@@ -1,0 +1,26 @@
+{
+  "id": "56907063-0e9c-4abd-b618-49b1eae5f1b0",
+  "name": "PerTenantLicenseState",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://PerTenantLicenseState.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
