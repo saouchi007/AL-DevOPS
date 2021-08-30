@@ -21,6 +21,6 @@
     }
   ],
   "contextSensitiveHelpUrl": "https://NonEditable_RealTime.com/help/",
-  "showMyCode": true,
+  "showMyCode": false,
   "runtime": "7.0"
 }
