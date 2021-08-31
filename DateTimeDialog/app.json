@@ -1,0 +1,26 @@
+{
+  "id": "4ec5e4fa-a355-4f58-9aec-b530b3482260",
+  "name": "DateTimeDialog",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://DateTimeDialog.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
