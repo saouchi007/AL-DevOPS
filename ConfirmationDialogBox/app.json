@@ -1,0 +1,26 @@
+{
+  "id": "2777f4f1-889e-4e8e-9bfd-5726553d235f",
+  "name": "ConfirmationDialogBox",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ConfirmationDialogBox.com/help/",
+  "showMyCode": true,
+  "runtime": "7.2"
+}
