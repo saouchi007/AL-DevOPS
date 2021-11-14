@@ -9,6 +9,7 @@ pageextension 50100 Customer extends "Customer Card"
                 Caption = 'Item Description';
                 ApplicationArea = All;
                 ToolTip = 'Description of the item';
+                
 
                 trigger OnLookup(var text: text): Boolean
                 var
@@ -16,7 +17,7 @@ pageextension 50100 Customer extends "Customer Card"
                 begin
                     itemRec.Reset();
                     if page.RunModal(Page::"Item List", itemRec) = Action::LookupOK then
-                        itemDescription := itemRec.Description;
+                        itemDescription := itemRec.Inventory;
                 end;
             }
             field(itemFilter; itemFilter)
@@ -44,6 +45,7 @@ pageextension 50100 Customer extends "Customer Card"
     }
 
     var
-        itemDescription: Text[50];
+        itemDescription: Decimal;
+        //itemDescription: Text[50];
         itemFilter: Text[100];
 }
