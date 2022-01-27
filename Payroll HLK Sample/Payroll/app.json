@@ -1,0 +1,29 @@
+{
+  "id": "4eaff6c5-6e74-46f2-b431-7618ff1f67fd",
+  "name": "ALProject5",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 1,
+      "to": 501490000
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ALProject5.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0",
+  "suppressWarnings": [ "AL0606", "AL0604" ],
+  "target": "OnPrem"
+  
+}

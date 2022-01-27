@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>b057eb1a-1593-4edb-8923-81053ac14db3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="EmployeeFullName">
+          <DataField>EmployeeFullName</DataField>
+        </Field>
+        <Field Name="BirthDateAndPlace">
+          <DataField>BirthDateAndPlace</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Function_Description_">
+          <DataField>Employee_Employee__Function_Description_</DataField>
+        </Field>
+        <Field Name="TypeContratEtDateRecrutement">
+          <DataField>TypeContratEtDateRecrutement</DataField>
+        </Field>
+        <Field Name="PictureBoxLogo">
+          <DataField>PictureBoxLogo</DataField>
+        </Field>
+        <Field Name="Sexe">
+          <DataField>Sexe</DataField>
+        </Field>
+        <Field Name="Empl">
+          <DataField>Empl</DataField>
+        </Field>
+        <Field Name="NumRef">
+          <DataField>NumRef</DataField>
+        </Field>
+        <Field Name="NomEntreprise">
+          <DataField>NomEntreprise</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Employment_Date_">
+          <DataField>Employee_Employee__Employment_Date_</DataField>
+        </Field>
+        <Field Name="Texte">
+          <DataField>Texte</DataField>
+        </Field>
+        <Field Name="FaitA">
+          <DataField>FaitA</DataField>
+        </Field>
+        <Field Name="DIRECTION_DES_RESSOURCES_HUMAINESCaption">
+          <DataField>DIRECTION_DES_RESSOURCES_HUMAINESCaption</DataField>
+        </Field>
+        <Field Name="SERVICE_DU_PERSONNELCaption">
+          <DataField>SERVICE_DU_PERSONNELCaption</DataField>
+        </Field>
+        <Field Name="RELEVE_DES_EMOLUMENTSCaption">
+          <DataField>RELEVE_DES_EMOLUMENTSCaption</DataField>
+        </Field>
+        <Field Name="Date_et_lieu_de_naissance__Caption">
+          <DataField>Date_et_lieu_de_naissance__Caption</DataField>
+        </Field>
+        <Field Name="depuis_le___Caption">
+          <DataField>depuis_le___Caption</DataField>
+        </Field>
+        <Field Name="Toutes_les_indications_et_mentions_portées_sur_la_présente_attestation_sont_certifiées_Caption">
+          <DataField>Toutes_les_indications_et_mentions_portées_sur_la_présente_attestation_sont_certifiées_Caption</DataField>
+        </Field>
+        <Field Name="exactes_Caption">
+          <DataField>exactes_Caption</DataField>
+        </Field>
+        <Field Name="P_Le_GérantCaption">
+          <DataField>P_Le_GérantCaption</DataField>
+        </Field>
+        <Field Name="V1__Préciser_si_à_titre_permanent_ou_temporaireCaption">
+          <DataField>V1__Préciser_si_à_titre_permanent_ou_temporaireCaption</DataField>
+        </Field>
+        <Field Name="V2__Mentionner_toutes_retenues_sur_salaire_par_decision_de_justice__pension_ouCaption">
+          <DataField>V2__Mentionner_toutes_retenues_sur_salaire_par_decision_de_justice__pension_ouCaption</DataField>
+        </Field>
+        <Field Name="remboursement_de_prêtCaption">
+          <DataField>remboursement_de_prêtCaption</DataField>
+        </Field>
+        <Field Name="Employee_No_">
+          <DataField>Employee_No_</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Payroll_Archive_Line___Item_Description_">
+          <DataField>Payroll_Archive_Line__Payroll_Archive_Line___Item_Description_</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Amount__12">
+          <DataField>Payroll_Archive_Line__Amount__12</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Amount__12Format">
+          <DataField>Payroll_Archive_Line__Amount__12Format</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Payroll_Archive_Line__Amount">
+          <DataField>Payroll_Archive_Line__Payroll_Archive_Line__Amount</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Payroll_Archive_Line__AmountFormat">
+          <DataField>Payroll_Archive_Line__Payroll_Archive_Line__AmountFormat</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line__Payroll_Archive_Line___Item_Description__Control1000000028">
+          <DataField>Payroll_Archive_Line__Payroll_Archive_Line___Item_Description__Control1000000028</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line_Employee_No_">
+          <DataField>Payroll_Archive_Line_Employee_No_</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line_Payroll_Code">
+          <DataField>Payroll_Archive_Line_Payroll_Code</DataField>
+        </Field>
+        <Field Name="Payroll_Archive_Line_Item_Code">
+          <DataField>Payroll_Archive_Line_Item_Code</DataField>
+        </Field>
+        <Field Name="footer1">
+          <DataField>footer1</DataField>
+        </Field>
+        <Field Name="footer2">
+          <DataField>footer2</DataField>
+        </Field>
+        <Field Name="footer3">
+          <DataField>footer3</DataField>
+        </Field>
+        <Field Name="AfficherLigne">
+          <DataField>AfficherLigne</DataField>
+        </Field>
+        <Field Name="Mensuel">
+          <DataField>Mensuel</DataField>
+        </Field>
+        <Field Name="annuel">
+          <DataField>annuel</DataField>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
+        <rd:TableName>Result</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Sexe">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Sexe.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.49579cm</Top>
+            <Left>0.73025cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.56796cm</Width>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="EmployeeFullName">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!EmployeeFullName.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.50108cm</Top>
+            <Left>3.33349cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.75725cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Date_et_lieu_de_naissance__Caption">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Date_et_lieu_de_naissance__Caption.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.13107cm</Top>
+            <Left>0.73554cm</Left>
+            <Height>0.53065cm</Height>
+            <Width>5.02567cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="BirthDateAndPlace">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!BirthDateAndPlace.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.13107cm</Top>
+            <Left>5.82294cm</Left>
+            <Height>0.52007cm</Height>
+            <Width>10.47278cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Empl">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Empl.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.70229cm</Top>
+            <Left>0.70908cm</Left>
+            <Height>0.57001cm</Height>
+            <Width>17.36463cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Employee_Employee__Function_Description_">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Employee_Employee__Function_Description_.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.27053cm</Top>
+            <Left>0.70379cm</Left>
+            <Height>0.57354cm</Height>
+            <Width>17.36993cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Texte">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Texte.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.71159cm</Top>
+            <Left>0.70379cm</Left>
+            <Height>1.19944cm</Height>
+            <Width>19.6089cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Employee_Employee__Employment_Date_">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Employee_Employee__Employment_Date_.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <Format>dd/MM/yy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Employee_Employee__Employment_Date_</rd:DefaultName>
+            <Top>4.06984cm</Top>
+            <Left>5.50192cm</Left>
+            <Height>0.56237cm</Height>
+            <Width>3.92522cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="depuis_le___Caption">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!depuis_le___Caption.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>depuis_le___Caption</rd:DefaultName>
+            <Top>4.06984cm</Top>
+            <Left>3.11124cm</Left>
+            <Height>0.56237cm</Height>
+            <Width>2.39068cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TypeContratEtDateRecrutement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!TypeContratEtDateRecrutement.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TypeContratEtDateRecrutement</rd:DefaultName>
+            <Top>4.06984cm</Top>
+            <Left>0.70379cm</Left>
+            <Height>0.56237cm</Height>
+            <Width>2.40745cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>8.81918cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.00491cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.57355cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Payroll_Archive_Line__Payroll_Archive_Line___Item_Description_.Value</Value>
+                                  <Style>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>3pt</PaddingLeft>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Payroll_Archive_Line__Payroll_Archive_Line__Amount.Value*12</Value>
+                                  <Style>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>=Fields!Payroll_Archive_Line__Payroll_Archive_Line__AmountFormat.Value</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Width>0.5pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Width>0.5pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Width>0.5pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Width>0.5pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingRight>3pt</PaddingRight>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Payroll_Archive_Line__Payroll_Archive_Line___Item_Description__Control1000000028.Value</Value>
+                                  <Style>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>3pt</PaddingLeft>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Payroll_Archive_Line__Payroll_Archive_Line__Amount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>=Fields!Payroll_Archive_Line__Payroll_Archive_Line__AmountFormat.Value</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Width>0.5pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Width>0.5pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Width>0.5pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Width>0.5pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingRight>3pt</PaddingRight>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                  <TablixMembers>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=iif((Fields!AfficherLigne.Value=TRUE) and (Fields!annuel.Value=TRUE),false,true)</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=iif((Fields!AfficherLigne.Value=TRUE) and (Fields!Mensuel.Value=TRUE),false,true)</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <Top>6.01483cm</Top>
+            <Left>3.32846cm</Left>
+            <Height>1.17355cm</Height>
+            <Width>13.82409cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+                <Width>0.5pt</Width>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="RELEVE_DES_EMOLUMENTSCaption">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!RELEVE_DES_EMOLUMENTSCaption.Value</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>16pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.846cm</Height>
+            <Width>20.31269cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>7.18838cm</Height>
+        <Style />
+      </Body>
+      <Width>20.31269cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>5.16909cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!PictureBoxLogo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Left>0.67733cm</Left>
+              <Height>2.34667cm</Height>
+              <Width>19.23848cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="SERVICE_DU_PERSONNELCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!SERVICE_DU_PERSONNELCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.94208cm</Top>
+              <Left>0.70379cm</Left>
+              <Height>0.63467cm</Height>
+              <Width>10.51251cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="NumRef">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!NumRef.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.56088cm</Top>
+              <Left>0.66171cm</Left>
+              <Height>0.60821cm</Height>
+              <Width>10.55459cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="NomEntreprise">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!NomEntreprise.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>2.74866cm</Top>
+              <Left>0.67733cm</Left>
+              <Height>0.61051cm</Height>
+              <Width>10.59187cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="DIRECTION_DES_RESSOURCES_HUMAINESCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!DIRECTION_DES_RESSOURCES_HUMAINESCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.35917cm</Top>
+              <Left>0.66171cm</Left>
+              <Height>0.60788cm</Height>
+              <Width>10.55459cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line1">
+              <Top>2.4525cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0cm</Height>
+              <Width>20.28623cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>6.85587cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="footer1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Sarl au capital social de 2.837.943.000.00DA - RN 26 TAHARACHT Akbou, Bejaia Algérie - R.C N° : 97 B 0182039 - N° ART : 0625 17 22061</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>footer1</rd:DefaultName>
+              <Top>4.7431cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.36717cm</Height>
+              <Width>20.28623cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="footer2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">NIS &amp; Matricule fiscale: 0 997 0625 00339 23 - Agrément sanitaire N° 06802 - compte bancaire CPA Akbou n° 132 400 20937 11 78</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>footer2</rd:DefaultName>
+              <Top>5.1526cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.44654cm</Height>
+              <Width>20.28623cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="footer3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Tél.: 034 35 89 50 - 034 35 60 60/73 - 034 35 88 68 - 034 35 54 20 - 034 35 86 93 - 034 35 57 81 - 0770 94 40 45 - 0770 24 12 55</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>footer3</rd:DefaultName>
+              <Top>5.56739cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.41479cm</Height>
+              <Width>20.28623cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line2">
+              <Top>4.70782cm</Top>
+              <Height>0cm</Height>
+              <Width>20.31269cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="footer4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Service consommateurs : 034 35 95 91 Fax : 034 35 95 92 &amp; 034 35 86 93</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>footer3</rd:DefaultName>
+              <Top>6.00335cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.38834cm</Height>
+              <Width>20.28623cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="footer5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">web : </Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">www.soummam-dz.com</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <Color>Blue</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>footer3</rd:DefaultName>
+              <Top>6.41461cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.44126cm</Height>
+              <Width>20.28623cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="V1__Préciser_si_à_titre_permanent_ou_temporaireCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!V1__Préciser_si_à_titre_permanent_ou_temporaireCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>2.92144cm</Top>
+              <Left>0.6617cm</Left>
+              <Height>0.47592cm</Height>
+              <Width>19.23847cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="V2__Mentionner_toutes_retenues_sur_salaire_par_decision_de_justice__pension_ouCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!V2__Mentionner_toutes_retenues_sur_salaire_par_decision_de_justice__pension_ouCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.36561cm</Top>
+              <Left>0.6617cm</Left>
+              <Height>0.50237cm</Height>
+              <Width>19.23847cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="remboursement_de_prêtCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!remboursement_de_prêtCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.84152cm</Top>
+              <Left>0.66171cm</Left>
+              <Height>0.53821cm</Height>
+              <Width>19.23847cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="P_Le_GérantCaption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!P_Le_GérantCaption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>2.0363cm</Top>
+              <Left>12.47776cm</Left>
+              <Height>0.58175cm</Height>
+              <Width>7.05199cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="FaitA">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!FaitA.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>FaitA</rd:DefaultName>
+              <Top>1.4465cm</Top>
+              <Left>12.47776cm</Left>
+              <Height>0.6cm</Height>
+              <Width>7.05199cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Toutes_les_indications_et_mentions_portées_sur_la_présente_attestation_sont_certifiées_Caption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!Toutes_les_indications_et_mentions_portées_sur_la_présente_attestation_sont_certifiées_Caption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.03351cm</Top>
+              <Left>0.73554cm</Left>
+              <Height>0.62398cm</Height>
+              <Width>19.23847cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="exactes_Caption">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!exactes_Caption.Value</Value>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.62927cm</Top>
+              <Left>0.73554cm</Left>
+              <Height>0.58176cm</Height>
+              <Width>19.23847cm</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>0.35cm</LeftMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <BottomMargin>0.5cm</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>d6a5d2fc-3e34-4a08-9b16-82b96cde56e7</rd:ReportID>
+</Report>

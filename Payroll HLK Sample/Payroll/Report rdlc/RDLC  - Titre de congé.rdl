@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="NumRef">
+          <DataField>NumRef</DataField>
+        </Field>
+        <Field Name="Employee__Last_Name_">
+          <DataField>Employee__Last_Name_</DataField>
+        </Field>
+        <Field Name="Employee__Function_Description_">
+          <DataField>Employee__Function_Description_</DataField>
+        </Field>
+        <Field Name="Unite_City">
+          <DataField>Unite_City</DataField>
+        </Field>
+        <Field Name="TODAY">
+          <DataField>TODAY</DataField>
+        </Field>
+        <Field Name="Employee__No__">
+          <DataField>Employee__No__</DataField>
+        </Field>
+        <Field Name="StDate">
+          <DataField>StDate</DataField>
+        </Field>
+        <Field Name="ReDate">
+          <DataField>ReDate</DataField>
+        </Field>
+        <Field Name="Motif">
+          <DataField>Motif</DataField>
+        </Field>
+        <Field Name="Employee__First_Name_">
+          <DataField>Employee__First_Name_</DataField>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+        </Field>
+        <Field Name="QtyFormat">
+          <DataField>QtyFormat</DataField>
+        </Field>
+        <Field Name="Droit_Conso">
+          <DataField>Droit_Conso</DataField>
+        </Field>
+        <Field Name="Droit_ConsoFormat">
+          <DataField>Droit_ConsoFormat</DataField>
+        </Field>
+        <Field Name="Conso_Qty">
+          <DataField>Conso_Qty</DataField>
+        </Field>
+        <Field Name="Conso_QtyFormat">
+          <DataField>Conso_QtyFormat</DataField>
+        </Field>
+        <Field Name="DIRECTION_DES_RESSOURCES_HUMAINESCaption">
+          <DataField>DIRECTION_DES_RESSOURCES_HUMAINESCaption</DataField>
+        </Field>
+        <Field Name="SERVICE_DU_PERSONNELCaption">
+          <DataField>SERVICE_DU_PERSONNELCaption</DataField>
+        </Field>
+        <Field Name="SARL_LAITERIE_SOUMMAMCaption">
+          <DataField>SARL_LAITERIE_SOUMMAMCaption</DataField>
+        </Field>
+        <Field Name="Fait_à_Caption">
+          <DataField>Fait_à_Caption</DataField>
+        </Field>
+        <Field Name="le___Caption">
+          <DataField>le___Caption</DataField>
+        </Field>
+        <Field Name="Matricule__Caption">
+          <DataField>Matricule__Caption</DataField>
+        </Field>
+        <Field Name="Fonction__Caption">
+          <DataField>Fonction__Caption</DataField>
+        </Field>
+        <Field Name="Date_de_départ__Caption">
+          <DataField>Date_de_départ__Caption</DataField>
+        </Field>
+        <Field Name="Date_de_retour__Caption">
+          <DataField>Date_de_retour__Caption</DataField>
+        </Field>
+        <Field Name="Le_DRHCaption">
+          <DataField>Le_DRHCaption</DataField>
+        </Field>
+        <Field Name="Beneficie_d_un__Caption">
+          <DataField>Beneficie_d_un__Caption</DataField>
+        </Field>
+        <Field Name="TITRE_DE_CONGECaption">
+          <DataField>TITRE_DE_CONGECaption</DataField>
+        </Field>
+        <Field Name="Nom__Caption">
+          <DataField>Nom__Caption</DataField>
+        </Field>
+        <Field Name="Prénom__Caption">
+          <DataField>Prénom__Caption</DataField>
+        </Field>
+        <Field Name="Prend__Caption">
+          <DataField>Prend__Caption</DataField>
+        </Field>
+        <Field Name="jours_Caption">
+          <DataField>jours_Caption</DataField>
+        </Field>
+        <Field Name="Reliquat__Caption">
+          <DataField>Reliquat__Caption</DataField>
+        </Field>
+        <Field Name="jours_Caption_Control1000000030">
+          <DataField>jours_Caption_Control1000000030</DataField>
+        </Field>
+        <Field Name="jours_Caption_Control1000000010">
+          <DataField>jours_Caption_Control1000000010</DataField>
+        </Field>
+        <Field Name="A_déjà_pris__Caption">
+          <DataField>A_déjà_pris__Caption</DataField>
+        </Field>
+        <Field Name="Employee_Leave_Entry_No_">
+          <DataField>Employee_Leave_Entry_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
