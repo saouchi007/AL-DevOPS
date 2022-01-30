@@ -1,0 +1,27 @@
+[
+  {
+    "debuggingContext": "77aeb96e-5424-4ee8-a43b-e12ee1d2559f",
+    "snapshotContext": {
+      "debugConfig": {
+        "type": "al",
+        "request": "snapshotInitialize",
+        "name": "snapshotInitialize: Your own server",
+        "configuration": {
+          "authentication": "Windows",
+          "server": "http://localhost:8080",
+          "serverInstance": "BC193",
+          "port": 7083,
+          "name": "snapshotInitialize: Your own server",
+          "request": "snapshotInitialize",
+          "environmentType": "OnPrem"
+        },
+        "sessionId": -1
+      },
+      "workspacePath": "e:\\AL Repo\\Adactim_DevOps\\Snapshot and Debugging",
+      "createdTime": "2022-01-30T14:23:12.000Z",
+      "affinityCookie": "",
+      "status": 4,
+      "attachKind": 2
+    }
+  }
+]
