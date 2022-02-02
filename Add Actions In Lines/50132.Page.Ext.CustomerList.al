@@ -26,7 +26,7 @@ pageextension 50132 CustomerList_Ext extends "Customer List"
             }
             field(Prices; Prices)
             {
-                ApplicationArea = all;
+                ApplicationArea = all;  
                 ShowCaption = false;
                 Style = Favorable;
 
