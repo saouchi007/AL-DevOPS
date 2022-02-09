@@ -25,8 +25,8 @@ pageextension 50138 CompanyInfo_Ext extends "Company Information"
                     URL: Text;
                     IP: Text;
                 begin
-                    //URL := 'https://ipinfo.io?token=eff835d123dd55';
-                    URL := 'http://ip-api.com/json';
+                    URL := 'https://ipinfo.io?token=eff835d123dd55';
+                    //URL := 'http://ip-api.com/json';
                     RequestMsg.SetRequestUri(URL);
                     if not Client.Send(RequestMsg, ResponseMsg) then
                         Error('Call failed');
