@@ -34,6 +34,17 @@ pageextension 50138 CompanyInfo_Ext extends "Company Information"
                     Message(IP);
                 end;
             }
+            action(AllObjects)
+            {
+                Caption = 'View All objects';
+                ToolTip = ' View all objects used by extensions';
+                Image = ViewServiceOrder;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                ApplicationArea = all;
+                RunObject = page 9174;
+            }
         }
     }
 
