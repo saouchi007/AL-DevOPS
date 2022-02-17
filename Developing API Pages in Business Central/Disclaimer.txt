@@ -1,0 +1,18 @@
+- Web services :
+Used to exchange data via oData or Soap URLs over HTTP protocol, Soap envelops the data and works on a fixed contract manner(only with XML) contrary to oData that actually works 
+on an open format (XML and json), both oData and SOAP needs to be enabled on the service tier under the corresponding tabs
+
+- API cannot be viewed from the web client straight away nor from the "Web Services" page in BSC 
+- "Custom API" refers to a page or querty created with type "API".
+-  They can be acessed through postman (basic authentication-user name, web service acess key or Oauth authentication)
+- Note that Odata and Soap must be enabled in the service tier firt
+- All available API within BSC can be accessible through : http://localhost:1948/BC193/api/v2.0 (mind Odata port that is different from 8080)
+- If there are multiple companies within a tenant then the company ID needs to be supplied first through : http://localhost:1948/BC193/api/v2.0/companies
+- Once company ID grabed then say an "Items" API can be viewed filtered on the company ID : http://localhost:1948/BC193/api/v2.0/companies(4f1db4ab-7482-ec11-85d4-00155d19383a)/items
+- For the cloud acess to available API : postman can be used yet with this url : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0
+- Tenant ID and env name are available under Help and support => Azure AD tenant and environment name
+- Credentials as username and password on postman need to be grabbed from the "Users" page of bsc, "User Name" is the user name on postman and the password
+needs to be generated under "Web Service Access Key" (expand the page to grab the value without special characters or spaces)
+- Then follow the same pattern to view items or items filtered per company or even the list of available companies
+- It is recommended to use "System ID" as a primary key when creating an API, it will be used as primary key in the API definition as a parameter : ODataKeyFields = SystemId
+-  
