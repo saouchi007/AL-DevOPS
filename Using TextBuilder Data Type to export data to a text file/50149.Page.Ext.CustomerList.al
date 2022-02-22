@@ -33,8 +33,9 @@ pageextension 50149 CustomerList_Ext extends "Customer List"
         FileName: Text;
         Lines: Integer;
         CustLedEnt: Record "Cust. Ledger Entry";
+        Customer: Record Customer;
     begin
-        FileName := 'TrialFile_' + UserId + '_' + Format(CurrentDateTime) + '.txt';
+        //FileName := 'TrialFile_' + UserId + '_' + Format(CurrentDateTime) + '.txt';
         /*txtBuilder.AppendLine('This is 1st line');
         txtBuilder.AppendLine('This is second line');
         txtBuilder.AppendLine('');
@@ -45,17 +46,23 @@ pageextension 50149 CustomerList_Ext extends "Customer List"
             txtBuilder.AppendLine(StrSubstNo('This is %1 line', Lines));
         txtBuilder.Append('End time: ' + Format(Time));  Add 1k lines in a text file*/
 
-        txtBuilder.AppendLine('Posting Date, ' + 'Document Type, ' + 'Document N°, ' + 'Customer No., ' + 'Amount (LCY)');
-        CustLedEnt.Reset();
-        CustLedEnt.SetAutoCalcFields("Amount (LCY)");
-        if CustLedEnt.FindSet() then
-            repeat
-                txtBuilder.AppendLine(Format(CustLedEnt."Posting Date") + ' , ' + Format(CustLedEnt."Document Type") + ' , ' + CustLedEnt."Document No." + ' , ' +
-                CustLedEnt."Customer No." + ' , ' + Format(CustLedEnt."Amount (LCY)"));
-            until CustLedEnt.Next() = 0;
-        TempBlolb.CreateOutStream(ouT);
-        ouT.Write(txtBuilder.ToText());
-        TempBlolb.CreateInStream(inS);
-        DownloadFromStream(inS, '', '', '', FileName);
+        /*
+                txtBuilder.AppendLine('Posting Date, ' + 'Document Type, ' + 'Document N°, ' + 'Customer No., ' + 'Amount (LCY)');
+                CustLedEnt.Reset();
+                CustLedEnt.SetAutoCalcFields("Amount (LCY)");
+                if CustLedEnt.FindSet() then
+                    repeat
+                        txtBuilder.AppendLine(Format(CustLedEnt."Posting Date") + ' , ' + Format(CustLedEnt."Document Type") + ' , ' + CustLedEnt."Document No." + ' , ' +
+                        CustLedEnt."Customer No." + ' , ' + Format(CustLedEnt."Amount (LCY)"));
+                    until CustLedEnt.Next() = 0;
+                TempBlolb.CreateOutStream(ouT);
+                ouT.Write(txtBuilder.ToText());
+                TempBlolb.CreateInStream(inS);
+                DownloadFromStream(inS, '', '', '', FileName);*/
+
+/*      Get the selected record
+        CurrPage.SetSelectionFilter(Rec);
+        Message('%1, %2', Rec.Name, Rec."Sales (LCY)");
+        Rec.Reset();*/  
     end;
 }
