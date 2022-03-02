@@ -1,0 +1,29 @@
+{
+  "id": "06ce72eb-b3d8-49d0-b70e-da3aef440228",
+  "name": "Start a new line in the description of app.json",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "Today I want to share a mini tip about how to start,\nToday I want to share a mini tip about how to start \n Today I want to share a mini tip about how to start",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "8.0"
+}
