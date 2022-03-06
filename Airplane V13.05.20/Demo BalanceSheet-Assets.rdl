@@ -97,9 +97,6 @@ End Function
         <Field Name="Address_CompanyInformation">
           <DataField>Address_CompanyInformation</DataField>
         </Field>
-        <Field Name="CISD_CompanyInformation">
-          <DataField>CISD_CompanyInformation</DataField>
-        </Field>
         <Field Name="RegistrationNo_CompanyInformation">
           <DataField>RegistrationNo_CompanyInformation</DataField>
         </Field>

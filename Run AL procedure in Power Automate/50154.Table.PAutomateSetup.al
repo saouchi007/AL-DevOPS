@@ -11,7 +11,7 @@ table 50154 PowerAutomateSetup
         {
             DataClassification = CustomerContent;
             Caption = 'Primary Key';
-        }
+        }   
         field(2; SetupField; Boolean)
         {
             DataClassification = CustomerContent;

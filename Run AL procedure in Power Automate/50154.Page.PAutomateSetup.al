@@ -1,3 +1,6 @@
+/// <summary>
+/// Page PAutomateSetup (ID 50154).
+/// </summary>
 page 50154 PAutomateSetup
 {
     PageType = Card;

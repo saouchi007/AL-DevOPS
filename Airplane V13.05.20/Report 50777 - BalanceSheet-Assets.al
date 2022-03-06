@@ -44,9 +44,9 @@ report 50777 "Demo BalanceSheet-Assets"
                 column(Address_CompanyInformation; Address)
                 {
                 }
-                column(CISD_CompanyInformation; CISD)
-                {
-                }
+                /* column(CISD_CompanyInformation; CISD)
+                 {
+                 }*/
                 column(RegistrationNo_CompanyInformation; "Registration No.")
                 {
                 }
