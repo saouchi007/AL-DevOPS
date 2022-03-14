@@ -29,15 +29,17 @@ pageextension 50156 ISA_DutyStamp extends "Sales Invoice Subform"
                 trigger OnAction()
                 var
                     ProcAmnt: Decimal;
+                    set: Boolean;
                 begin
                     Rec.ISA_DutyStamp := 0;
                     ProcAmnt := 0;
                     Rec.SetRange("Line Amount");
-                    if Rec.Find('-') then begin
+                    if Rec.Find('-') and set = false then begin
                         repeat
                             ProcAmnt += Rec."Line Amount";
                             Rec.ISA_DutyStamp := ((ProcAmnt * 0.19) + ProcAmnt) * 0.01;
                         until Rec.Next = 0;
+                        set := true;
                     end;
                     Rec.Modify();
                 end;

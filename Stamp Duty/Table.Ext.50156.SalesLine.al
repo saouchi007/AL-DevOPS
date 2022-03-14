@@ -8,7 +8,7 @@ tableextension 50156 ISA_DutyStamp extends "Sales Line"
         field(50156; ISA_DutyStamp; Decimal)
         {
             DataClassification = CustomerContent;
-            Caption = 'Duty Stamp';
+            Caption = 'Stamp Duty';
             Editable = false;
         }
     }
