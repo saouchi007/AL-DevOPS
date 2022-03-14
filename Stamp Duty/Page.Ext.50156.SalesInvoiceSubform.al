@@ -36,7 +36,7 @@ pageextension 50156 ISA_DutyStamp extends "Sales Invoice Subform"
                     if Rec.Find('-') then begin
                         repeat
                             ProcAmnt += Rec."Line Amount";
-                            Rec.ISA_DutyStamp := ProcAmnt; //* 0.01;
+                            Rec.ISA_DutyStamp := ((ProcAmnt * 0.19) + ProcAmnt) * 0.01;
                         until Rec.Next = 0;
                     end;
                     Rec.Modify();
