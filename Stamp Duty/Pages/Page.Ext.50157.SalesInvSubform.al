@@ -33,7 +33,7 @@ pageextension 50157 ISA_StampDuty_SIS extends "Sales Invoice Subform"
                     clear(Rec.StampDuty);
                     SalesHeader.get(Rec."Document Type", Rec."Document No.");
                     if SalesHeader."Payment Terms Code" <> 'COD' then begin
-                        Error('Payment terms code needs to be set to ''COD'' under ''Invoice Details''');
+                        Error('Oh dear......payment terms code needs to be set to ''COD'' under ''Invoice Details''');
                         exit;
                     end;
                     Rec.StampDuty := TotalSalesLine."Amount Including VAT" * 0.01;
