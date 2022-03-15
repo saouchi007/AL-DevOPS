@@ -17,7 +17,7 @@ pageextension 50157 ISA_StampDuty_SIS extends "Sales Invoice Subform"
 
     actions
     {
-        addafter("F&unctions")
+        addafter(GetPrice)
         {
             action(StDuty)
             {
@@ -27,11 +27,19 @@ pageextension 50157 ISA_StampDuty_SIS extends "Sales Invoice Subform"
 
                 trigger OnAction()
                 var
-                    TotalAmountInclVAT: Decimal;
                     isHandled: Boolean;
+                    SalesHeader: Record "Sales Header";
                 begin
-                    Rec.StampDuty := 0;
+                    clear(Rec.StampDuty);
+                    SalesHeader.get(Rec."Document Type", Rec."Document No.");
+                    if SalesHeader."Payment Terms Code" <> 'COD' then begin
+                        Error('Payment terms code needs to be set to ''COD'' under ''Invoice Details''');
+                        exit;
+                    end;
                     Rec.StampDuty := TotalSalesLine."Amount Including VAT" * 0.01;
+                    Rec.Modify();
+                    isHandled := true;
+                    //Message('%1', SalesHeader."Payment Terms Code");
                 end;
             }
         }

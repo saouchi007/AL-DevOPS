@@ -13,7 +13,7 @@ tableextension 50157 ISA_StampDuty_SL extends "Sales Line"
     /// <summary>
     /// MyProcedure.
     /// </summary>
-    procedure GetStampDuty()
+    /*procedure GetStampDuty()
     var
         ProcAmnt: Decimal;
         set: Boolean;
@@ -29,5 +29,5 @@ tableextension 50157 ISA_StampDuty_SL extends "Sales Line"
             set := true;
         end;
         Rec.Modify();
-    end;
+    end;*/
 }
