@@ -42,18 +42,18 @@ page 50175 PurchaseInvoicePicture
 
                 trigger OnAction()
                 var
-                CameraInteraction: Page "Camera Interaction";
-                Picstraeam: InStream;
+                //CameraInteraction: Page "Camera Interaction";
+                //Picstraeam: InStream;
                 begin
 
-                    CameraInteraction.AllowEdit(true);
-                    CameraInteraction.Quality(100);
-                    CameraInteraction.EncodingType('PNG');
-                    CameraInteraction.RunModal();
-                    CameraInteraction.GetPicture(Picstraeam);
-                    PurchInvoiceImage.ImportStream(Picstraeam, CameraInteraction.GetPictureName());
-                    if not Insert(true) then
-                        Modify(true);
+                    /* CameraInteraction.AllowEdit(true);
+                     CameraInteraction.Quality(100);
+                     CameraInteraction.EncodingType('PNG');
+                     CameraInteraction.RunModal();
+                     CameraInteraction.GetPicture(Picstraeam);
+                     PurchInvoiceImage.ImportStream(Picstraeam, CameraInteraction.GetPictureName());
+                     if not Insert(true) then
+                         Modify(true);*/
                     Rec.TestField("No.");
                     Camera.AddPicture(Rec, Rec.FieldNo(PurchaseInvoiceImage));
                 end;
