@@ -40,6 +40,7 @@ pageextension 50157 ISA_StampDuty_SIS extends "Sales Invoice Subform"
                     Rec.StampDuty := TotalSalesLine."Amount Including VAT" * 0.01;
                     Rec.Modify();
                     isHandled := true;
+                    Message('%1', Rec.StampDuty);
                     //Message('%1', SalesHeader."Payment Terms Code");
                 end;
             }
