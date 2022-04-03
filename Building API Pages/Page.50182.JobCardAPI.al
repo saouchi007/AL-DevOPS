@@ -7,6 +7,7 @@ page 50182 ISA_JobCard
     Endpoint to list all the companies the particular environment –https://api.businesscentral.dynamics.com/v2.0/<tenantid>/<environmentname>/api/v2.0/companies
     Example (using above API details) – https://api.businesscentral.dynamics.com/v2.0/9c5c9bca-3497-4d90-b50e-ccd14c51558c/dev/api/v2.0/companies
     Final API endpoint comes out to be – https://api.businesscentral.dynamics.com/v2.0/9c5c9bca-3497-4d90-b50e-ccd14c51558c/Production/api/MyCompany/app1/v1.0/companies(f2f053b8-361a-ec11-86bc-000d3a70b137)/Jobs
+    https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/microsoft/automation/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/automationCompanies
     */
     PageType = API;
     ApplicationArea = All;
