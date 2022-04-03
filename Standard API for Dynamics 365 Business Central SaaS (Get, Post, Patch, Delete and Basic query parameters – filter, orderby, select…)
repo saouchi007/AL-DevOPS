@@ -1,0 +1,105 @@
+Pre-requisites: 
+
+1. Endpoints for the APIs: Direct tenant
+With multiple environments (v2.0):
+Endpoints : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0
+
+2. Authentication: Basic authentication
+Username and web service access key as password.
+You can get web service access key from User Card.
+
+3. Test Tool: Postman
+The Collaboration Platform for API Development
+
+Standard API and Basic operations
+The standard APIs are provided by Microsoft and we can use them out-of-box.
+
+1. Set GET request and enter your Endpoint URL.
+For Example: https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0
+
+2. In Authorization tab, set type to Basic Auth, and enter your Username and web service access key as password.
+
+Sample of out of the box API : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/items
+NB = > API are case sensitive 
+
+Basic operations
+
+GET	List collection	GET …/salesOrders
+GET	Get member of the collection	GET …/salesOrders({id})
+POST	Create new sales order in the collection	POST …/salesOrders/
+PATCH	Update sales order	PATCH …/salesOrders({id})
+DELETE	Delete sales order	DELETE …/salesOrders({id})
+POST	Invoke operations/bound actions	POST …/salesInvoice({id})/Microsoft.NAV.post
+POST	Execute multiple requests	POST …/$batch
+
+1. Get company list : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies
+2. Get member of the collection : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)
+3. Get Sales Order list in CRONUS UK Ltd : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders
+4. Get only one Sales Order in  CRONUS UK Ltd : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders(ec17651c-e69e-ec11-80f2-000d3a86e72f)
+5. $filter :  
+eq 	Equal
+born 	Not equal > ?$ filter = unitPrice not 0
+gt	Greater than    
+give	Greater than or equal
+lt	Less than
+the	Less than or equal
+and	Logical and
+or	Logical or
+not	Logical negation
+contains	Search for substring > ?$filter=contains(displayName, ‘red’)
+endswith	Test if first string ends with second string >	?$filter=endswith(email,’contoso.com’)
+startswith	Test if first string starts with second string > ?$filter=startswith(email,’aj’)
+
+-Note: The field name needs to refer to the name output below, not the name on the page.
+
+6. $select :
+For example:
+Get Sales Order list: only have fields, number, postingDate, customerNumber, customerName : 
+ https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders?$select=customerNumber,billToName,postingDate,postingDate
+7. orderby
+Orders results:
+Get Sales Order list: sorting by customerNumber desc https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders?$orderby= customerNumber desc
+8.$top
+Sets the tops of results: 
+Get Sales Order list: top three orders: https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders?$top=3
+9. $skip
+Skip a number of rows:
+Get Sales Order list: skip 9 rows : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders?$skip=3
+10. $expand
+Retrieves related resources.
+Get Sales Order list: with sales lines : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders?$expand=salesOrderLines
+11. $count
+Retrieves the total count of matching resources, notice "/" in "/$count"
+Get the total count of Sales Orders : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders/$count
+12. Post
+For example: Create a sales order object in Dynamics 365 Business Central : 
+
+1. Set Postrequest and enter your URL.
+https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders
+
+2. Set key (Content-type) and value (application/json) in Headers.
+key : Content-Type,  value : application/json
+
+3. Set order information in Body -> raw.
+POST : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders
+BODY : {
+    "orderDate" : "2022-04-02",
+    "customerNumber" : "30000",
+    "currencyCode": "GBP",
+    "externalDocumentNumber" : "API demo",
+    "paymentTermsId" : "86a57518-d46f-ec11-bb80-000d3a269a15"
+}
+13. Patch
+For example: Update the properties of a sales orders object for Dynamics 365 Business Central.
+
+1. Set Patchrequest and enter your URL. (You must specify which sales order you want update) : PATCH https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders(94bc7324-d46f-ec11-bb80-000d3a269a15)
+2. Set key (Content-type) and value (application/json) like post, then add secomd key (If-Match) and value (*) in Headers.
+3. 3. Set the update information of the order in Body -> raw : 
+{
+    "orderDate" : "2022-04-01",
+    "externalDocumentNumber" : "Patched from an API demo"
+}
+
+14.Delete
+For example: Delete a sales order object from Dynamics 365 Business Central.
+Set Deleterequest and enter your URL. (You must specify which sales order you want delete) : DELETE https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0/companies(934528f5-d36f-ec11-bb80-000d3a269a15)/salesOrders(94bc7324-d46f-ec11-bb80-000d3a269a15)
