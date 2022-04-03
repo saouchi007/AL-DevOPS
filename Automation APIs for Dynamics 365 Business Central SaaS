@@ -1,0 +1,34 @@
+1. Endpoints for the Automation APIs:
+https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0 - https://api.businesscentral.dynamics.com/v2.0/user domain name/environment name/api/microsoft/automation/v2.0/
+
+2. Authentication: Basic authentication
+Username and web service access key as password.
+You can get web service access key from User Card.
+
+3. Test Tool: Postman
+The Collaboration Platform for API Development
+
+Get Automation APIs list
+1. Set GET request and enter your Endpoint URL. : GET : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/v2.0 
+2. In Authorization tab, set type to Basic Auth, and enter your Username and web service access key as password.
+
+Up to now, BC17.1 2020/11/30, there are a total of 14 Automation APIs in Business Central.
+Note: The upper and lower case letters in the URL must match exactly.
+
+Some Examples
+1. Get extensionDeploymentStatus: Retrieves the properties of an extensionDeploymentStatus object for Dynamics 365 Business Central.
+2. extensions: Get and Uninstall extension : GET https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/microsoft/automation/v2.0/companies(f1fada27-3bb3-ec11-8aa5-00224800924c)/extensions
+3. Uninstall: POST : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/microsoft/automation/v2.0/companies(f1fada27-3bb3-ec11-8aa5-00224800924c)/extensions(a8005b76-3814-44e3-996e-32e4c99581ad)/Microsoft.NAV.uninstall
+Note : use "packageId" for the extension ID
+
+4. automationCompany Resource Type: Create a new company
+
+1. Set key (Content-type) and value (application/json) in Headers.
+key : Content-Type,  value : application/json
+2. Set company information in Body -> raw.
+POST : https://api.businesscentral.dynamics.com/v2.0/2b31fe61-4907-4dce-8fa7-e489b983f1e9/Sandbox/api/microsoft/automation/v2.0/companies(f1fada27-3bb3-ec11-8aa5-00224800924c)/automationCompanies
+BODY : {
+    "name" :"API Corp",
+    "displayName": "API Corp",
+    "businessProfileId": ""
+}
