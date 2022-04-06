@@ -1,0 +1,29 @@
+{
+  "id": "6f055fb1-038b-4fa9-a533-50d69ddca9c9",
+  "name": "Create Excel Buffer to Import data",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50300
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "8.0"
+}
