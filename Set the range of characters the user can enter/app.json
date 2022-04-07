@@ -1,6 +1,6 @@
 {
-  "id": "80de7484-5d4c-494a-8040-c9d9f0c975c9",
-  "name": "Trial",
+  "id": "0e6476fa-cda4-49f8-903e-1445e8ffeda1",
+  "name": "Set the range of characters the user can enter",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -17,7 +17,7 @@
   "idRanges": [
     {
       "from": 50100,
-      "to": 50149
+      "to": 50349
     }
   ],
   "resourceExposurePolicy": {

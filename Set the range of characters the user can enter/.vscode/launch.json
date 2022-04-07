@@ -1,19 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "SAAS Sandbox",
-            "request": "launch",
-            "type": "al",
-            "environmentType": "Sandbox",
-            "environmentName": "sandbox",
-            "startupObjectId": 22,
-            "startupObjectType": "Page",
-            "breakOnError": true,
-            "launchBrowser": true,
-            "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
-        }, {
+         {
             "name": "Local Server",
             "request": "launch",
             "type": "al",
