@@ -1,7 +1,7 @@
 /// <summary>
-/// PageExtension ISA_VendorCard_Ext (ID 50228) extends Record MyTargetPage.
+/// PageExtension ISA_CustomerCard_Ext (ID 50229) extends Record Customer Card.
 /// </summary>
-pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
+pageextension 50229 ISA_CustomerCard_Ext extends "Customer Card"
 {
     layout
     {
@@ -14,9 +14,10 @@ pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
+                    ToolTip = 'Afin de renseigner le Registre du Commerce du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Vendor;
+                        VendorRec: Record Customer;
                     begin
                         VendorRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
                         if VendorRec.Count > 0 then
@@ -27,9 +28,10 @@ pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
                 {
                     ApplicationArea = all;
                     Importance = Promoted;
+                    ToolTip = 'Afin de renseigner le Numéro d''Identification Fiscale du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Vendor;
+                        VendorRec: Record Customer;
                     begin
                         VendorRec.SetFilter(ISA_FiscalID, Rec.ISA_FiscalID);
                         if VendorRec.Count > 0 then
@@ -40,9 +42,10 @@ pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
+                    ToolTip = 'Afin de renseigner le  Numéro d''Identification Statistique du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Vendor;
+                        VendorRec: Record Customer;
                     begin
                         VendorRec.SetFilter(ISA_StatisticalID, Rec.ISA_StatisticalID);
                         if VendorRec.Count > 0 then
@@ -53,9 +56,10 @@ pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
+                    ToolTip = 'Afin de renseigner le Numéro d''Article du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Vendor;
+                        VendorRec: Record Customer;
                     begin
                         VendorRec.SetFilter(ISA_ItemNumber, Rec.ISA_ItemNumber);
                         if VendorRec.Count > 0 then
@@ -77,4 +81,5 @@ pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
 
     var
         DuplicatEntryLbl: Label 'Value %1 is already used ! Press F5 to refesh';
+
 }
