@@ -18,9 +18,4 @@ pageextension 50231 ISA_SalesReceivable extends "Sales & Receivables Setup"
             }
         }
     }
-    trigger OnOpenPage()
-    begin
-        Message('%1', Rec.ISA_StampDuty_GLA);
-    end;
-
 }
