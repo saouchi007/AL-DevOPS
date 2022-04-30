@@ -2,7 +2,7 @@
   "id": "bb02921e-a696-4804-ba67-31f9616979eb",
   "name": "Altractors",
   "publisher": "Saouchi Ilyes - Adactim",
-  "version": "1.26.04.22",
+  "version": "1.30.04.22",
   "brief": "This extension implements business requirements of Altractors",
   "description": "This extension implements business requirements of Altractors",
   "privacyStatement": "",
@@ -22,8 +22,8 @@
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
   },
   "runtime": "8.0"
 }

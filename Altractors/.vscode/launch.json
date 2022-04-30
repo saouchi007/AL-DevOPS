@@ -1,5 +1,5 @@
 {
-    "version": "26.04.22",
+    "version": "30.04.22",
     "configurations": [
          {
             "name": "Local Server",
@@ -9,7 +9,7 @@
             "server": "http://localhost:8080/",
             "serverInstance": "BC190",
             "authentication": "Windows",
-            "startupObjectId": 22,
+            "startupObjectId": 459,
             "startupObjectType": "Table",
             "breakOnError": true,
             "launchBrowser": true,
