@@ -11,9 +11,16 @@ pageextension 50231 ISA_SalesReceivable extends "Sales & Receivables Setup"
             {
                 ApplicationArea = All;
                 ToolTip = 'Sepcifies the G/L Account to be used to post ''Stamp Duty'' entries on Sales Orders';
+                trigger OnValidate()
+                begin
+                    Rec.Modify();
+                end;
             }
         }
     }
-
+    trigger OnOpenPage()
+    begin
+        Message('%1', Rec.ISA_StampDuty_GLA);
+    end;
 
 }

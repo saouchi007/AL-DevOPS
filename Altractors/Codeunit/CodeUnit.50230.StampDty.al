@@ -13,8 +13,10 @@ codeunit 50230 ISA_StampDutyProcessor
     local procedure PostingDutyEntries(SalesHeader: Record "Sales Header"; DocNo: Code[20]; ExtDocNo: Code[35]; SourceCode: Code[10]; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     var
         GenJnlLine: Record "Gen. Journal Line";
-    //SalesLine : Record "Sales Line";
+        SalesAndRec: Record "Sales & Receivables Setup";
+        SalesLine: Record "Sales Line";
     begin
+        SalesAndRec.Get();
         if SalesHeader."Payment Terms Code" = 'COD' then begin
 
             with GenJnlLine do begin
@@ -27,7 +29,7 @@ codeunit 50230 ISA_StampDutyProcessor
                 "Account Type" := "Account Type"::Customer;
                 "Account No." := SalesHeader."Bill-to Customer No.";
                 CopyFromSalesHeader(SalesHeader);
-                Amount := -5000; //SalesLine.ISA_StampDuty;
+                Amount := SalesHeader.ISA_StampDuty * -1; //-5000; //SalesLine.ISA_StampDuty;
                 Description := 'Customer Duty';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
 
@@ -38,9 +40,9 @@ codeunit 50230 ISA_StampDutyProcessor
 
                 CopyDocumentFields("Gen. Journal Document Type"::" ", DocNo, ExtDocNo, SourceCode, '');
                 "Account Type" := "Account Type"::"G/L Account";
-                "Account No." := '6110';
+                "Account No." := SalesAndRec.ISA_StampDuty_GLA; //; '6110';
                 CopyFromSalesHeader(SalesHeader);
-                Amount := 5000; //SalesLine.ISA_StampDuty;
+                Amount := SalesHeader.ISA_StampDuty; //5000; //SalesLine.ISA_StampDuty;
                 Description := 'G/L Duty';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
             end;
