@@ -30,7 +30,7 @@ codeunit 50230 ISA_StampDutyProcessor
                 "Account No." := SalesHeader."Bill-to Customer No.";
                 CopyFromSalesHeader(SalesHeader);
                 Amount := SalesHeader.ISA_StampDuty * -1; //-5000; //SalesLine.ISA_StampDuty;
-                Description := 'Customer Duty';
+                Description := SalesHeader."Bill-to Name" + ' - ' + SalesHeader."No." + ' - Droit de timbre';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
 
                 InitNewLine(
@@ -43,7 +43,7 @@ codeunit 50230 ISA_StampDutyProcessor
                 "Account No." := SalesAndRec.ISA_StampDuty_GLA; //; '6110';
                 CopyFromSalesHeader(SalesHeader);
                 Amount := SalesHeader.ISA_StampDuty; //5000; //SalesLine.ISA_StampDuty;
-                Description := 'G/L Duty';
+                Description := SalesHeader."Bill-to Name" + ' - ' + SalesHeader."No." + ' - Droit de timbre';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
             end;
 
