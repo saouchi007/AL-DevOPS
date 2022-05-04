@@ -2,7 +2,7 @@
   "id": "bb02921e-a696-4804-ba67-31f9616979eb",
   "name": "Altractors SPA",
   "publisher": "Saouchi Ilyes - Adactim",
-  "version": "2.30.04.22",
+  "version": "4.04.05.22",
   "brief": "Altractors SPA Extension",
   "description": "This extension deploys Altractors business requirements, Dev is reachable through +213 772 14 85 56",
   "privacyStatement": "",
@@ -22,8 +22,8 @@
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": true,
-    "includeSourceInSymbolFile": true
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
   },
   "runtime": "8.0"
 }
