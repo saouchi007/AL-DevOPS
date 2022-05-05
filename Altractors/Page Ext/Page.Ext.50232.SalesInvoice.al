@@ -1,7 +1,7 @@
 /// <summary>
-/// PageExtension ISA_SalesOrderSubform (ID 50230) extends Record Sales Order Subform.
+/// PageExtension ISA_SalesInvoice_Ext (ID 50232) extends Record MyTargetPage.
 /// </summary>
-pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
+pageextension 50232 ISA_SalesInvoice_Ext extends "Sales Invoice"
 {
     layout
     {
@@ -10,10 +10,21 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
                 ApplicationArea = All;
-                ToolTipML = ENU = 'Processes 1% of amount including VAT',FRA = 'Calcule 1% du TTC';
+                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
             }
         }
+        modify("Payment Terms Code")
+        {
+            trigger OnAfterValidate()
+            begin
+                if Rec."Payment Terms Code" = 'COD' then
+                    ProcessStampDuty()
+                else
+                    Rec.ISA_StampDuty := 0;
+            end;
+        }
     }
+
     actions
     {
         addafter("P&osting")
@@ -35,6 +46,7 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
             }
         }
     }
+
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
@@ -60,6 +72,7 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
     begin
         ProcessStampDuty();
     end;
+
     /// <summary>
     /// ProcessStampDuty.
     /// </summary>
@@ -105,6 +118,3 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
 
     end;
 }
-
-
-

@@ -8,10 +8,16 @@ codeunit 50230 ISA_StampDutyProcessor
     begin
         PostingDutyEntries(SalesHeader, GenJnlLineDocNo, GenJnlLineExtDocNo, SrcCode, GenJnlPostLine);
     end;
-
-
+    /*
+        [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterInsertInvoiceHeader', '', false, false)]
+        local procedure TransferStampDuty(var SalesHeader: Record "Sales Header"; var SalesInvHeader: Record "Sales Invoice Header")
+        begin
+            InsertInvoiceHeaderWithDuty(SalesHeader, SalesInvHeader);
+        end;
+    */
     local procedure PostingDutyEntries(SalesHeader: Record "Sales Header"; DocNo: Code[20]; ExtDocNo: Code[35]; SourceCode: Code[10]; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     var
+        //PostCustomerEntry in post sales
         GenJnlLine: Record "Gen. Journal Line";
         SalesAndRec: Record "Sales & Receivables Setup";
         SalesLine: Record "Sales Line";
@@ -47,6 +53,36 @@ codeunit 50230 ISA_StampDutyProcessor
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
             end;
 
+        end;
+    end;
+
+    local procedure InsertInvoiceHeaderWithDuty(var SalesHeaderDT: Record "Sales Header"; var SalesInvHeader: Record "Sales Invoice Header")
+    // InsertInvoiceHeader in post sales
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        if IsHandled then
+            exit;
+
+        with SalesHeaderDT do begin
+            SalesInvHeader.Init();
+            CalcFields("Work Description");
+            SalesInvHeader."No." := "Posting No.";
+
+            if "Document Type" = "Document Type"::Order then begin
+                SalesInvHeader."Pre-Assigned No. Series" := '';
+                SalesInvHeader."Order No. Series" := "No. Series";
+                SalesInvHeader."Order No." := "No.";
+                SalesInvHeader.ISA_StampDuty := 666; //SalesHeaderDT.ISA_StampDuty;
+            end else begin
+                if "Posting No." = '' then
+                    SalesInvHeader."No." := "No.";
+                SalesInvHeader."Pre-Assigned No. Series" := "No. Series";
+                SalesInvHeader."Pre-Assigned No." := "No.";
+            end;
+
+            SalesInvHeader.TransferFields(SalesHeaderDT);
         end;
     end;
 }
