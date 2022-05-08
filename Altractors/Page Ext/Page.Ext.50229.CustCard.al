@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_CustomerCard_Ext (ID 50229) extends Record Customer Card.
 /// </summary>
-pageextension 50229 ISA_CustomerCard_Ext extends "Customer Card"
+pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
 {
     layout
     {

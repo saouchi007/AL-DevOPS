@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension ISA_VendorCard_Ext (ID 50228) extends Record Vendor.
 /// </summary>
-tableextension 50228 ISA_VendorCard_Ext extends Vendor
+tableextension 50100 ISA_VendorCard_Ext extends Vendor
 {
     fields
     {

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PermissionSets>
-  <PermissionSet RoleID="ALTRACTORS SPA" RoleName="Altractors SPA">
+  <PermissionSet RoleID="ALTRAAPP" RoleName="AltraApp">
     <Permission>
-      <ObjectID>50230</ObjectID>
+      <ObjectID>50106</ObjectID>
       <ObjectType>5</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>

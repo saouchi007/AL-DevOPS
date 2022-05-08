@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension ISA_SalesInvHeader_Ext (ID 50233) extends Record Sales Invoice Header.
 /// </summary>
-tableextension 50233 ISA_SalesInvHeader_Ext extends "Sales Invoice Header"
+tableextension 50104 ISA_SalesInvHeader_Ext extends "Sales Invoice Header"
 {
     fields
     {

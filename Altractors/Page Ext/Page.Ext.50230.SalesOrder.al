@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_SalesOrderSubform (ID 50230) extends Record Sales Order Subform.
 /// </summary>
-pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
+pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
 {
     layout
     {
@@ -10,7 +10,7 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
                 ApplicationArea = All;
-                ToolTipML = ENU = 'Processes 1% of amount including VAT',FRA = 'Calcule 1% du TTC';
+                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
             }
         }
     }
@@ -26,15 +26,30 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
                 ToolTipML = ENU = 'Allows updating the ''Stamp Duty''', FRA = 'Permet de mettre à jour le droit de timbre';
                 trigger OnAction()
                 var
-                    PaymtCodeLbl: Label '''Payment Terms Code'' must be set to ''COD aka ''Cash On Delivery''''';
+                    PaymtCodeLbl: Label '''Payment Methods Code'' must be set to ''COD aka ''Cash On Delivery''''';
                 begin
-                    if Rec."Payment Terms Code" <> 'COD' then
+                    if Rec."Payment Method Code" <> 'COD' then
                         Error(PaymtCodeLbl);
                     ProcessStampDuty();
                 end;
             }
         }
     }
+
+    trigger OnOpenPage()
+    var
+        PayMethCode: Record "Payment Method";
+    begin
+        PayMethCode.SetFilter(PayMethCode.Code, 'COD');
+        if not PayMethCode.FindFirst() then begin
+            PayMethCode.Init();
+            PayMethCode.Code := 'COD';
+            PayMethCode.Description := 'Espèces';
+            PayMethCode."Bal. Account Type" := PayMethCode."Bal. Account Type"::"G/L Account";
+            PayMethCode.Insert();
+            Message('Not Found');
+        end;
+    end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
@@ -69,7 +84,7 @@ pageextension 50230 ISA_SalesOrderSubform extends "Sales Order"
     begin
         clear(Rec.ISA_StampDuty);
 
-        if Rec."Payment Terms Code" = 'COD' then begin
+        if Rec."Payment Method Code" = 'COD' then begin
             Rec.CalcFields("Amount Including VAT");
 
             if Rec."Amount Including VAT" > 20 then begin

@@ -1,7 +1,7 @@
 /// <summary>
 /// Unknown ISA_SalesConf (ID 50232) extends Record Standard Sales - Order Conf..
 /// </summary>
-reportextension 50232 ISA_SalesConf extends "Standard Sales - Order Conf."
+reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
 {
     RDLCLayout = './Reports/ISA_SalesConf.rdlc';
     dataset

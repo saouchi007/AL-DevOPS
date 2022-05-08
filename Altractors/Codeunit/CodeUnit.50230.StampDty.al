@@ -1,8 +1,9 @@
 /// <summary>
 /// Codeunit ISA_StampDutyProcessor (ID 50230).
 /// </summary>
-codeunit 50230 ISA_StampDutyProcessor
+codeunit 50106 ISA_StampDutyProcessor
 {
+    //Permissions = tabledata "Sales Header" = RIMD;
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostGLAndCustomer', '', false, false)]
     local procedure CreateandPostStampDuty(var SalesHeader: Record "Sales Header"; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; var SrcCode: Code[10]; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
@@ -23,7 +24,7 @@ codeunit 50230 ISA_StampDutyProcessor
         SalesLine: Record "Sales Line";
     begin
         SalesAndRec.Get();
-        if SalesHeader."Payment Terms Code" = 'COD' then begin
+        if SalesHeader."Payment Method Code" = 'COD' then begin
 
             with GenJnlLine do begin
                 InitNewLine(
@@ -74,7 +75,7 @@ codeunit 50230 ISA_StampDutyProcessor
                 SalesInvHeader."Pre-Assigned No. Series" := '';
                 SalesInvHeader."Order No. Series" := "No. Series";
                 SalesInvHeader."Order No." := "No.";
-                SalesInvHeader.ISA_StampDuty := 666; //SalesHeaderDT.ISA_StampDuty;
+                //SalesInvHeader.ISA_StampDuty := 666; //SalesHeaderDT.ISA_StampDuty;
             end else begin
                 if "Posting No." = '' then
                     SalesInvHeader."No." := "No.";

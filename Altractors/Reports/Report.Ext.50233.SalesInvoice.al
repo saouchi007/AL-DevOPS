@@ -1,7 +1,7 @@
 /// <summary>
 /// Unknown ISA_SalesInvoice (ID 50233) extends Record Sales - Invoice GB.
 /// </summary>
-reportextension 50233 ISA_SalesInvoice extends "Standard Sales - Invoice"
+reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
 {
     dataset
     {

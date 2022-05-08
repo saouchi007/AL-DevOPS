@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_SalesInvoice_Ext (ID 50232) extends Record MyTargetPage.
 /// </summary>
-pageextension 50232 ISA_SalesInvoice_Ext extends "Sales Invoice"
+pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
 {
     layout
     {
@@ -13,11 +13,11 @@ pageextension 50232 ISA_SalesInvoice_Ext extends "Sales Invoice"
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
             }
         }
-        modify("Payment Terms Code")
+        modify("Payment Method Code")
         {
             trigger OnAfterValidate()
             begin
-                if Rec."Payment Terms Code" = 'COD' then
+                if Rec."Payment Method Code" = 'COD' then
                     ProcessStampDuty()
                 else
                     Rec.ISA_StampDuty := 0;

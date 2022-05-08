@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_PostedSalesInv_Ext (ID 50233) extends Record MyTargetPage.
 /// </summary>
-pageextension 50233 ISA_PostedSalesInv_Ext extends "Posted Sales Invoice"
+pageextension 50105 ISA_PostedSalesInv_Ext extends "Posted Sales Invoice"
 {
     layout
     {

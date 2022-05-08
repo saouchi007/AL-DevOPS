@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_VendorCard_Ext (ID 50228) extends Record MyTargetPage.
 /// </summary>
-pageextension 50228 ISA_VendorCard_Ext extends "Vendor Card"
+pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
 {
     layout
     {

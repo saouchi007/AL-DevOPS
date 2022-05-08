@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension ISA_CustomerCard_Ext (ID 50229) extends Record MyTargetTable.
 /// </summary>
-tableextension 50229 ISA_CustomerCard_Ext extends Customer
+tableextension 50101 ISA_CustomerCard_Ext extends Customer
 {
     fields
     {

@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_SalesReceivable (ID 50231) extends Record MyTargetPage.
 /// </summary>
-pageextension 50231 ISA_SalesReceivable extends "Sales & Receivables Setup"
+pageextension 50103 ISA_SalesReceivable extends "Sales & Receivables Setup"
 {
     layout
     {
