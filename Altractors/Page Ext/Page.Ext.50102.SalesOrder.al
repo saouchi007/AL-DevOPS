@@ -101,7 +101,7 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
                 //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
 
                 if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then
-                    Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 10, '>');
+                    Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 1, '=');
                 Rec.Modify();
                 //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
 
