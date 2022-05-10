@@ -11,6 +11,7 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
             {
                 ApplicationArea = All;
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
+                CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
             }
         }
         modify("Payment Method Code")
