@@ -13,6 +13,13 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
             }
         }
+        modify("Payment Method Code")
+        {
+            trigger OnAfterValidate()
+            begin
+                ProcessStampDuty();
+            end;
+        }
     }
     actions
     {
