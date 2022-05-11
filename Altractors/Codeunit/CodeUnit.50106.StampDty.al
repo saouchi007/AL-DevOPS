@@ -36,7 +36,7 @@ codeunit 50106 ISA_StampDutyProcessor
                 "Account Type" := "Account Type"::Customer;
                 "Account No." := SalesHeader."Bill-to Customer No.";
                 CopyFromSalesHeader(SalesHeader);
-                Amount := SalesHeader.ISA_StampDuty * -1; //-5000; //SalesLine.ISA_StampDuty;
+                Amount := SalesHeader.ISA_StampDuty; //-5000; //SalesLine.ISA_StampDuty;
                 Description := SalesHeader."Bill-to Name" + ' - ' + SalesHeader."No." + ' - Droit de timbre';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
 
@@ -49,7 +49,7 @@ codeunit 50106 ISA_StampDutyProcessor
                 "Account Type" := "Account Type"::"G/L Account";
                 "Account No." := SalesAndRec.ISA_StampDuty_GLA; //; '6110';
                 CopyFromSalesHeader(SalesHeader);
-                Amount := SalesHeader.ISA_StampDuty; //5000; //SalesLine.ISA_StampDuty;
+                Amount := SalesHeader.ISA_StampDuty * -1; //5000; //SalesLine.ISA_StampDuty;
                 Description := SalesHeader."Bill-to Name" + ' - ' + SalesHeader."No." + ' - Droit de timbre';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
             end;
