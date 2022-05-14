@@ -51,7 +51,7 @@ pageextension 50228 ISA_SalesOrder_Ext extends "Sales Order"
                 begin
                     getSalesOrder(tempBlob);
                     tempBlob.CreateInStream(inStream);
-                    documentServiceMgmnt.OpenInOneDrive(StrSubstNo(salesOrderName, Rec."No."), '.pdf', inStream);
+                    //documentServiceMgmnt.ShareWithOneDrive(StrSubstNo(SalesOrderName, Rec."No."), '.pdf', InStr);
                 end;
             }
         }
