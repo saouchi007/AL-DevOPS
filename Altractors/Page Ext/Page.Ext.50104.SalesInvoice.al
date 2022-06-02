@@ -99,7 +99,8 @@ pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
                 //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
 
                 if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then
-                    Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 10, '>');
+                    //Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 10, '>');
+                    Rec.ISA_StampDuty := Rec."Amount Including VAT" * 0.01;
                 Rec.Modify();
                 //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
 
