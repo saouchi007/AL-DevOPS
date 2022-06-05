@@ -31,7 +31,7 @@ codeunit 50106 ISA_StampDutyProcessor
                   SalesHeader."Posting Date", SalesHeader."Document Date", SalesHeader."Posting Description",
                   SalesHeader."Shortcut Dimension 1 Code", SalesHeader."Shortcut Dimension 2 Code",
                   SalesHeader."Dimension Set ID", SalesHeader."Reason Code");
-                // Customer entry
+
                 CopyDocumentFields("Gen. Journal Document Type"::" ", DocNo, ExtDocNo, SourceCode, '');
                 "Account Type" := "Account Type"::Customer;
                 "Account No." := SalesHeader."Bill-to Customer No.";
@@ -44,7 +44,7 @@ codeunit 50106 ISA_StampDutyProcessor
              SalesHeader."Posting Date", SalesHeader."Document Date", SalesHeader."Posting Description",
              SalesHeader."Shortcut Dimension 1 Code", SalesHeader."Shortcut Dimension 2 Code",
              SalesHeader."Dimension Set ID", SalesHeader."Reason Code");
-                // StampDuty entry
+
                 CopyDocumentFields("Gen. Journal Document Type"::" ", DocNo, ExtDocNo, SourceCode, '');
                 "Account Type" := "Account Type"::"G/L Account";
                 "Account No." := SalesAndRec.ISA_StampDuty_GLA; //; '6110';
