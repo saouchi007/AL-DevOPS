@@ -11,9 +11,11 @@ pageextension 50107 ISA_ItemChargeAssign extends "Item Charge Assignment (Purch)
             {
                 ApplicationArea = ItemCharges;
                 BlankZero = true;
-                Caption = 'Customs Fees';
+                CaptionML = ENU = 'Customs Fees', FRA = 'Droit de douane';
+                ToolTipML = ENU = 'Specifies customs fees for the item', FRA = 'Spécifie le droit de douane de l''article';
                 DecimalPlaces = 0 : 5;
                 Editable = false;
+
             }
         }
 

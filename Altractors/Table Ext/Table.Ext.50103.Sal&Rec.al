@@ -8,14 +8,14 @@ tableextension 50103 ISA_SalesReceivable_Ext extends "Sales & Receivables Setup"
         field(50231; ISA_StampDuty_GLA; Code[50])
         {
             DataClassification = CustomerContent;
-            CaptionML = ENU = 'Stamp Duty G/L Account';
+            CaptionML = ENU = 'Stamp Duty G/L Account', FRA = 'CG du droit de timbre';
             TableRelation = "G/L Account";
             ValidateTableRelation = true;
         }
         field(50232; ISA_StampDutyPaymentTermsCode; Code[50])
         {
             DataClassification = CustomerContent;
-            CaptionML = ENU = 'Stamp Duty', FRA = 'CG du droit de timbre';
+            CaptionML = ENU = 'Stamp Duty payment term', FRA = 'Mode de règlement du droit de timbre';
             TableRelation = "Payment Method";
             ValidateTableRelation = true;
         }

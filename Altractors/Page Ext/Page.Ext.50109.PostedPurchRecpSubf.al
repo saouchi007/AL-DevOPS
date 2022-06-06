@@ -10,6 +10,8 @@ pageextension 50109 ISA_PostedPurchRcpSubform extends "Posted Purchase Rcpt. Sub
             field(ISA_CustomsFees; Rec.ISA_CustomsFees)
             {
                 ApplicationArea = all;
+                CaptionML = ENU = 'Customs Fees', FRA = 'Droit de douane';
+                ToolTipML = ENU = 'Specifies customs fees for the item', FRA = 'Spécifie le droit de douane de l''article';
             }
         }
     }

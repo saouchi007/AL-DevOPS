@@ -11,7 +11,8 @@ pageextension 50106 ISA_PurchaseOrderSubForm_Ext extends "Purchase Order Subform
             {
                 ApplicationArea = All;
                 Visible = true;
-                Caption = 'Customs Fees';
+                CaptionML = ENU = 'Customs Fees', FRA = 'Droit de douane';
+                ToolTipML = ENU = 'Specifies customs fees for the item', FRA = 'Spécifie le droit de douane de l''article';
             }
         }
     }

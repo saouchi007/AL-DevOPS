@@ -8,7 +8,7 @@ pageextension 50108 ISA_SvcItemWksheetSub_Ext extends "Service Item Worksheet Su
     {
         addafter("Location Code")
         {
-            field("Unit Cost (LCY)"; Rec."Unit Cost (LCY)")
+            field("Unit Cost"; Rec."Unit Cost")
             {
                 Visible = true;
                 ApplicationArea = all;
