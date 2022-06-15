@@ -20,6 +20,7 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
             begin
                 ProcessStampDuty();
             end;
+           
         }
     }
     actions

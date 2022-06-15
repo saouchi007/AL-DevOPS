@@ -18,8 +18,11 @@ tableextension 50111 ISA_ServiceLine_Ext extends "Service Line"
             Caption = 'Payment Methods Code';
             TableRelation = "Payment Method";
             ValidateTableRelation = true;
+            InitValue = '';
         }
     }
+
+
 
 
 }

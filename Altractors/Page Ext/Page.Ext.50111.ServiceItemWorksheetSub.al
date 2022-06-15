@@ -6,14 +6,23 @@ pageextension 50108 ISA_SvcItemWksheetSub_Ext extends "Service Item Worksheet Su
 {
     layout
     {
+        modify(Quantity)
+        {
+            trigger OnAfterValidate()
+            begin
+                // ProcessStampDuty();
+            end;
+        }
         addafter("Location Code")
         {
-            field("Unit Cost"; Rec."Unit Cost")
+            field("Unit Cost "; Rec."Unit Cost (LCY)")
             {
                 Visible = true;
                 ApplicationArea = all;
             }
         }
+
+        /* Stamp Duty has been implemented on Stats page of service order (which applies to service quote, order, )
         addafter(Control1)
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
@@ -27,18 +36,25 @@ pageextension 50108 ISA_SvcItemWksheetSub_Ext extends "Service Item Worksheet Su
             field(ISA_PayMethodCode; Rec.ISA_PayMethodCode)
             {
                 ApplicationArea = All;
+
+                trigger OnValidate()
+                begin
+                    ProcessStampDuty();
+                end;
             }
-        }
+        }*/
+
     }
     actions
     {
-        addafter("F&unctions")
+        addlast("F&unctions")
         {
             action(StampDuty)
             {
-                Caption = 'Stamp Duty';
+                CaptionML = ENU = 'Stamp Duty', FRA = 'Calcul du droit de timbre';
+                ToolTipML = ENU = 'Processes stamp duty', FRA = 'Pour calculer le droit de timbre';
                 ApplicationArea = All;
-                Image = ProductDesign;
+                Image = ProjectExpense;
                 trigger OnAction()
                 begin
                     ProcessStampDuty();
@@ -52,22 +68,34 @@ pageextension 50108 ISA_SvcItemWksheetSub_Ext extends "Service Item Worksheet Su
     procedure ProcessStampDuty()
     var
         ServiceLine: Record "Service Line";
+        CheckStampDuty: Decimal;
     begin
-        TotalAmountIncVAT := 0;
-        ServiceLine.Reset();
-        ServiceLine.CopyFilters(Rec);
-        ServiceLine.CalcSums("Amount Including VAT");
-        Rec.ISA_StampDuty := ServiceLine."Amount Including VAT";
-        TotalAmountIncVAT := ServiceLine."Amount Including VAT";
-        NbOfLines := ServiceLine.Count;
-        Rec.Modify();
-        //Message('%1 - NB = %2', TotalAmountIncVAT, NbOfLines);
+        if Rec.ISA_PayMethodCode = 'COD' then begin
+            ServiceLine.Reset();
+            ServiceLine.CopyFilters(Rec);
+            ServiceLine.CalcSums("Amount Including VAT");
+            CheckStampDuty := ServiceLine."Amount Including VAT" * 0.01;
+            //Message('%1 - %2', ServiceLine."Amount Including VAT", CheckStampDuty);
+            if CheckStampDuty < 5 then begin
+                Rec.ISA_StampDuty := 5;
+                Rec.Modify();
+            end;
+            if CheckStampDuty > 2500 then begin
+                Rec.ISA_StampDuty := 2500;
+                Rec.Modify();
+            end;
+            if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then begin
+                Rec.ISA_StampDuty := Round(CheckStampDuty, 0.01, '=');
+                Rec.Modify();
+            end;
+            //Rec.ISA_StampDuty := ServiceLine."Amount Including VAT" * 0.01;
+            //TotalAmountIncVAT := ServiceLine."Amount Including VAT";
+        end;
     end;
 
-    var
-        TotalAmountIncVAT: Decimal;
-        NbOfLines: Integer;
-
-
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        Rec.ISA_PayMethodCode := '';
+    end;
 }
 
