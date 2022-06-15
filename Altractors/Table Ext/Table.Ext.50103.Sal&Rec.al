@@ -15,7 +15,7 @@ tableextension 50103 ISA_SalesReceivable_Ext extends "Sales & Receivables Setup"
         field(50232; ISA_StampDutyPymtMethodsCode; Code[50])
         {
             DataClassification = CustomerContent;
-            CaptionML = ENU = 'Stamp Duty payment Method', FRA = 'Mode de règlement du droit de timbre';
+            CaptionML = ENU = 'Stamp Duty Payment Method', FRA = 'Mode de règlement du droit de timbre';
             TableRelation = "Payment Method";
             ValidateTableRelation = true;
         }
