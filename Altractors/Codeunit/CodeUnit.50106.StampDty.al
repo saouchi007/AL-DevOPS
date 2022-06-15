@@ -18,7 +18,7 @@ codeunit 50106 ISA_StampDutyProcessor
         SalesLine: Record "Sales Line";
     begin
         SalesAndRec.Get();
-        if SalesHeader."Payment Method Code" = 'COD' then begin
+        if SalesHeader."Payment Method Code" = SalesAndRec.ISA_StampDutyPymtMethodsCode then begin
 
             with GenJnlLine do begin
                 InitNewLine(
@@ -96,7 +96,7 @@ codeunit 50106 ISA_StampDutyProcessor
     begin
         SrcCode := SrcCodeSetup."Service Management";
         SalesAndRec.Get();
-        if ServiceHeader."Payment Method Code" = 'COD' then begin
+        if ServiceHeader."Payment Method Code" = SalesAndRec.ISA_StampDutyPymtMethodsCode then begin
             with GenJnlLine do begin
                 InitNewLine(
                   ServiceHeader."Posting Date", "Document Date", ServiceHeader."Posting Description",
