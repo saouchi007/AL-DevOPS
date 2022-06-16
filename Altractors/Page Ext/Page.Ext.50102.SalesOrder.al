@@ -5,7 +5,7 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
 {
     layout
     {
-        addafter("Currency Code")
+        /*addafter("Currency Code") SDuty moves to page 402
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
@@ -13,16 +13,17 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
                 CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
             }
-        }
+        }*/
         modify("Payment Method Code")
         {
             trigger OnAfterValidate()
             begin
                 ProcessStampDuty();
             end;
-           
+
         }
     }
+    /* SDuty moves to page 402
     actions
     {
         addafter("P&osting")
@@ -83,51 +84,78 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
     trigger OnModifyRecord(): Boolean
     begin
         ProcessStampDuty();
-    end;
+    end;*/
+
+
+
     /// <summary>
     /// ProcessStampDuty.
     /// </summary>
-    procedure ProcessStampDuty()
-    var
-        CheckStampDuty: Decimal;
-    begin
-        clear(Rec.ISA_StampDuty);
+    /// <returns>Return value of type a new version of ProcessStampDuty has been brewed at line 137.</returns>
+    /*    procedure ProcessStampDuty()          a new version of ProcessStampDuty has been brewed at line 137
+        var
+            CheckStampDuty: Decimal;
+        begin
+            clear(Rec.ISA_StampDuty);
 
-        if Rec."Payment Method Code" = 'COD' then begin
-            Rec.CalcFields("Amount Including VAT");
+            if Rec."Payment Method Code" = 'COD' then begin
+                Rec.CalcFields("Amount Including VAT");
 
-            if Rec."Amount Including VAT" > 20 then begin
-                CheckStampDuty := Rec."Amount Including VAT" * 0.01;
+                if Rec."Amount Including VAT" > 20 then begin
+                    CheckStampDuty := Rec."Amount Including VAT" * 0.01;
 
-                if CheckStampDuty < 5 then
-                    Rec.ISA_StampDuty := 5;
+                    if CheckStampDuty < 5 then
+                        Rec.ISA_StampDuty := 5;
+                    Rec.Modify();
+                    //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
+
+                    if CheckStampDuty > 2500 then
+                        Rec.ISA_StampDuty := 2500;
+                    Rec.Modify();
+                    //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
+
+                    if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then
+                        Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 0.01, '=');
+                    //Rec.ISA_StampDuty := Rec."Amount Including VAT" * 0.01;
+                    Rec.Modify();
+                    //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
+
+                end;
+
+
+
                 Rec.Modify();
-                //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
-
-                if CheckStampDuty > 2500 then
-                    Rec.ISA_StampDuty := 2500;
-                Rec.Modify();
-                //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
-
-                if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then
-                    Rec.ISA_StampDuty := Round(Rec."Amount Including VAT" * 0.01, 0.01, '=');
-                //Rec.ISA_StampDuty := Rec."Amount Including VAT" * 0.01;
-                Rec.Modify();
-                //Message('Amount Incl VAT : %1 \ CheckStampDuty : %2', Rec."Amount Including VAT", Rec.ISA_StampDuty);
-
+                //Message('%1', Rec.ISA_StampDuty);
+                //isHandled := true;
+                //Message('%1', Rec."Payment Terms Code");
+                /*Error('Oh dear...Payment term code needs to be set to ''COD'' aka ''Cash On Delivery'' under ''Invoice Details''');
+                exit;
             end;
 
 
+        end;*/
 
+    procedure ProcessStampDuty()
+    var
+        SalesLine: Record "Sales Line";
+        CheckStampDuty: Decimal;
+    begin
+        SalesLine.Reset();
+        SalesLine.SetFilter("Document No.", Rec."No.");
+        SalesLine.CalcSums("Amount Including VAT");
+        CheckStampDuty := SalesLine."Amount Including VAT" * 0.01;
+        if CheckStampDuty < 5 then begin
+            Rec.ISA_StampDuty := 5;
             Rec.Modify();
-            //Message('%1', Rec.ISA_StampDuty);
-            //isHandled := true;
-            //Message('%1', Rec."Payment Terms Code");
-            /*Error('Oh dear...Payment term code needs to be set to ''COD'' aka ''Cash On Delivery'' under ''Invoice Details''');
-            exit;*/
         end;
-
-
+        if CheckStampDuty > 2500 then begin
+            Rec.ISA_StampDuty := 2500;
+            Rec.Modify();
+        end;
+        if (CheckStampDuty > 5) and (CheckStampDuty < 2500) then begin
+            Rec.ISA_StampDuty := Round(CheckStampDuty, 0.01, '=');
+            Rec.Modify();
+        end;
     end;
 }
 
