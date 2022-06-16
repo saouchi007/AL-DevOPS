@@ -11,6 +11,8 @@ pageextension 50115 ISA_SalesOrderStats_Ext extends "Sales Order Statistics"
             {
                 ApplicationArea = All;
                 Visible = true;
+                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
+                CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
             }
         }
     }
