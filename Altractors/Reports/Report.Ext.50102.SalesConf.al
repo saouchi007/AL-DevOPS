@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
 {
-    RDLCLayout = './Reports/ISA_SalesConf.rdlc';
+    RDLCLayout = './Reports/Added Stamp Duty.rdl';
     dataset
     {
         add(Header)
@@ -11,11 +11,45 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
             column(ISA_StampDuty; ISA_StampDuty)
             {
             }
+            column(StampDutywithDocTotal; StampDutywithDocTotal)
+            { }
+
+            column(FiscalID; FiscalID)
+            {
+            }
+            column(TradeRegister; TradeRegister)
+            { }
+            column(ItemNumber; ItemNumber)
+            { }
+            column(StatisticalID; StatisticalID)
+            { }
+
         }
 
-
+        add(Line)
+        {
+            column(Bin_Code; "Bin Code")
+            {
+            }
+        }
+        modify(Line)
+        {
+            trigger OnAfterAfterGetRecord()
+            begin
+                Line.CalcSums("Amount Including VAT");
+                StampDutywithDocTotal := Line."Amount Including VAT" + Header.ISA_StampDuty;
+            end;
+        }
 
     }
-
+    var
+        ConvertTxtToNumber: Report Check;
+        DescriptionLine: Text[80];
+        Format22: Codeunit "Employee/Resource Update";
+        StampDutywithDocTotal: Decimal;
+        FiscalID: Label 'NIF : 0 999 1600 07189 04';
+        StatisticalID: Label 'N° Statistique : 0 994 4228 03302 33';
+        TradeRegister: Label 'Code Activité : 408301 408406 410321';
+        ItemNumber: Label 'Article : 607002 609002 61320';
 
 }
