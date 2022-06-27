@@ -23,6 +23,8 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
             { }
             column(StatisticalID; StatisticalID)
             { }
+            column(AmountInWords; AmountInWords)
+            { }
 
         }
 
@@ -38,18 +40,32 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
             begin
                 Line.CalcSums("Amount Including VAT");
                 StampDutywithDocTotal := Line."Amount Including VAT" + Header.ISA_StampDuty;
+
             end;
         }
-
+        modify(Header)
+        {
+            trigger OnAfterAfterGetRecord()
+            begin
+                Header.CalcFields(Amount, "Amount Including VAT");
+                AmountCustomer := Header."Amount Including VAT";
+                RepCheck.InitTextVariable();
+                RepCheck.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
+                AmountInWords := NoText[1];
+                //Message('AmountInWords : %1 \AmountCustomer - %2', AmountInWords, Header."Amount Including VAT");
+            end;
+        }
     }
     var
-        ConvertTxtToNumber: Report Check;
-        DescriptionLine: Text[80];
-        Format22: Codeunit "Employee/Resource Update";
         StampDutywithDocTotal: Decimal;
         FiscalID: Label 'NIF : 0 999 1600 07189 04';
         StatisticalID: Label 'N° Statistique : 0 994 4228 03302 33';
         TradeRegister: Label 'Code Activité : 408301 408406 410321';
         ItemNumber: Label 'Article : 607002 609002 61320';
+        Text021: Label 'VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID';
+        RepCheck: Report Check;
+        NoText: array[2] of Text;
+        AmountInWords: Text[100];
+        AmountCustomer: Decimal;
 
 }
