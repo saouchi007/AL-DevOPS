@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
 {
-    RDLCLayout = './Reports/Added Stamp Duty.rdl';
+    RDLCLayout = './Reports/Sales Conf Stamp Duty.rdl';
     dataset
     {
         add(Header)
@@ -38,8 +38,8 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
         {
             trigger OnAfterAfterGetRecord()
             begin
-                Line.CalcSums("Amount Including VAT");
-                StampDutywithDocTotal := Line."Amount Including VAT" + Header.ISA_StampDuty;
+                //Line.CalcSums("Amount Including VAT");
+                //StampDutywithDocTotal := Line."Amount Including VAT" + Header.ISA_StampDuty;
 
             end;
         }
@@ -47,10 +47,11 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
         {
             trigger OnAfterAfterGetRecord()
             begin
-                Header.CalcFields(Amount, "Amount Including VAT");
-                AmountCustomer := Header."Amount Including VAT";
+                Header.CalcFields("Amount Including VAT");
+                //AmountCustomer := Header."Amount Including VAT" + Header.ISA_StampDuty;
+                StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 RepCheck.InitTextVariable();
-                RepCheck.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
+                RepCheck.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
                 AmountInWords := NoText[1];
                 //Message('AmountInWords : %1 \AmountCustomer - %2', AmountInWords, Header."Amount Including VAT");
             end;
