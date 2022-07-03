@@ -5,7 +5,7 @@ pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
 {
     layout
     {
-        addafter("Currency Code")
+        addafter("Currency Code") // TODO remove SDuty implementation from S.Inv details tab
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
