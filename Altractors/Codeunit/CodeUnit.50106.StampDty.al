@@ -134,6 +134,13 @@ codeunit 50106 ISA_StampDutyProcessor
             end;
         end;
     end;
+/*
+[EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', true, true)]
+local procedure OnAfterSubstituteReport(ReportId: Integer; var NewReportId: Integer)
+begin
+    if ReportId = v: Report::"Standard Sales - Quote" then
+        NewReportId := Report::altra ;
+end;*/
 
     var
         SrcCode: Code[10];

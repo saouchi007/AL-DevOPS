@@ -3,22 +3,33 @@
 /// </summary>
 reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
 {
-    RDLCLayout = './Reports/Sales Ship Customised.rdl';
+    RDLCLayout = './Reports/AltrApp Reports/Posted Sales Shipment.rdl';
     dataset
     {
         add("Sales Shipment Header")
         {
-            column(ISA_Company_FiscalID; ISA_Company_FiscalID)
-            { }
-            column(ISA_Company_TradeRegister; ISA_Company_TradeRegister)
-            { }
-            column(ISA_Company_ItemNumber; ISA_Company_ItemNumber)
-            { }
-            column(ISA_Company_StatisticalID; ISA_Company_StatisticalID)
-            { }
+            column(ISA_Customer_FiscalID; ISA_Customer_FiscalID)
+            {
+            }
+            column(ISA_Customer_ItemNumber; ISA_Customer_ItemNumber)
+            {
+            }
+            column(ISA_Customer_StatisticalID; ISA_Customer_StatisticalID)
+            {
+            }
+            column(ISA_Customer_TradeRegister; ISA_Customer_TradeRegister)
+            {
+            }
+            column(Sell_to_Customer_Name; "Sell-to Customer Name")
+            {
+            }
             column(ISA_TransactionType; ISA_TransactionType)
             {
             }
+            column(ISA_SalesPersonName; ISA_SalesPersonName)
+            {
+            }
+
         }
 
         add("Sales Shipment Line")
@@ -30,23 +41,37 @@ reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
         modify("Sales Shipment Header")
         {
             trigger OnAfterAfterGetRecord()
+            var
+                Customer: Record Customer;
+                SalesPerson: Record "Salesperson/Purchaser";
             begin
+                SalesPerson.Reset();
+                SalesPerson.SetRange(Code, "Salesperson Code");
+                Customer.Reset();
+                Customer.SetRange("No.", "Sell-to Customer No.");
+                if Customer.FindSet or SalesPerson.FindSet then begin
+                    ISA_Customer_FiscalID := Customer.ISA_FiscalID;
+                    ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
+                    ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
+                    ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
+
+                    ISA_SalesPersonName := SalesPerson.Name;
+                end;
+
                 ISA_TransactionType := "Sales Shipment Header"."Gen. Bus. Posting Group";
-                if ISA_TransactionType = 'DOMESTIC' then begin
+                if ISA_TransactionType = 'DOMESTIC' then begin //TODO review which posting group to use to display the correct transaction type 
                     ISA_TransactionType := 'Consommations à Usages Internes';
-                    Message(ISA_TransactionType);
                 end;
                 ISA_TransactionType := '';
-                Message(ISA_TransactionType);
             end;
         }
     }
     var
-        ISA_Company_FiscalID: Label 'NIF : 0 999 1600 07189 04';
-        ISA_Company_StatisticalID: Label 'N° Statistique : 0 994 4228 03302 33';
-        ISA_Company_TradeRegister: Label 'Code Activité : 408301 408406 410321';
-        ISA_Company_ItemNumber: Label 'Article : 607002 609002 61320';
         ISA_TransactionType: Text;
-
+        ISA_Customer_FiscalID: Text;
+        ISA_Customer_TradeRegister: Text;
+        ISA_Customer_ItemNumber: Text;
+        ISA_Customer_StatisticalID: Text;
+        ISA_SalesPersonName: Text;
 
 }
