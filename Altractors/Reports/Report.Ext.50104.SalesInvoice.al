@@ -20,23 +20,23 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             column(Company_StatisticalID; Company_StatisticalID)
             { }
 
-            column(Customer_FiscalID; Customer_FiscalID)
+            column(ISA_Customer_FiscalID; ISA_Customer_FiscalID)
             {
             }
-            column(Customer_ItemNumber; Customer_ItemNumber)
+            column(ISA_Customer_ItemNumber; ISA_Customer_ItemNumber)
             {
             }
-            column(Customer_StatisticalID; Customer_StatisticalID)
+            column(ISA_Customer_StatisticalID; ISA_Customer_StatisticalID)
             {
             }
-            column(Customer_TradeRegister; Customer_TradeRegister)
+            column(ISA_Customer_TradeRegister; ISA_Customer_TradeRegister)
             {
             }
 
-            column(SalesShipNo; SalesShipNo)
+            column(AmountInWords; AmountInWords)
             {
             }
-            column(AmountInWords; AmountInWords)
+            column(ISA_SalesPersonName; ISA_SalesPersonName)
             {
             }
 
@@ -48,18 +48,21 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             trigger OnAfterAfterGetRecord()
             var
                 Customer: Record Customer;
+                SalesPerson: Record "Salesperson/Purchaser";
             begin
+                SalesPerson.Reset();
+                SalesPerson.SetRange(Code, "Salesperson Code");
                 Customer.Reset();
-                Customer.SetRange("No.", Header."Bill-to Customer No.");
-                SalesShipHeader.SetRange("Order No.", '1032');
+                Customer.SetRange("No.", "Sell-to Customer No.");
+                if Customer.FindSet or SalesPerson.FindSet then begin
+                    ISA_Customer_FiscalID := Customer.ISA_FiscalID;
+                    ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
+                    ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
+                    ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
 
-                if Customer.FindSet or SalesShipHeader.FindSet then begin
-                    Customer_FiscalID := Customer.ISA_FiscalID;
-                    Customer_ItemNumber := Customer.ISA_ItemNumber;
-                    Customer_StatisticalID := Customer.ISA_StatisticalID;
-                    Customer_TradeRegister := Customer.ISA_TradeRegister;
-                    SalesShipNo := SalesShipHeader."No.";
+                    ISA_SalesPersonName := SalesPerson.Name;
                 end;
+
                 Header.CalcFields(Amount, "Amount Including VAT");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 RepCheck.InitTextVariable();
@@ -80,10 +83,10 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         NoText: array[2] of Text;
         AmountInWords: Text[100];
         // AmountCustomer: Decimal; replaced by StampDutywithDocTotal to add up the SDuty with the doc total 
-        SalesShipHeader: Record "Sales Shipment Header";
-        Customer_FiscalID: Text;
-        Customer_TradeRegister: Text;
-        Customer_ItemNumber: Text;
-        Customer_StatisticalID: Text;
-        SalesShipNo: Text;
+        ISA_Customer_FiscalID: Text;
+        ISA_Customer_TradeRegister: Text;
+        ISA_Customer_ItemNumber: Text;
+        ISA_Customer_StatisticalID: Text;
+        ISA_SalesPersonName: Text;
+
 }
