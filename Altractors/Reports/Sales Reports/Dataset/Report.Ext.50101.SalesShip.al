@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
 {
-    RDLCLayout = './Reports/AltrApp Reports/Posted Sales Shipment.rdl';
+    //RDLCLayout = './Reports/AltrApp Reports/Posted Sales Shipment.rdl';
     dataset
     {
         add("Sales Shipment Header")

@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
 {
-    RDLCLayout = './Reports/Sales Invoice Customised.rdl';
+    //RDLCLayout = './Reports/Sales Invoice Customised.rdl';
     dataset
     {
         add(Header)

@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
 {
-    RDLCLayout = './Reports/Sales Conf Stamp Duty.rdl';
+    //RDLCLayout = './Reports/Sales Conf Stamp Duty.rdl';
     dataset
     {
         add(Header)

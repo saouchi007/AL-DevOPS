@@ -3,7 +3,7 @@
 /// </summary>
 reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
 {
-    RDLCLayout = './Reports/Sales Quote.rdl';
+    //RDLCLayout = './Reports/Sales Quote.rdl';
     dataset
     {
         add(Header)
