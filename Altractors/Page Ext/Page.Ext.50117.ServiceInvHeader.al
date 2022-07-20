@@ -1,11 +1,11 @@
 /// <summary>
 /// PageExtension ISA_ServiceInvoiceHeader_Ext (ID 50117) extends Record Posted Service Invoice.
 /// </summary>
-pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Service Invoice Statistics"
+pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Posted Service Invoice"
 {
     layout
     {
-        addafter(AmountInclVAT)
+        addafter("Bill-to Contact No.")
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
@@ -20,7 +20,7 @@ pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Service Invoice Statist
     }
     trigger OnOpenPage()
     begin
-        //ProcessStampDuty() //TODO Stamp Duty is causing customers to be deleted from service invoice headers
+        ProcessStampDuty()
     end;
 
     /// <summary>
@@ -34,6 +34,7 @@ pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Service Invoice Statist
         ServiceInvLine.Reset();
         ServiceInvLine.SetFilter("Document No.", Rec."No.");
         ServiceInvLine.CalcSums("Amount Including VAT");
+        Message('%1', ServiceInvLine."Amount Including VAT");
         CheckStampDuty := ServiceInvLine."Amount Including VAT" * 0.01;
         if CheckStampDuty < 5 then begin
             Rec.ISA_StampDuty := 5;

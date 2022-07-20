@@ -18,7 +18,7 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
         {
             trigger OnAfterValidate()
             begin
-                ProcessStampDuty();
+                //ProcessStampDuty();
             end;
 
         }

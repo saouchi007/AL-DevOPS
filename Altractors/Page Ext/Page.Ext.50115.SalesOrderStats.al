@@ -30,8 +30,11 @@ pageextension 50115 ISA_SalesOrderStats_Ext extends "Sales Order Statistics"
     begin
         SalesLine.Reset();
         SalesLine.SetFilter("Document No.", Rec."No.");
+        //SalesLine.SetFilter("Document Type", 'Order');
         SalesLine.CalcSums("Amount Including VAT");
-        CheckStampDuty := SalesLine."Amount Including VAT" * 0.01;
+        Message('Header :%1', Rec."Amount Including VAT");
+        CheckStampDuty := Rec."Amount Including VAT" * 0.01;
+        Message('%1', CheckStampDuty);
         if CheckStampDuty < 5 then begin
             Rec.ISA_StampDuty := 5;
             Rec.Modify();

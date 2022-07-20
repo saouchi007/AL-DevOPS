@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension ISA_ServiceOrderStats_Ext (ID 50112) extends Record Service Order Statistics.
+/// </summary>
 pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
 {
     layout
@@ -24,9 +27,12 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
         CheckStampDuty: Decimal;
     begin
         ServiceLine.Reset();
-        ServiceLine.SetFilter("Document No.", Rec."No.");
-        ServiceLine.CalcSums("Amount Including VAT");
-        CheckStampDuty := ServiceLine."Amount Including VAT" * 0.01;
+        ServiceLine.SetRange("Document No.", Rec."No.");
+        if ServiceLine.FindSet then begin
+            ServiceLine.CalcSums("Amount Including VAT");
+            CheckStampDuty := ServiceLine."Amount Including VAT" * 0.01;
+            Message('%1 - %2', ServiceLine."Amount Including VAT", CheckStampDuty);
+        end;
         if CheckStampDuty < 5 then begin
             Rec.ISA_StampDuty := 5;
             Rec.Modify();
