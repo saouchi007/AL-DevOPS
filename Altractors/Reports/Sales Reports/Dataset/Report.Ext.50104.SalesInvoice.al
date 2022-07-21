@@ -39,6 +39,9 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             column(ISA_SalesPersonName; ISA_SalesPersonName)
             {
             }
+            column(Order_No_; "Order No.")
+            {
+            }
 
         }
 

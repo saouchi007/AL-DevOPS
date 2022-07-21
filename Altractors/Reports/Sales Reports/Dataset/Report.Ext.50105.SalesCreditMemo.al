@@ -38,6 +38,10 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
             column(ISA_SalesPersonName; ISA_SalesPersonName)
             {
             }
+            column(Pre_Assigned_No_; "Pre-Assigned No.")
+            {
+
+            }
 
         }
 

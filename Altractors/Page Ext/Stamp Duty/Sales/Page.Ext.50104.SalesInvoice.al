@@ -5,31 +5,14 @@ pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
 {
     layout
     {
-        addafter("Currency Code") // TODO remove SDuty implementation from S.Inv details tab
-        {
-            field(ISA_StampDuty; Rec.ISA_StampDuty)
-            {
-                ApplicationArea = All;
-                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
-            }
-        }
-        modify("Payment Method Code")
-        {
-            trigger OnAfterValidate()
-            begin
-                if Rec."Payment Method Code" = 'COD' then
-                    ProcessStampDuty()
-                else
-                    Rec.ISA_StampDuty := 0;
-            end;
-        }
+
     }
 
     actions
     {
         addafter("P&osting")
         {
-            action(PorcessStampDuty)
+            /*action(PorcessStampDuty)
             {
                 ApplicationArea = All;
                 CaptionML = ENU = 'Process Stamp Duty', FRA = 'Calcule du droit de timbre';
@@ -43,7 +26,7 @@ pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
                         Error(PaymtCodeLbl);
                     ProcessStampDuty();
                 end;
-            }
+        }*/
         }
     }
 

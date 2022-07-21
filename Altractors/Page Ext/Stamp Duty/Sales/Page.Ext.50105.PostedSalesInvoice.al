@@ -1,11 +1,11 @@
 /// <summary>
 /// PageExtension ISA_PostedSalesInv_Ext (ID 50233) extends Record MyTargetPage.
 /// </summary>
-pageextension 50105 ISA_PostedSalesInv_Ext extends "Posted Sales Invoice"
+pageextension 50105 ISA_SalesInvoiceStats_Ext extends "Sales Invoice Statistics"
 {
     layout
     {
-        addafter("Currency Code")
+        addafter(AmountInclVAT)
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {

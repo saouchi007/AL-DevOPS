@@ -911,7 +911,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Fields!YourReference.Value</Value>
+                    <Value>=Fields!OrderNo.Value</Value>
                     <Style>
                       <FontFamily>Georgia</FontFamily>
                     </Style>

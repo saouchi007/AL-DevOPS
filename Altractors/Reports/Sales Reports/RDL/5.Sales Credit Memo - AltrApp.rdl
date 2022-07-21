@@ -429,6 +429,9 @@
         <Field Name="ISA_SalesPersonName">
           <DataField>ISA_SalesPersonName</DataField>
         </Field>
+        <Field Name="Pre_Assigned_No_">
+          <DataField>Pre_Assigned_No_</DataField>
+        </Field>
         <Field Name="LineNo_Line">
           <DataField>LineNo_Line</DataField>
         </Field>
@@ -1340,7 +1343,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>=Fields!YourReference.Value</Value>
+                                      <Value>=Fields!Pre_Assigned_No_.Value</Value>
                                       <Style>
                                         <FontFamily>Georgia</FontFamily>
                                       </Style>
@@ -3750,6 +3753,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

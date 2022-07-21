@@ -63,6 +63,9 @@
         <Field Name="ISA_AmountInWords">
           <DataField>ISA_AmountInWords</DataField>
         </Field>
+        <Field Name="Location_Code">
+          <DataField>Location_Code</DataField>
+        </Field>
         <Field Name="CompanyInfo1Picture">
           <DataField>CompanyInfo1Picture</DataField>
         </Field>
@@ -701,7 +704,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ServShelfNo_ServLineType.Value</Value>
+                                  <Value>=First(Fields!Location_Code.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
                                     <FontSize>9pt</FontSize>

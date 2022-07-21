@@ -40,6 +40,10 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
             column(ISA_AmountInWords; ISA_AmountInWords)
             {
             }
+            column(Location_Code; "Location Code")
+            {
+
+            }
 
         }
         add("Service Line")
