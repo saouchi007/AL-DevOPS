@@ -19,8 +19,16 @@ pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Posted Service Invoice"
 
     }
     trigger OnOpenPage()
+    var
+        SalandRec: Record "Sales & Receivables Setup";
     begin
-        ProcessStampDuty()
+        SalandRec.Get();
+        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then
+            ProcessStampDuty()
+        else begin
+            Rec.ISA_StampDuty := 0;
+            Rec.Modify();
+        end;
     end;
 
     /// <summary>
@@ -33,12 +41,15 @@ pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Posted Service Invoice"
     begin
         ServiceInvLine.Reset();
         ServiceInvLine.SetFilter("Document No.", Rec."No.");
-        ServiceInvLine.CalcSums("Amount Including VAT");
-        Message('%1', ServiceInvLine."Amount Including VAT");
-        CheckStampDuty := ServiceInvLine."Amount Including VAT" * 0.01;
-        if CheckStampDuty < 5 then begin
-            Rec.ISA_StampDuty := 5;
-            Rec.Modify();
+
+        if ServiceInvLine.FindSet then begin
+            ServiceInvLine.CalcSums("Amount Including VAT");
+            CheckStampDuty := ServiceInvLine."Amount Including VAT" * 0.01;
+
+            if CheckStampDuty < 5 then begin
+                Rec.ISA_StampDuty := 5;
+                Rec.Modify();
+            end;
         end;
         if CheckStampDuty > 2500 then begin
             Rec.ISA_StampDuty := 2500;

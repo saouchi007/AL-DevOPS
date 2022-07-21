@@ -15,8 +15,17 @@ pageextension 50113 ISA_ServiceQuoteExt extends "Service Statistics"
         }
     }
     trigger OnOpenPage()
+
+    var
+        SalandRec: Record "Sales & Receivables Setup";
     begin
-        ProcessStampDuty();
+        SalandRec.Get();
+        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then
+            ProcessStampDuty()
+        else begin
+            Rec.ISA_StampDuty := 0;
+            Rec.Modify();
+        end;
     end;
     /// <summary>
     /// ProcessStampDuty.
@@ -27,8 +36,19 @@ pageextension 50113 ISA_ServiceQuoteExt extends "Service Statistics"
         CheckStampDuty: Decimal;
     begin
         ServiceLine.Reset();
+        ServiceLine.SetFilter("Document Type", 'Quote');
         ServiceLine.SetFilter("Document No.", Rec."No.");
-        ServiceLine.CalcSums("Amount Including VAT");
+
+        if ServiceLine.FindSet then begin
+            ServiceLine.CalcSums("Amount Including VAT");
+            CheckStampDuty := ServiceLine.ISA_StampDuty;
+        end;
+        /*
+                if CheckStampDuty <> Rec.ISA_StampDuty then begin
+                    ServiceLine.ISA_StampDuty := Rec.ISA_StampDuty;
+                    ServiceLine.Modify();
+                end;
+                    ServiceLine.CalcSums("Amount Including VAT");*/
         CheckStampDuty := ServiceLine."Amount Including VAT" * 0.01;
         if CheckStampDuty < 5 then begin
             Rec.ISA_StampDuty := 5;

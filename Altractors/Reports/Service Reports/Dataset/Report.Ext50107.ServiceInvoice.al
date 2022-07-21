@@ -100,7 +100,7 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
             trigger OnAfterAfterGetRecord()
             begin
                 "Service Invoice Line".CalcSums("Amount Including VAT");
-                AmountCustomer := "Service Invoice Line"."Amount Including VAT";
+                AmountCustomer := "Service Invoice Line"."Amount Including VAT" + "Service Invoice Header".ISA_StampDuty;
                 InitTextVariable();
                 FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
                 ISA_AmountInWords := NoText[1];
@@ -143,8 +143,8 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                     AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
                     AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
                 end;
-                /*if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');*/
+                if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');
                 if Tens >= 2 then begin
                     AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
                     if Ones > 0 then
@@ -157,7 +157,7 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                 No := No - (Hundreds * 100 + Tens * 10 + Ones) * Power(1000, Exponent - 1);
             end;
 
-            AddToNoText(NoText, NoTextIndex, PrintExponent, 'DINARS,');
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'DINARS ');
         end;
 
         /*if No > 0 then
@@ -296,5 +296,5 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
         Text059: Label ' MILLE';
         Text060: Label ' MILLION';
         Text061: Label ' MILLIARD';
-        Text1020000: Label ' et';
+        Text1020000: Label ' ET';
 }

@@ -1,19 +1,30 @@
 /// <summary>
 /// PageExtension ISA_ServiceInvoice_Ext (ID 50114).
 /// </summary>
-pageextension 50114 ISA_ServiceInvoice_Ext extends "Service Invoice"
+pageextension 50114 ISA_ServiceStats_Ext extends "Service Invoice Statistics"
 {
     layout
     {
-        addafter("Currency Code")
+        addafter(AmountInclVAT)
+        {
+            field(ISA_StampDuty; Rec.ISA_StampDuty)
+            {
+                ApplicationArea = All;
+                Visible = true;
+                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
+                CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
+            }
+        }
+
+        /*addafter("Currency Code")
         {
             field(ISA_StampDuty; Rec.ISA_StampDuty)
             {
                 ApplicationArea = All;
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
             }
-        }
-        modify("Payment Method Code")
+        }*/
+        /*modify("Payment Method Code")
         {
             trigger OnAfterValidate()
             begin
@@ -22,12 +33,12 @@ pageextension 50114 ISA_ServiceInvoice_Ext extends "Service Invoice"
                 else
                     Rec.ISA_StampDuty := 0;
             end;
-        }
+        }*/
     }
 
     actions
     {
-        addafter("P&osting")
+        /*addafter("P&osting")
         {
             action(PorcessStampDuty)
             {
@@ -44,12 +55,12 @@ pageextension 50114 ISA_ServiceInvoice_Ext extends "Service Invoice"
                     ProcessStampDuty();
                 end;
             }
-        }
+        }*/
     }
     /// <summary>
     /// ProcessStampDuty.
     /// </summary>
-    procedure ProcessStampDuty()
+    /*procedure ProcessStampDuty()
     var
         ServiceLine: Record "Service Line";
         CheckStampDuty: Decimal;
@@ -72,5 +83,5 @@ pageextension 50114 ISA_ServiceInvoice_Ext extends "Service Invoice"
         end;
         //Rec.ISA_StampDuty := ServiceLine."Amount Including VAT" * 0.01;
         //TotalAmountIncVAT := ServiceLine."Amount Including VAT";
-    end;
+    end;*/
 }

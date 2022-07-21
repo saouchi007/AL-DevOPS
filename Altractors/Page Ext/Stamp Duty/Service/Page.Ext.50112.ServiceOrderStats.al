@@ -15,8 +15,16 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
         }
     }
     trigger OnOpenPage()
+    var
+        SalandRec: Record "Sales & Receivables Setup";
     begin
-        ProcessStampDuty();
+        SalandRec.Get();
+        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then
+            ProcessStampDuty()
+        else begin
+            Rec.ISA_StampDuty := 0;
+            Rec.Modify();
+        end;
     end;
     /// <summary>
     /// ProcessStampDuty.
@@ -27,11 +35,12 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
         CheckStampDuty: Decimal;
     begin
         ServiceLine.Reset();
-        ServiceLine.SetRange("Document No.", Rec."No.");
+        ServiceLine.SetFilter("Document Type", 'Order');
+        ServiceLine.SetFilter("Document No.", Rec."No.");
+
         if ServiceLine.FindSet then begin
             ServiceLine.CalcSums("Amount Including VAT");
             CheckStampDuty := ServiceLine."Amount Including VAT" * 0.01;
-            Message('%1 - %2', ServiceLine."Amount Including VAT", CheckStampDuty);
         end;
         if CheckStampDuty < 5 then begin
             Rec.ISA_StampDuty := 5;
