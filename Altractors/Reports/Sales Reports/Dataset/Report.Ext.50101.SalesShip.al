@@ -29,7 +29,9 @@ reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
             column(ISA_SalesPersonName; ISA_SalesPersonName)
             {
             }
-
+            column(Document_Date; "Document Date")
+            {
+            }
         }
 
         add("Sales Shipment Line")
