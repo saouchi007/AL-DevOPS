@@ -111,8 +111,8 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                     AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
                     AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
                 end;
-                /*if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');*/
+                if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');
                 if Tens >= 2 then begin
                     AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
                     if Ones > 0 then

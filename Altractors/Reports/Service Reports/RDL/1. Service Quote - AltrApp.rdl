@@ -66,6 +66,12 @@
         <Field Name="Location_Code">
           <DataField>Location_Code</DataField>
         </Field>
+        <Field Name="Due_Date">
+          <DataField>Due_Date</DataField>
+        </Field>
+        <Field Name="Finishing_Date">
+          <DataField>Finishing_Date</DataField>
+        </Field>
         <Field Name="CompanyInfo1Picture">
           <DataField>CompanyInfo1Picture</DataField>
         </Field>
@@ -2576,7 +2582,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=First(Fields!Finishing_Date.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
                                   </Style>
@@ -2629,14 +2635,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox20">
+                        <Textbox Name="Due_Date">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Due_Date.Value</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
                                     <Format>D</Format>
@@ -2648,7 +2654,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <rd:DefaultName>Due_Date</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -2697,7 +2703,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve">    </Value>
+                                  <Value>=Fields!Payment_Terms_Code.Value</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
                                   </Style>
@@ -2750,14 +2756,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox22">
+                        <Textbox Name="Payment_Method_Code">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Payment_Method_Code.Value</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
                                   </Style>
@@ -2768,7 +2774,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox22</rd:DefaultName>
+                          <rd:DefaultName>Payment_Method_Code</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>

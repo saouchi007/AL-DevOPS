@@ -31,6 +31,16 @@ pageextension 50103 ISA_SalesReceivable extends "Sales & Receivables Setup"
                         Rec.Modify();
                     end;
                 }
+                field(ISA_TransactionType; Rec.ISA_TransactionType)
+                {
+                    ApplicationArea = All;
+                    ToolTipML = ENU = 'Specifies the Gen. Business posting group for internal use',
+                    FRA = 'Représente le groupe compta marché pour les consommations internes';
+                    trigger OnValidate()
+                    begin
+                        Rec.Modify();
+                    end;
+                }
             }
         }
     }

@@ -46,8 +46,10 @@ reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
             var
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
+                SalandReceiv: Record "Sales & Receivables Setup";
             begin
                 SalesPerson.Reset();
+                SalandReceiv.Get();
                 SalesPerson.SetRange(Code, "Salesperson Code");
                 Customer.Reset();
                 Customer.SetRange("No.", "Sell-to Customer No.");
@@ -61,10 +63,11 @@ reportextension 50101 ISA_SalesShip_Ext extends "Sales - Shipment"
                 end;
 
                 ISA_TransactionType := "Sales Shipment Header"."Gen. Bus. Posting Group";
-                if ISA_TransactionType = 'DOMESTIC' then begin //TODO review which posting group to use to display the correct transaction type 
+                if ISA_TransactionType = SalandReceiv.ISA_TransactionType then begin
                     ISA_TransactionType := 'Consommations à Usages Internes';
-                end;
-                ISA_TransactionType := '';
+                end
+                else
+                    ISA_TransactionType := '';
             end;
         }
     }

@@ -19,6 +19,13 @@ tableextension 50103 ISA_SalesReceivable_Ext extends "Sales & Receivables Setup"
             TableRelation = "Payment Method";
             ValidateTableRelation = true;
         }
+        field(50233; ISA_TransactionType; Code[20])
+        {
+            DataClassification = CustomerContent;
+            CaptionML = ENU = 'Internal Usage Gen. Bus. Posting Group', FRA = 'Grp Compta Marché consommations internes';
+            TableRelation = "Gen. Business Posting Group";
+            ValidateTableRelation = true;
+        }
     }
 
 }

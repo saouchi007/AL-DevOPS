@@ -44,6 +44,13 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
             {
 
             }
+            column(Due_Date; "Due Date")
+            {
+            }
+            column(Finishing_Date; "Finishing Date")
+            {
+
+            }
 
         }
         add("Service Line")
