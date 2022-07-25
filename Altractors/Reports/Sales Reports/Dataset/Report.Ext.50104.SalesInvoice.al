@@ -265,6 +265,6 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         Text059: Label ' MILLE';
         Text060: Label ' MILLION';
         Text061: Label ' MILLIARD';
-        Text1020000: Label ' et';
+        Text1020000: Label ' ET';
 
 }

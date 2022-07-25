@@ -127,8 +127,8 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                     AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
                     AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
                 end;
-                /*if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
-                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');*/
+                if ((Tens > 0) or (Ones > 0)) and (Hundreds > 0) then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');
                 if Tens >= 2 then begin
                     AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
                     if Ones > 0 then
@@ -281,7 +281,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
         Text059: Label ' MILLE';
         Text060: Label ' MILLION';
         Text061: Label ' MILLIARD';
-        Text1020000: Label ' et';
+        Text1020000: Label ' ET';
 
 }
 
