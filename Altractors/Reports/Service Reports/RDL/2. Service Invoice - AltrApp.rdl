@@ -1053,7 +1053,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.14147cm</Width>
+                  <Width>4.23409cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1279,7 +1279,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>4.31417cm</Size>
+                    <Size>4.40679cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox401">
                         <CanGrow>true</CanGrow>
@@ -1328,7 +1328,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>5.80916cm</Size>
+                        <Size>5.90178cm</Size>
                         <CellContents>
                           <Textbox Name="SerialNo_ServiceItem">
                             <CanGrow>true</CanGrow>
@@ -1360,7 +1360,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.71354cm</Size>
+                            <Size>2.80616cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox399">
                                 <CanGrow>true</CanGrow>
@@ -1407,7 +1407,7 @@
             <Top>0.27438cm</Top>
             <Left>0.15028cm</Left>
             <Height>1.95672cm</Height>
-            <Width>16.97834cm</Width>
+            <Width>17.34882cm</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1438,28 +1438,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.12481cm</Width>
+                  <Width>2.17166cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.58176cm</Width>
+                  <Width>0.62861cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.17481cm</Width>
+                  <Width>3.22166cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.32678cm</Width>
+                  <Width>1.37363cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.91517cm</Width>
+                  <Width>2.96202cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.93949cm</Width>
+                  <Width>1.98634cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.07233cm</Width>
+                  <Width>1.11918cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.83887cm</Width>
+                  <Width>3.88572cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -4023,7 +4023,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.41156cm</Height>
+                  <Height>0.66556cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -4098,7 +4098,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.854cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -4113,7 +4113,7 @@
                                   <Value>=Fields!ISA_AmountInWords.Value</Value>
                                   <Style>
                                     <FontFamily>Georgia</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4321,8 +4321,8 @@
             </Filters>
             <Top>2.86405cm</Top>
             <Left>0.15028cm</Left>
-            <Height>7.36568cm</Height>
-            <Width>16.97402cm</Width>
+            <Height>7.87368cm</Height>
+            <Width>17.34882cm</Width>
             <ZIndex>1</ZIndex>
             <Visibility>
               <Hidden>=IIF(Fields!No_ServInvLineCaption.Value = "",True,False)</Hidden>
@@ -4409,7 +4409,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox28</rd:DefaultName>
-            <Top>11.43392cm</Top>
+            <Top>11.68792cm</Top>
             <Left>0.15028cm</Left>
             <Height>2.26483cm</Height>
             <Width>7.98221cm</Width>
@@ -4443,8 +4443,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>10.60842cm</Top>
-            <Left>8.30888cm</Left>
+            <Top>10.84356cm</Top>
+            <Left>8.68368cm</Left>
             <Height>0.66322cm</Height>
             <Width>8.81542cm</Width>
             <ZIndex>3</ZIndex>
@@ -4481,8 +4481,8 @@
           </Textbox>
           <Rectangle Name="Rectangle1">
             <KeepTogether>true</KeepTogether>
-            <Top>11.34926cm</Top>
-            <Left>8.30888cm</Left>
+            <Top>11.5844cm</Top>
+            <Left>8.68368cm</Left>
             <Height>3.02684cm</Height>
             <Width>8.81542cm</Width>
             <ZIndex>4</ZIndex>
@@ -4513,13 +4513,13 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>14.5666cm</Height>
+        <Height>14.86293cm</Height>
         <Style />
       </Body>
       <Width>17.74296cm</Width>
       <Page>
         <PageHeader>
-          <Height>9.34798cm</Height>
+          <Height>10.91431cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -4669,8 +4669,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox290</rd:DefaultName>
-              <Top>0.38774cm</Top>
-              <Left>9.03cm</Left>
+              <Top>2.19749cm</Top>
+              <Left>9.284cm</Left>
               <Height>2.89984cm</Height>
               <Width>8.2151cm</Width>
               <Style>
@@ -4721,7 +4721,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>3.84849cm</Top>
+              <Top>5.65824cm</Top>
               <Left>0.15028cm</Left>
               <Height>0.59267cm</Height>
               <Width>1.95694cm</Width>
@@ -4826,9 +4826,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>4.44116cm</Top>
+              <Top>6.25091cm</Top>
               <Left>0.15028cm</Left>
-              <Height>3.15383cm</Height>
+              <Height>4.52229cm</Height>
               <Width>9.12517cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -4879,8 +4879,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>3.80969cm</Top>
-              <Left>9.9731cm</Left>
+              <Top>5.61944cm</Top>
+              <Left>10.2271cm</Left>
               <Height>0.59267cm</Height>
               <Width>2.43319cm</Width>
               <ZIndex>3</ZIndex>
@@ -5057,9 +5057,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>4.44116cm</Top>
-              <Left>9.9731cm</Left>
-              <Height>3.15383cm</Height>
+              <Top>6.25091cm</Top>
+              <Left>10.2271cm</Left>
+              <Height>4.52229cm</Height>
               <Width>7.272cm</Width>
               <ZIndex>4</ZIndex>
               <Style>

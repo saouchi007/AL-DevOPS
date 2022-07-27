@@ -426,9 +426,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>5.55936cm</Top>
+            <Top>4.41636cm</Top>
             <Left>0.33367cm</Left>
-            <Height>3.95816cm</Height>
+            <Height>3.25966cm</Height>
             <Width>8.04333cm</Width>
             <Style>
               <Border>
@@ -1627,7 +1627,7 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>1.75781cm</Top>
+            <Top>1.56731cm</Top>
             <Left>0.33367cm</Left>
             <Height>1.99473cm</Height>
             <Width>17.31819cm</Width>
@@ -1661,7 +1661,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox36</rd:DefaultName>
-            <Top>0.46785cm</Top>
+            <Top>0.27735cm</Top>
             <Left>0.33367cm</Left>
             <Height>0.6cm</Height>
             <Width>17.31819cm</Width>
@@ -1752,9 +1752,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>5.55936cm</Top>
+            <Top>4.41636cm</Top>
             <Left>9.60853cm</Left>
-            <Height>3.95816cm</Height>
+            <Height>3.25966cm</Height>
             <Width>8.04333cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -1844,9 +1844,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>9.94361cm</Top>
+            <Top>8.22911cm</Top>
             <Left>0.33367cm</Left>
-            <Height>3.95816cm</Height>
+            <Height>3.25966cm</Height>
             <Width>8.04333cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -1936,9 +1936,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>9.94361cm</Top>
+            <Top>8.25028cm</Top>
             <Left>9.60853cm</Left>
-            <Height>3.95816cm</Height>
+            <Height>3.25966cm</Height>
             <Width>8.04333cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
@@ -1973,13 +1973,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>14.36743cm</Height>
+        <Height>12.31426cm</Height>
         <Style />
       </Body>
       <Width>18.03519cm</Width>
       <Page>
         <PageHeader>
-          <Height>10.0144cm</Height>
+          <Height>11.6019cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2002,7 +2002,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ISA_TransactionType</rd:DefaultName>
-              <Top>0.82129cm</Top>
+              <Top>3.13904cm</Top>
               <Left>0.55554cm</Left>
               <Height>0.6cm</Height>
               <Width>5.08233cm</Width>
@@ -2152,7 +2152,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox290</rd:DefaultName>
-              <Top>0.37354cm</Top>
+              <Top>2.69129cm</Top>
               <Left>9.78601cm</Left>
               <Height>2.45534cm</Height>
               <Width>7.86585cm</Width>
@@ -2188,164 +2188,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox4">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Emetteur :</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>3.85194cm</Top>
-              <Left>0.33367cm</Left>
-              <Height>0.59267cm</Height>
-              <Width>1.95694cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox5">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>SPA Altractors</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Siège social : Route des dunes,lot n°04 Chéraga - Alger</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Showroom : Cité BOUAAKAB Ali, RN01 Boufarik - Blida</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Téléphone : +213 (0) 23 22 66 00/05</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Fax : +213 (0) 23 22 62 91/92</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>E-mail : contact@altractors.com</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Site Web : www.altractors.dz</Value>
-                      <Style>
-                        <FontFamily>Georgia</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>4.44461cm</Top>
-              <Left>0.33367cm</Left>
-              <Height>3.15383cm</Height>
-              <Width>9.12517cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <TopBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </TopBorder>
-                <BottomBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </BottomBorder>
-                <LeftBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </LeftBorder>
-                <RightBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </RightBorder>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -2363,11 +2205,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>3.80962cm</Top>
+              <Top>5.30187cm</Top>
               <Left>10.72911cm</Left>
               <Height>0.59267cm</Height>
               <Width>2.08394cm</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2538,10 +2380,168 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>4.44109cm</Top>
+              <Top>5.93334cm</Top>
               <Left>10.72911cm</Left>
-              <Height>3.15383cm</Height>
+              <Height>4.52966cm</Height>
               <Width>6.92275cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Emetteur :</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>5.30187cm</Top>
+              <Left>0.33367cm</Left>
+              <Height>0.59267cm</Height>
+              <Width>1.95694cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SPA Altractors</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Siège social : Route des dunes,lot n°04 Chéraga - Alger</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Showroom : Cité BOUAAKAB Ali, RN01 Boufarik - Blida</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Téléphone : +213 (0) 23 22 66 00/05</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Fax : +213 (0) 23 22 62 91/92</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>E-mail : contact@altractors.com</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Site Web : www.altractors.dz</Value>
+                      <Style>
+                        <FontFamily>Georgia</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>5.89454cm</Top>
+              <Left>0.33367cm</Left>
+              <Height>4.31446cm</Height>
+              <Width>9.12517cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
