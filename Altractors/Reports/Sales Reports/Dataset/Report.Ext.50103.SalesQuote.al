@@ -49,6 +49,9 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
             column(ISA_AmountInWords; ISA_AmountInWords)
             {
             }
+            column(CommentFetched; CommentFetched)
+            {
+            }
         }
 
         modify(Header)
@@ -57,6 +60,8 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
             var
                 Customer: Record Customer;
                 ToolBox: Codeunit ISA_StampDutyProcessor;
+                ISA_SalesComments: Record "Sales Comment Line";
+
             begin
                 Customer.Reset();
                 ISA_SalesComments.reset();
@@ -67,6 +72,14 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                     ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
                     ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
                     ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
+                end;
+                ISA_SalesComments.SetFilter("Document Type", 'Quote');
+                ISA_SalesComments.SetRange("No.", Header."No.");
+
+                if ISA_SalesComments.FindSet then begin
+                    repeat begin
+                        CommentFetched += '- ' + ISA_SalesComments.Comment + ', ';
+                    end until ISA_SalesComments.Next = 0;
                 end;
 
                 Header.CalcFields(Amount, "Amount Including VAT");
@@ -91,6 +104,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
         AmountCustomer: Decimal;
 
         ISA_SalesComments: Record "Sales Comment Line";
+        CommentFetched: Text;
 
 
 
