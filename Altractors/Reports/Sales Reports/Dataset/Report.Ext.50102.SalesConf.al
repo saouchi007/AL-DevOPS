@@ -46,14 +46,13 @@ reportextension 50102 ISA_SalesConf extends "Standard Sales - Order Conf."
         modify(Header)
         {
             trigger OnAfterAfterGetRecord()
+            var
+                ToolBox: Codeunit ISA_StampDutyProcessor;
             begin
                 Header.CalcFields("Amount Including VAT");
-                //AmountCustomer := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
-                RepCheck.InitTextVariable();
-                RepCheck.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
-                AmountInWords := NoText[1];
-                //Message('AmountInWords : %1 \AmountCustomer - %2', AmountInWords, Header."Amount Including VAT");
+                ToolBox.InitTextVariable();
+                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'Dinars', 'Centimes');
             end;
         }
     }
