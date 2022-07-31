@@ -18,10 +18,16 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         VendorRec: Record Customer;
+                        TradeRegisterNotification: Notification;
+                        TradeRegisterNotificationLabel: Label 'This trade register is already used by another customer';
                     begin
                         VendorRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
-                        if VendorRec.Count > 0 then
-                            Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
+                        if VendorRec.Count > 0 then begin
+                            TradeRegisterNotification.Message(TradeRegisterNotificationLabel);
+                            TradeRegisterNotification.Scope := NotificationScope::LocalScope;
+                            TradeRegisterNotification.Send();
+                            //Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
+                        end;
                     end;
                 }
                 field(ISA_FiscalID; Rec.ISA_FiscalID)
