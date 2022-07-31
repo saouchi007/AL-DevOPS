@@ -17,12 +17,12 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Registre du Commerce du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Customer;
+                        CustomerRec: Record Customer;
                         TradeRegisterNotification: Notification;
                         TradeRegisterNotificationLabel: Label 'This trade register is already used by another customer';
                     begin
-                        VendorRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
-                        if VendorRec.Count > 0 then begin
+                        CustomerRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
+                        if CustomerRec.Count > 0 then begin
                             TradeRegisterNotification.Message(TradeRegisterNotificationLabel);
                             TradeRegisterNotification.Scope := NotificationScope::LocalScope;
                             TradeRegisterNotification.Send();
@@ -37,10 +37,10 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Numéro d''Identification Fiscale du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Customer;
+                        CustomerRec: Record Customer;
                     begin
-                        VendorRec.SetFilter(ISA_FiscalID, Rec.ISA_FiscalID);
-                        if VendorRec.Count > 0 then
+                        CustomerRec.SetFilter(ISA_FiscalID, Rec.ISA_FiscalID);
+                        if CustomerRec.Count > 0 then
                             Error(DuplicatEntryLbl, Rec.ISA_FiscalID);
                     end;
                 }
@@ -51,10 +51,10 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le  Numéro d''Identification Statistique du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Customer;
+                        CustomerRec: Record Customer;
                     begin
-                        VendorRec.SetFilter(ISA_StatisticalID, Rec.ISA_StatisticalID);
-                        if VendorRec.Count > 0 then
+                        CustomerRec.SetFilter(ISA_StatisticalID, Rec.ISA_StatisticalID);
+                        if CustomerRec.Count > 0 then
                             Error(DuplicatEntryLbl, Rec.ISA_StatisticalID);
                     end;
                 }
@@ -65,10 +65,10 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Numéro d''Article du client';
                     trigger OnValidate()
                     var
-                        VendorRec: Record Customer;
+                        CustomerRec: Record Customer;
                     begin
-                        VendorRec.SetFilter(ISA_ItemNumber, Rec.ISA_ItemNumber);
-                        if VendorRec.Count > 0 then
+                        CustomerRec.SetFilter(ISA_ItemNumber, Rec.ISA_ItemNumber);
+                        if CustomerRec.Count > 0 then
                             Error(DuplicatEntryLbl, Rec.ISA_ItemNumber);
                     end;
                 }
@@ -76,12 +76,12 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
             }
         }
     }
-    local procedure CheckDuplicate(var Vendor: Record Vendor)
+    local procedure CheckDuplicate(var CustRec: Record Vendor)
     begin
         //Message('%1', rec.ISA_TradeRegister);
-        Vendor.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
+        CustRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
         //Message('%1', Vendor.Count);
-        if Vendor.Count > 0 then
+        if CustRec.Count > 0 then
             Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
     end;
 
