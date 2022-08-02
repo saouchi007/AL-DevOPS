@@ -214,44 +214,65 @@ codeunit 50106 ISA_StampDutyProcessor
     /// </summary>
     procedure InitTextVariable()
     begin
-        OnesText[1] := 'Un';
-        OnesText[2] := 'Deux';
-        OnesText[3] := 'Trois';
-        OnesText[4] := 'Quatre';
-        OnesText[5] := 'Cinq';
-        OnesText[6] := 'Six';
-        OnesText[7] := 'Sept';
-        OnesText[8] := 'Huit';
-        OnesText[9] := 'Neuf';
-        OnesText[10] := 'Dix';
-        OnesText[11] := 'Onze';
-        OnesText[12] := 'Douze';
-        OnesText[13] := 'Treize';
-        OnesText[14] := 'Quatorze';
-        OnesText[15] := 'Quinze';
-        OnesText[16] := 'Seize';
-        OnesText[17] := 'Dix-sept';
-        OnesText[18] := 'Diez-huit';
-        OnesText[19] := 'Dix-neuf';
+        OnesText[1] := 'UN';
+        OnesText[2] := 'DEUX';
+        OnesText[3] := 'TROIS';
+        OnesText[4] := 'QUATRE';
+        OnesText[5] := 'CINQ';
+        OnesText[6] := 'SIX';
+        OnesText[7] := 'SEPT';
+        OnesText[8] := 'HUIT';
+        OnesText[9] := 'NEUF';
+        OnesText[10] := 'DIX';
+        OnesText[11] := 'ONZE';
+        OnesText[12] := 'DOUZE';
+        OnesText[13] := 'TREIZE';
+        OnesText[14] := 'QUATORZE';
+        OnesText[15] := 'QUINZE';
+        OnesText[16] := 'SEIZE';
+        OnesText[17] := 'DIX-SEPT';
+        OnesText[18] := 'DIX-HUIT';
+        OnesText[19] := 'DIX-NEUF';
 
         TensText[1] := '';
-        TensText[2] := 'Vingt';
-        TensText[3] := 'Trente';
-        TensText[4] := 'Quarante';
-        TensText[5] := 'Cinquante';
-        TensText[6] := 'Soixante';
-        TensText[7] := 'Soixante-dix';
-        TensText[8] := 'Quatre-vingt';
-        TensText[9] := 'Quatre-vingt-dix';
+        TensText[2] := 'VINGT';
+        TensText[3] := 'TRENTE';
+        TensText[4] := 'QUARANTE';
+        TensText[5] := 'CINQUANTE';
+        TensText[6] := 'SOIXANTE';
+        TensText[7] := 'SOIXANTE-DIX';
+        TensText[8] := 'QUATRE-VINGT';
+        TensText[9] := 'QUATRE-VINGT-DIX';
 
-        ThousText[1] := 'Cent';
-        ThousText[2] := 'Mille';
-        ThousText[3] := 'Million';
-        ThousText[4] := 'Milliard';
-        ThousText[5] := 'Triillion';
+        ThousText[1] := 'CENT';
+        ThousText[2] := 'MILLE';
+        ThousText[3] := 'MILLION';
+        ThousText[4] := 'MILLIARD';
+        ThousText[5] := 'TRILLION';
     end;
 
-
+    //******************** Customer Legal Mentions Notification *********************************************************
+    /// <summary>
+    /// OpenCustLedgerEntries.
+    /// </summary>
+    /// <param name="TradeRegisterNotification">Notification.</param>
+    procedure OpenCustomersList(TradeRegisterNotification: Notification)
+    begin
+        Page.Run(22);
+    end;
+    /*
+        procedure OpenCustomersList(TradeRegisterNotification: Notification)
+        var
+            CustNumber: Text;
+            CustNo: Text;
+            CustomerList: Record Customer;
+        begin
+            CustNo := TradeRegisterNotification.GetData(CustNumber);
+            CustomerList.Reset();
+            CustomerList.SetRange("No.", CustNo);
+            Page.Run(22, CustomerList);
+        end;*/
+    //*********************************************************************************************************
     var
         SrcCode: Code[10];
         SrcCodeSetup: Record "Source Code Setup";

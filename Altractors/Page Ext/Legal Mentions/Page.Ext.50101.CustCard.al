@@ -17,16 +17,21 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Registre du Commerce du client';
                     trigger OnValidate()
                     var
-                        CustomerRec: Record Customer;
                         TradeRegisterNotification: Notification;
-                        TradeRegisterNotificationLabel: Label 'This trade register is already used by another customer';
+                        TradeRegisterNotificationLabel: Label 'Notification : Ce Registre de commerce est déjà utilisé par un autre client.';
+                        ShowDetails: Label 'Trouver les duplications';
+                        CustomerRec: Record Customer;
+                        OpenCustomerRec: Text;
+                        CustNumber: Text;
                     begin
                         CustomerRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
                         if CustomerRec.Count > 0 then begin
                             TradeRegisterNotification.Message(TradeRegisterNotificationLabel);
                             TradeRegisterNotification.Scope := NotificationScope::LocalScope;
+                            //TradeRegisterNotification.SetData(CustNumber, CustomerRec."No.");
+                            TradeRegisterNotification.AddAction(ShowDetails, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersList');
                             TradeRegisterNotification.Send();
-                            //Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
+                            Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
                         end;
                     end;
                 }
