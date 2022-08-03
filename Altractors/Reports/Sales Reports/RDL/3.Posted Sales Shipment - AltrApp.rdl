@@ -1333,7 +1333,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox290</rd:DefaultName>
-            <Top>0.53501cm</Top>
+            <Top>1.17001cm</Top>
             <Left>9.59551cm</Left>
             <Height>2.45534cm</Height>
             <Width>7.86585cm</Width>
@@ -1460,7 +1460,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>NIF : </Value>
+                    <Value>N° IF : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1477,7 +1477,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>NIS : </Value>
+                    <Value>N° IS : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1494,7 +1494,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>NAI : </Value>
+                    <Value>N° AI : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
