@@ -42,6 +42,9 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             column(Order_No_; "Order No.")
             {
             }
+            column(AmountExclVatAfterDiscount; AmountExclVatAfterDiscount)
+            {
+            }
 
         }
 
@@ -65,13 +68,15 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                     ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
 
                     ISA_SalesPersonName := SalesPerson.Name;
+
                 end;
 
-                Header.CalcFields(Amount, "Amount Including VAT");
+                Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'Dinars', 'Centimes');
+                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
 
+                AmountExclVatAfterDiscount := Header.Amount - Header."Invoice Discount Amount";
             end;
         }
     }
@@ -91,6 +96,8 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         ISA_Customer_ItemNumber: Text;
         ISA_Customer_StatisticalID: Text;
         ISA_SalesPersonName: Text;
+        AmountExclVatAfterDiscount: Decimal;
+
 
 
 }
