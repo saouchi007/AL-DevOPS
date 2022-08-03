@@ -160,10 +160,10 @@ codeunit 50106 ISA_StampDutyProcessor
 
         IF DecimalPart <> 0 THEN BEGIN
             DecimalInWords := NumberToWords(DecimalPart, DenomName);
-            WholeInWords := WholeInWords + ' et ' + DecimalInWords;
+            WholeInWords := WholeInWords + ' ET ' + DecimalInWords;
         END;
 
-        ISA_AmountInWords := '' + WholeInWords + ' Seulement';
+        ISA_AmountInWords := '' + WholeInWords + ' SEULEMENT';
         EXIT(ISA_AmountInWords);
     end;
 
