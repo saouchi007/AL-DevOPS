@@ -42,6 +42,10 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
             {
 
             }
+            column(CommentFetched; CommentFetched)
+            {
+
+            }
 
         }
 
@@ -53,24 +57,35 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
                 ToolBox: Codeunit ISA_StampDutyProcessor;
+                ISA_SalesComments: Record "Sales Comment Line";
+
             begin
                 SalesPerson.Reset();
                 SalesPerson.SetRange(Code, "Salesperson Code");
                 Customer.Reset();
                 Customer.SetRange("No.", "Sell-to Customer No.");
-                if Customer.FindSet or SalesPerson.FindSet then begin
+                if Customer.FindSet or SalesPerson.FindSet or ISA_SalesComments.FindSet then begin
                     ISA_Customer_FiscalID := Customer.ISA_FiscalID;
                     ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
                     ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
                     ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
 
                     ISA_SalesPersonName := SalesPerson.Name;
+
+                    ISA_SalesComments.SetFilter("Document Type", 'Posted Credit Memo');
+                    ISA_SalesComments.SetRange("No.", Header."No.");
+
+                    if ISA_SalesComments.FindSet then begin
+                        repeat begin
+                            CommentFetched += '- ' + ISA_SalesComments.Comment + ', ';
+                        end until ISA_SalesComments.Next = 0;
+                    end;
                 end;
 
                 Header.CalcFields(Amount, "Amount Including VAT");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'Dinars', 'Centimes');
+                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
             end;
         }
     }
@@ -90,4 +105,5 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
         ISA_Customer_StatisticalID: Text;
         ISA_SalesPersonName: Text;
 
+        CommentFetched: Text;
 }
