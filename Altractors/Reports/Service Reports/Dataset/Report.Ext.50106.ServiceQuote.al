@@ -51,6 +51,14 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
             {
 
             }
+            column(PayTermDescription; PayTermDescription)
+            {
+
+            }
+            column(CommentFetched; CommentFetched)
+            {
+
+            }
 
         }
         add("Service Line")
@@ -76,21 +84,39 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
                 ServiceLine: Record "Service Line";
+                PayTerms: Record "Payment Terms";
+                ISA_ServiceCommentLine: Record "Service Comment Line";
             begin
                 Customer.Reset();
                 SalesPerson.Reset();
                 "Service Line".Reset();
+                PayTerms.Reset();
+                ISA_ServiceCommentLine.Reset();
                 Customer.SetRange("No.", "Service Header"."Bill-to Customer No.");
                 SalesPerson.SetRange(Code, "Salesperson Code");
                 ServiceLine.SetRange("No.", "No.");
-                if Customer.FindSet or SalesPerson.FindSet then begin
+                ISA_ServiceCommentLine.SetRange(Type, ISA_ServiceCommentLine.Type::General);
+                PayTerms.SetRange(Code, "Service Header"."Payment Terms Code");
+                if Customer.FindSet or SalesPerson.FindSet or PayTerms.FindSet or ISA_ServiceCommentLine.FindSet then begin
                     ISA_Customer_FiscalID := Customer.ISA_FiscalID;
                     ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
                     ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
                     ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
                     ISA_SalesPersonName := SalesPerson.Name;
                     ISA_CustomerName := Customer.Name;
+                    PayTermDescription := PayTerms.Description;
+
+                    ISA_ServiceCommentLine.SetRange("No.", "Service Header"."No.");
+
+                    if ISA_ServiceCommentLine.FindSet then begin
+                        repeat begin
+                            CommentFetched += '- ' + ISA_ServiceCommentLine.Comment + ', ';
+                        end until ISA_ServiceCommentLine.Next = 0;
+                    end;
+
                 end;
+
+                Message(CommentFetched);
 
 
             end;
@@ -104,7 +130,7 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
                 "Service Line".CalcSums("Amount Including VAT");
                 AmountCustomer := "Service Line"."Amount Including VAT" + ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'Dinars', 'Centimes');
+                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
             end;
         }
     }
@@ -121,5 +147,10 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
         ISA_SalesComments: Record "Sales Comment Line";
         ISA_SalesPersonName: Text;
         ISA_CustomerName: Text;
+
+        PayTermDescription: Text;
+
+        CommentFetched: Text;
+
 
 }
