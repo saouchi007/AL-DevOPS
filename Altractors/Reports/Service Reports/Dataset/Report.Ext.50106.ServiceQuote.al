@@ -116,9 +116,6 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
 
                 end;
 
-                Message(CommentFetched);
-
-
             end;
         }
         modify("Service Line")
