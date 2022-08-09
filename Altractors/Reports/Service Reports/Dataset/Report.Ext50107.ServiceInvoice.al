@@ -47,6 +47,18 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
             column(ISA_StampDuty; ISA_StampDuty)
             {
             }
+            column(CommentFetched; CommentFetched)
+            {
+
+            }
+            column(ISA_PayMethDescription; ISA_PayMethDescription)
+            {
+
+            }
+            column(ISA_PayTermsDescription; ISA_PayTermsDescription)
+            {
+
+            }
         }
         add("Service Invoice Line")
         {
@@ -64,20 +76,28 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                 ServiceItemLine: Record "Service Item Line";
                 ServiceShipHeader: Record "Service Shipment Header";
                 ServiceShipItemLine: Record "Service Shipment Item Line";
+                ISA_ServiceComments: Record "Service Comment Line";
+                ISA_PaymMethod: Record "Payment Method";
+                ISA_PayTerms: Record "Payment Terms";
             begin
                 Customer.Reset();
                 SalesPerson.Reset();
                 "Service Invoice Line".Reset();
                 ServiceItemLine.Reset();
-                ISA_SalesComments.reset();
                 ServiceShipItemLine.reset();
+                ISA_ServiceComments.Reset();
+                ISA_PaymMethod.Reset();
+                ISA_PayTerms.Reset();
 
 
-                //ISA_SalesComments.SetRange("No.", "Service Header"."No.");
                 Customer.SetRange("No.", "Service Invoice Header"."Bill-to Customer No.");
                 SalesPerson.SetRange(Code, "Salesperson Code");
                 "Service Invoice Line".SetRange("Document No.", "Service Invoice Header"."No.");
                 ServiceShipHeader.SetRange("Order No.", "Service Invoice Header"."Order No.");
+                ISA_ServiceComments.SetFilter(Type, 'General');
+                ISA_ServiceComments.SetRange("No.", "Service Invoice Header"."No.");
+                ISA_PaymMethod.SetRange(Code, "Service Invoice Header"."Payment Method Code");
+                ISA_PayTerms.SetRange(Code, "Service Invoice Header"."Payment Terms Code");
 
                 if Customer.FindSet or SalesPerson.FindSet or "Service Invoice Line".FindSet or ServiceShipHeader.FindSet then begin
                     ISA_Customer_FiscalID := Customer.ISA_FiscalID;
@@ -90,6 +110,17 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                     ServiceShipItemLine.SetRange("No.", ServiceShipHeader."No.");
                     if ServiceShipItemLine.FindSet then
                         ISA_ServiceItem_Description := ServiceShipItemLine.Description;
+                end;
+
+                if ISA_ServiceComments.FindSet then begin
+                    repeat begin
+                        CommentFetched += '- ' + ISA_ServiceComments.Comment + ',';
+                    end until ISA_ServiceComments.Next = 0;
+                end;
+
+                if ISA_PaymMethod.FindSet or ISA_PayTerms.FindSet then begin
+                    ISA_PayMethDescription := ISA_PaymMethod.Description;
+                    ISA_PayTermsDescription := ISA_PayTerms.Description;
                 end;
 
             end;
@@ -118,9 +149,13 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
         ISA_AmountInWords: Text[100];
         AmountCustomer: Decimal;
 
-        ISA_SalesComments: Record "Sales Comment Line";
         ISA_SalesPersonName: Text;
         ISA_CustomerName: Text;
         ISA_ServiceItem_Description: Text;
+
+        CommentFetched: Text;
+
+        ISA_PayMethDescription: Text;
+        ISA_PayTermsDescription: Text;
 
 }
