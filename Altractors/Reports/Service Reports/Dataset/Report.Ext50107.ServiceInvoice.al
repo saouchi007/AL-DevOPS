@@ -135,7 +135,7 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                 "Service Invoice Line".CalcSums("Amount Including VAT");
                 AmountCustomer := "Service Invoice Line"."Amount Including VAT" + "Service Invoice Header".ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'Dinars', 'Centimes');
+                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
             end;
         }
     }

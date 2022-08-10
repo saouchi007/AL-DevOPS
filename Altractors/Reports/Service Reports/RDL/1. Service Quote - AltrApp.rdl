@@ -475,7 +475,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.52212cm</Height>
+                  <Height>0.64912cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -512,6 +512,8 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="textbox22">
+                          <CanGrow>true</CanGrow>
+                          <CanShrink>true</CanShrink>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -519,7 +521,7 @@
                                 <TextRun>
                                   <Value>=Fields!Description_ServLineType.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -573,6 +575,8 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="ServShelfNo_ServLineType">
+                          <CanGrow>true</CanGrow>
+                          <CanShrink>true</CanShrink>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -640,6 +644,7 @@
                       <CellContents>
                         <Textbox Name="Textbox210">
                           <CanGrow>true</CanGrow>
+                          <CanShrink>true</CanShrink>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -914,7 +919,7 @@
               </Filter>
             </Filters>
             <Top>6.58867cm</Top>
-            <Height>1.11684cm</Height>
+            <Height>1.24384cm</Height>
             <Width>18.10202cm</Width>
             <Style>
               <Border>
@@ -2858,7 +2863,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>13.0849cm</Top>
             <Height>1.02361cm</Height>
-            <Width>15.32466cm</Width>
+            <Width>15.32467cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

@@ -163,7 +163,7 @@ codeunit 50106 ISA_StampDutyProcessor
             WholeInWords := WholeInWords + ' ET ' + DecimalInWords;
         END;
 
-        ISA_AmountInWords := '' + WholeInWords + ' SEULEMENT';
+        ISA_AmountInWords := '' + WholeInWords;
         EXIT(ISA_AmountInWords);
     end;
 

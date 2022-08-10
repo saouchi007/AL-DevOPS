@@ -85,7 +85,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                 Header.CalcFields(Amount, "Amount Including VAT");
                 AmountCustomer := Header."Amount Including VAT";
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
+                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CTS');
 
             end;
 
