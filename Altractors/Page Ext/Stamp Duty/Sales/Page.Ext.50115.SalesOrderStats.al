@@ -21,13 +21,13 @@ pageextension 50115 ISA_SalesOrderStats_Ext extends "Sales Order Statistics"
         SalandRec: Record "Sales & Receivables Setup";
     begin
         SalandRec.Get();
-        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then 
+        if (Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode) and (SalandRec.ISA_StampDutyPymtMethodsCode <> '') then
             //Rec.SetFilter("Document Type", 'Order');
-                ProcessStampDuty()
-            else begin
-                Rec.ISA_StampDuty := 0;
-                Rec.Modify();
-            end;
+            ProcessStampDuty()
+        else begin
+            Rec.ISA_StampDuty := 0;
+            Rec.Modify();
+        end;
     end;
     /// <summary>
     /// ProcessStampDuty.

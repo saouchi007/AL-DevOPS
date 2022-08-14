@@ -19,7 +19,7 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
         SalandRec: Record "Sales & Receivables Setup";
     begin
         SalandRec.Get();
-        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then
+        if (Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode) and (SalandRec.ISA_StampDutyPymtMethodsCode <> '') then
             ProcessStampDuty()
         else begin
             Rec.ISA_StampDuty := 0;

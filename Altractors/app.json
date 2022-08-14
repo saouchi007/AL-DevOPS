@@ -11,6 +11,7 @@
   "url": "https://adactim.com/home/",
   "logo": "./logo.png",
   "dependencies": [],
+  "features": ["NoImplicitWith"],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "19.0.0.0",

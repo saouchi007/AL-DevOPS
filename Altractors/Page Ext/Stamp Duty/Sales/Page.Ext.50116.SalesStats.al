@@ -22,11 +22,11 @@ pageextension 50116 ISA_SalesStats_Ext extends "Sales Statistics"
         SalandRec: Record "Sales & Receivables Setup";
     begin
         SalandRec.Get();
-        if Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode then begin
-            if Rec."Document Type" = "Document Type"::Quote then
+        if (Rec."Payment Method Code" = SalandRec.ISA_StampDutyPymtMethodsCode) and (SalandRec.ISA_StampDutyPymtMethodsCode <> '') then begin
+            if Rec."Document Type" = Rec."Document Type"::Quote then
                 ProcessStampDuty('Quote')
             else
-                if Rec."Document Type" = "Document Type"::Invoice then
+                if Rec."Document Type" = Rec."Document Type"::Invoice then
                     ProcessStampDuty('Invoice')
                 else begin
                     Rec.ISA_StampDuty := 0;
