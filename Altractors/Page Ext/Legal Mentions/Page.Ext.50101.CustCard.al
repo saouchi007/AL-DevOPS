@@ -18,20 +18,20 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         TradeRegisterNotification: Notification;
-                        TradeRegisterNotificationLabel: Label 'Notification : Ce Registre de commerce est déjà utilisé par un autre client.';
-                        ShowDetails: Label 'Trouver les duplications';
-                        CustomerRec: Record Customer;
-                        OpenCustomerRec: Text;
-                        CustNumber: Text;
+                        TradeRegisterNotificationLbl: Label 'New Notification : Current trade register is overused !';
+                        Customers: Record Customer;
+                        CurrentTradeRegister: Text;
                     begin
-                        CustomerRec.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
-                        if CustomerRec.Count > 0 then begin
-                            TradeRegisterNotification.Message(TradeRegisterNotificationLabel);
-                            TradeRegisterNotification.Scope := NotificationScope::LocalScope;
-                            //TradeRegisterNotification.SetData(CustNumber, CustomerRec."No.");
-                            TradeRegisterNotification.AddAction(ShowDetails, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersList');
-                            TradeRegisterNotification.Send();
-                            Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
+
+                        if Rec.ISA_TradeRegister <> '' then begin
+                            Customers.SetRange(ISA_TradeRegister, Rec.ISA_TradeRegister);
+                            if Customers.Count > 0 then begin
+                                TradeRegisterNotification.Message(TradeRegisterNotificationLbl);
+                                TradeRegisterNotification.Scope := NotificationScope::LocalScope;
+                                TradeRegisterNotification.SetData(CurrentTradeRegister, Rec.ISA_TradeRegister);
+                                TradeRegisterNotification.AddAction(ShowDetailsLbl, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersListTradeRegister');
+                                TradeRegisterNotification.Send();
+                            end;
                         end;
                     end;
                 }
@@ -42,11 +42,22 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Numéro d''Identification Fiscale du client';
                     trigger OnValidate()
                     var
-                        CustomerRec: Record Customer;
+                        FiscalIDNotification: Notification;
+                        FiscalIDNotificationLbl: Label 'New Notification : Current fiscal identification is overused !';
+                        Customers: Record Customer;
+                        CurrentFiscalID: Text;
                     begin
-                        CustomerRec.SetFilter(ISA_FiscalID, Rec.ISA_FiscalID);
-                        if CustomerRec.Count > 0 then
-                            Error(DuplicatEntryLbl, Rec.ISA_FiscalID);
+
+                        if Rec.ISA_FiscalID <> '' then begin
+                            Customers.SetRange(ISA_FiscalID, Rec.ISA_FiscalID);
+                            if Customers.Count > 0 then begin
+                                FiscalIDNotification.Message(FiscalIDNotificationLbl);
+                                FiscalIDNotification.Scope := NotificationScope::LocalScope;
+                                FiscalIDNotification.SetData(CurrentFiscalID, Rec.ISA_FiscalID);
+                                FiscalIDNotification.AddAction(ShowDetailsLbl, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersListFiscalID');
+                                FiscalIDNotification.Send();
+                            end;
+                        end;
                     end;
                 }
                 field(ISA_StatisticalID; Rec.ISA_StatisticalID)
@@ -56,11 +67,22 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le  Numéro d''Identification Statistique du client';
                     trigger OnValidate()
                     var
-                        CustomerRec: Record Customer;
+                        StatisticalIDNotification: Notification;
+                        StatisticalIDNotificationLbl: Label 'New Notification : Current statistical identification is overused !';
+                        Customers: Record Customer;
+                        CurrentStatisticalID: Text;
                     begin
-                        CustomerRec.SetFilter(ISA_StatisticalID, Rec.ISA_StatisticalID);
-                        if CustomerRec.Count > 0 then
-                            Error(DuplicatEntryLbl, Rec.ISA_StatisticalID);
+
+                        if Rec.ISA_StatisticalID <> '' then begin
+                            Customers.SetRange(ISA_StatisticalID, Rec.ISA_StatisticalID);
+                            if Customers.Count > 0 then begin
+                                StatisticalIDNotification.Message(StatisticalIDNotificationLbl);
+                                StatisticalIDNotification.Scope := NotificationScope::LocalScope;
+                                StatisticalIDNotification.SetData(CurrentStatisticalID, Rec.ISA_StatisticalID);
+                                StatisticalIDNotification.AddAction(ShowDetailsLbl, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersListStatisticalID');
+                                StatisticalIDNotification.Send();
+                            end;
+                        end;
                     end;
                 }
                 field(ISA_ItemNumber; Rec.ISA_ItemNumber)
@@ -70,11 +92,22 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     ToolTip = 'Afin de renseigner le Numéro d''Article du client';
                     trigger OnValidate()
                     var
-                        CustomerRec: Record Customer;
+                        ItemNumberNotification: Notification;
+                        ItemNumberNotificationLbl: Label 'New Notification : Current item number is overused !';
+                        Customers: Record Customer;
+                        CurrentItemNumber: Text;
                     begin
-                        CustomerRec.SetFilter(ISA_ItemNumber, Rec.ISA_ItemNumber);
-                        if CustomerRec.Count > 0 then
-                            Error(DuplicatEntryLbl, Rec.ISA_ItemNumber);
+
+                        if Rec.ISA_ItemNumber <> '' then begin
+                            Customers.SetRange(ISA_ItemNumber, Rec.ISA_ItemNumber);
+                            if Customers.Count > 0 then begin
+                                ItemNumberNotification.Message(ItemNumberNotificationLbl);
+                                ItemNumberNotification.Scope := NotificationScope::LocalScope;
+                                ItemNumberNotification.SetData(CurrentItemNumber, Rec.ISA_ItemNumber);
+                                ItemNumberNotification.AddAction(ShowDetailsLbl, Codeunit::ISA_StampDutyProcessor, 'OpenCustomersListItemNumber');
+                                ItemNumberNotification.Send();
+                            end;
+                        end;
                     end;
                 }
 
@@ -92,5 +125,6 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
 
     var
         DuplicatEntryLbl: Label 'Value %1 is already used ! Press F5 to refesh';
+        ShowDetailsLbl: Label 'Find duplicates !';
 
 }

@@ -256,22 +256,73 @@ codeunit 50106 ISA_StampDutyProcessor
     /// OpenCustLedgerEntries.
     /// </summary>
     /// <param name="TradeRegisterNotification">Notification.</param>
-    procedure OpenCustomersList(TradeRegisterNotification: Notification)
+    /* procedure OpenCustomersList(TradeRegisterNotification: Notification)
     begin
         Page.Run(22);
+    end; */
+    /// <summary>
+    /// OpenCustomersList.
+    /// </summary>
+    /// <param name="TradeRegisterNotification">Notification.</param>
+    procedure OpenCustomersListTradeRegister(TradeRegisterNotification: Notification)
+    var
+        CurrentTradeRegister: Text;
+        TradeRegisterFilter: Text;
+        Customers: Record Customer;
+    begin
+        TradeRegisterFilter := TradeRegisterNotification.GetData(CurrentTradeRegister);
+        Customers.Reset();
+        Customers.SetRange(ISA_TradeRegister, TradeRegisterFilter);
+        Page.Run(22, Customers);
     end;
-    /*
-        procedure OpenCustomersList(TradeRegisterNotification: Notification)
-        var
-            CustNumber: Text;
-            CustNo: Text;
-            CustomerList: Record Customer;
-        begin
-            CustNo := TradeRegisterNotification.GetData(CustNumber);
-            CustomerList.Reset();
-            CustomerList.SetRange("No.", CustNo);
-            Page.Run(22, CustomerList);
-        end;*/
+    //************************************************************
+    /// <summary>
+    /// OpenCustomersListFiscalID.
+    /// </summary>
+    /// <param name="FiscalIDNotification">Notification.</param>
+    procedure OpenCustomersListFiscalID(FiscalIDNotification: Notification)
+    var
+        CurrentFiscalID: Text;
+        FiscalIDFilter: Text;
+        Customers: Record Customer;
+    begin
+        FiscalIDFilter := FiscalIDNotification.GetData(CurrentFiscalID);
+        Customers.Reset();
+        Customers.SetRange(ISA_FiscalID, FiscalIDFilter);
+        Page.Run(22, Customers);
+    end;
+    //*********************************************************************
+    /// <summary>
+    /// OpenCustomersListStatisticalID.
+    /// </summary>
+    /// <param name="StatisticalIDNotification">Notification.</param>
+    procedure OpenCustomersListStatisticalID(StatisticalIDNotification: Notification)
+    var
+        CurrentStatisticalID: Text;
+        StatisticalIDFilter: Text;
+        Customers: Record Customer;
+    begin
+        StatisticalIDFilter := StatisticalIDNotification.GetData(CurrentStatisticalID);
+        Customers.Reset();
+        Customers.SetRange(ISA_StatisticalID, StatisticalIDFilter);
+        Page.Run(22, Customers);
+    end;
+    //*********************************************************************
+    /// <summary>
+    /// OpenCustomersListItemNumber.
+    /// </summary>
+    /// <param name="ItemNumberNotification">Notification.</param>
+    procedure OpenCustomersListItemNumber(ItemNumberNotification: Notification)
+    var
+        CurrentItemNumber: Text;
+        ItemNumberFilter: Text;
+        Customers: Record Customer;
+    begin
+        ItemNumberFilter := ItemNumberNotification.GetData(CurrentItemNumber);
+        Customers.Reset();
+        Customers.SetRange(ISA_ItemNumber, ItemNumberFilter);
+        Page.Run(22, Customers);
+    end;
     //*********************************************************************************************************
     var
         SrcCode: Code[10];

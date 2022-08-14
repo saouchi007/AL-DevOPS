@@ -16,18 +16,17 @@ codeunit 50200 ISA_NotificationHandler
     /// <summary>
     /// OpenCustLedgerEntries.
     /// </summary>
-    /// <param name="CreditBalanceNotification">Notification.</param>
-    procedure OpenCustLedgerEntries(CreditBalanceNotification: Notification)
+    /// <param name="ResponsabilityCenterNotification">Notification.</param>
+    procedure OpenCustomersList(ResponsabilityCenterNotification: Notification)
     var
-        CustNumber: Text;
-        CustNo: Text;
-        CustLedgerEntry: Record "Cust. Ledger Entry";
+        CurrentRespCenter: Text;
+        RespCenterFilter: Text;
+        Customers: Record Customer;
     begin
-        CustNo := CreditBalanceNotification.GetData(CustNumber);
-        CustLedgerEntry.Reset();
-        CustLedgerEntry.SetRange("Customer No.", CustNo);
-        CustLedgerEntry.SetRange(Open, true);
-        Page.Run(25, CustLedgerEntry);
+        RespCenterFilter := ResponsabilityCenterNotification.GetData(CurrentRespCenter);
+        Customers.Reset();
+        Customers.SetRange("Responsibility Center", RespCenterFilter);
+        Page.Run(22, Customers);
     end;
 
 }
