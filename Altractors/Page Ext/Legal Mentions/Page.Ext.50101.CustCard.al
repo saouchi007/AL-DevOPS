@@ -18,7 +18,7 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         TradeRegisterNotification: Notification;
-                        TradeRegisterNotificationLbl: Label 'New Notification : Current trade register is overused !';
+                        TradeRegisterNotificationLbl: Label 'Nouvelle notification : le registre de commerce actuel est surutilisé !';
                         Customers: Record Customer;
                         CurrentTradeRegister: Text;
                     begin
@@ -43,7 +43,7 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         FiscalIDNotification: Notification;
-                        FiscalIDNotificationLbl: Label 'New Notification : Current fiscal identification is overused !';
+                        FiscalIDNotificationLbl: Label 'Nouvelle notification : l''identification fiscale actuelle est surutilisée !';
                         Customers: Record Customer;
                         CurrentFiscalID: Text;
                     begin
@@ -68,7 +68,7 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         StatisticalIDNotification: Notification;
-                        StatisticalIDNotificationLbl: Label 'New Notification : Current statistical identification is overused !';
+                        StatisticalIDNotificationLbl: Label 'Nouvelle notification : l''identification statistique actuelle est surutilisée !';
                         Customers: Record Customer;
                         CurrentStatisticalID: Text;
                     begin
@@ -93,7 +93,7 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
                     trigger OnValidate()
                     var
                         ItemNumberNotification: Notification;
-                        ItemNumberNotificationLbl: Label 'New Notification : Current item number is overused !';
+                        ItemNumberNotificationLbl: Label 'Nouvelle notification : le numéro d''article actuel est surutilisé !';
                         Customers: Record Customer;
                         CurrentItemNumber: Text;
                     begin
@@ -125,6 +125,6 @@ pageextension 50101 ISA_CustomerCard_Ext extends "Customer Card"
 
     var
         DuplicatEntryLbl: Label 'Value %1 is already used ! Press F5 to refesh';
-        ShowDetailsLbl: Label 'Find duplicates !';
+        ShowDetailsLbl: Label 'Trouver des doublons!';
 
 }

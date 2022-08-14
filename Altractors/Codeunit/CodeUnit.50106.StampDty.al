@@ -323,6 +323,70 @@ codeunit 50106 ISA_StampDutyProcessor
         Customers.SetRange(ISA_ItemNumber, ItemNumberFilter);
         Page.Run(22, Customers);
     end;
+    //******************** Vendor Legal Mentions Notification *********************************************************
+    /// <summary>
+    /// OpenVendorsListItemNumber.
+    /// </summary>
+    /// <param name="ItemNumberNotification">Notification.</param>
+    procedure OpenVendorsListItemNumber(ItemNumberNotification: Notification)
+    var
+        CurrentItemNumber: Text;
+        ItemNumberFilter: Text;
+        Vendors: Record Vendor;
+    begin
+        ItemNumberFilter := ItemNumberNotification.GetData(CurrentItemNumber);
+        Vendors.Reset();
+        Vendors.SetRange(ISA_ItemNumber, ItemNumberFilter);
+        Page.Run(27, Vendors);
+    end;
+    //*********************************************************************
+    /// <summary>
+    /// OpenVendorsListStatisticalID.
+    /// </summary>
+    /// <param name="StatisticalIDNotification">Notification.</param>
+    procedure OpenVendorsListStatisticalID(StatisticalIDNotification: Notification)
+    var
+        CurrentStatisticalID: Text;
+        StatisticalIDFilter: Text;
+        Vendors: Record Vendor;
+    begin
+        StatisticalIDFilter := StatisticalIDNotification.GetData(CurrentStatisticalID);
+        Vendors.Reset();
+        Vendors.SetRange(ISA_StatisticalID, StatisticalIDFilter);
+        Page.Run(27, Vendors);
+    end;
+    //*********************************************************************
+    /// <summary>
+    /// OpenVendorsListFiscalID.
+    /// </summary>
+    /// <param name="FiscalIDNotification">Notification.</param>
+    procedure OpenVendorsListFiscalID(FiscalIDNotification: Notification)
+    var
+        CurrentFiscalID: Text;
+        FiscalIDFilter: Text;
+        Vendors: Record Vendor;
+    begin
+        FiscalIDFilter := FiscalIDNotification.GetData(CurrentFiscalID);
+        Vendors.Reset();
+        Vendors.SetRange(ISA_FiscalID, FiscalIDFilter);
+        Page.Run(27, Vendors);
+    end;
+    //*********************************************************************
+    /// <summary>
+    /// OpenVendorsListTradeRegister.
+    /// </summary>
+    /// <param name="TradeRegisterNotification">Notification.</param>
+    procedure OpenVendorsListTradeRegister(TradeRegisterNotification: Notification)
+    var
+        CurrentTradeRegister: Text;
+        TradeRegisterFilter: Text;
+        Vendors: Record Vendor;
+    begin
+        TradeRegisterFilter := TradeRegisterNotification.GetData(CurrentTradeRegister);
+        Vendors.Reset();
+        Vendors.SetRange(ISA_TradeRegister, TradeRegisterFilter);
+        Page.Run(27, Vendors);
+    end;
     //*********************************************************************************************************
     var
         SrcCode: Code[10];
