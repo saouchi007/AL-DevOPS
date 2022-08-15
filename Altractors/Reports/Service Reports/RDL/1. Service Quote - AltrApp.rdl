@@ -2106,7 +2106,7 @@
             <Top>8.51385cm</Top>
             <Left>0.05553cm</Left>
             <Height>4.96616cm</Height>
-            <Width>18.49091cm</Width>
+            <Width>18.49094cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3232,8 +3232,7 @@
                                 <Value>=Fields!Des_ServShptItemLn.Value</Value>
                                 <Style>
                                   <FontStyle>Normal</FontStyle>
-                                  <FontFamily>Segoe UI</FontFamily>
-                                  <FontSize>8pt</FontSize>
+                                  <FontSize>9pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -3399,8 +3398,7 @@
                                 <Value>=Fields!SerialNo_ServShptItemLn.Value</Value>
                                 <Style>
                                   <FontStyle>Normal</FontStyle>
-                                  <FontFamily>Segoe UI</FontFamily>
-                                  <FontSize>8pt</FontSize>
+                                  <FontSize>9pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -3455,7 +3453,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value />
+                                    <Value>=First(Fields!Location_Code.Value, "DataSet_Result")</Value>
                                     <Style>
                                       <FontSize>9pt</FontSize>
                                     </Style>
@@ -3725,7 +3723,7 @@
         <Height>18.41212cm</Height>
         <Style />
       </Body>
-      <Width>18.54644cm</Width>
+      <Width>18.54647cm</Width>
       <Page>
         <PageHeader>
           <Height>2.89206cm</Height>

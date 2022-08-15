@@ -47,6 +47,9 @@ reportextension 50108 ISA_ServiceShip_Ext extends "Service - Shipment"
             {
 
             }
+            column(Location_Code; "Location Code")
+            {
+            }
 
         }
         modify("Service Shipment Header")
