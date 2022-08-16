@@ -60,7 +60,7 @@ page 50306 ISA_Cue
                         begin
                             Error('Booya !');
                         end;
-                    }
+                    }""
                 }
 
             }
