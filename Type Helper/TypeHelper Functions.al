@@ -30,7 +30,7 @@ pageextension 50307 CustomerListExt extends "Customer List"
         V := d;
         TypeHelper.Evaluate(V, t, 'G', CultureInfo);
         d := V;
-        Message('%1',d);
+        Message('%1 \%2 \%3', d, TypeHelper.FormatDecimal(d, 'G', CultureInfo), GlobalLanguage);
 
     end;
 }
