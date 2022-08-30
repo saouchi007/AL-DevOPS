@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_LocationCard_Ext (ID 50314) extends Record Location Card.
 /// </summary>
-pageextension 50314 ISA_LocationCard_Ext extends "Location Card"
+pageextension 50314 ISA_LocationCard_Ext extends "Service Quote"
 {
     layout
     {
@@ -11,16 +11,11 @@ pageextension 50314 ISA_LocationCard_Ext extends "Location Card"
             {
                 ApplicationArea = All;
                 Caption = 'Attachements';
-                SubPageLink = "Table ID" = const(14),
-                              "No." = field(Code);
+                SubPageLink = "Table ID" = const(5900),
+                              "No." = field("No.");
                 Visible = true;
             }
         }
-    }
-
-    actions
-    {
-        // Add changes to page actions here
     }
 
 }

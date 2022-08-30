@@ -10,9 +10,9 @@ codeunit 50302 ISA_ToolBox_AttachDoc
         RecNo: Code[20];
     begin
         case RecRef.Number of
-            Database::Location:
+            Database::"Service Header":
                 begin
-                    FieldRef := RecRef.Field(1);
+                    FieldRef := RecRef.Field(3);
                     RecNo := FieldRef.Value;
                     DocumentAttachment.Validate("No.", RecNo);
                 end;
@@ -28,9 +28,9 @@ codeunit 50302 ISA_ToolBox_AttachDoc
         RecNo: Code[20];
     begin
         case RecRef.Number of
-            Database::Location:
+            Database::"Service Header":
                 begin
-                    FieldRef := RecRef.Field(1);
+                    FieldRef := RecRef.Field(3);
                     RecNo := FieldRef.Value;
                     DocumentAttachment.Validate("No.", RecNo);
                 end;

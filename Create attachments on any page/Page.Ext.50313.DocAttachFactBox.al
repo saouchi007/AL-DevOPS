@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension ISA_DocAttachmentFactbox_Ext (ID 50313) extends Record Document Attachment Factbox.
+/// </summary>
 pageextension 50313 ISA_DocAttachmentFactbox_Ext extends "Document Attachment Factbox"
 {
     Caption = 'Documents Attached';
@@ -7,16 +10,16 @@ pageextension 50313 ISA_DocAttachmentFactbox_Ext extends "Document Attachment Fa
         {
             trigger OnDrillDown()
             var
-                Location: Record Location;
+                ServiceHeader: Record "Service Header";
                 RecRef: RecordRef;
                 DocAttachDetails: Page "Document Attachment Details";
             begin
                 case Rec."Table ID" of
-                    Database::Location:
+                    Database::"Service Header":
                         begin
-                            RecRef.Open(Database::Location);
-                            if Location.Get(Rec."No.") then
-                                RecRef.GetTable(Location);
+                            RecRef.Open(Database::"Service Header");
+                            if ServiceHeader.Get(Rec."Document Type") then
+                                RecRef.GetTable(ServiceHeader);
                         end;
                 end;
                 DocAttachDetails.OpenForRecRef(RecRef);
