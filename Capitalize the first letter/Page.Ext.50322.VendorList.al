@@ -5,11 +5,19 @@ pageextension 50322 ISA_VendorList_Ext extends "Vendor List"
 {
     trigger OnOpenPage()
     var
-        String: Text[50];
-        NewString: Text[50];
+        InputString: Text[1024];
+        SringList: List of [Text];
+        OutputString: Text[1024];
+        I: Integer;
     begin
-        String := 'NEW YORK';
-        NewString := UpperCase(CopyStr(String, 1, 1)) + LowerCase(CopyStr(String, 1, 1));
-        Message('String is %1.\New String is %2.\%3\%4', String, NewString, UpperCase(CopyStr(String, 1, 1)), LowerCase(CopyStr(String, 1, 1)));
+        Clear(I);
+        InputString := 'NEW YORK ABC CAD BDF RED BLUE YELLOW';
+        Message('InputString is %1', InputString);
+        SringList := InputString.Split(' ');
+
+        for I := 1 to SringList.Count do begin
+            OutputString := OutputString + ' ' + UpperCase(CopyStr(SringList.Get(i), 1, 1)) + LowerCase(CopyStr(SringList.Get(I), 2));
+        end;
+        Message('OutputString is %1', OutputString);
     end;
 }
