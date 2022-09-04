@@ -1,6 +1,6 @@
 {
-  "id": "8ac70b11-ad6c-48ea-bb14-496635b122a4",
-  "name": "ErikHoogrd",
+  "id": "6043b309-e325-4436-ada4-fda6671f6e81",
+  "name": "FlowFields",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -12,8 +12,18 @@
   "logo": "",
   "dependencies": [],
   "screenshots": [],
-  "platform": "13.0.0.0",
-  "application": "13.0.0.0",
-  "showMyCode": true,
-  "runtime": "2.0"
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50349
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
 }

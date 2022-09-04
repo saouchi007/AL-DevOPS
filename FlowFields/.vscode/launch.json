@@ -1,19 +1,23 @@
 {
-    "version": "0.2.0",
+    "version": "0.0.2.0",
     "configurations": [
-        {
-            "type": "al",
+         {
+            "name": "Local Server",
             "request": "launch",
-            "name": "Acme sandbox",
-            "server": "http://localhost",
-            "serverInstance": "BC130",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/",
+            "serverInstance": "BC204",
             "authentication": "Windows",
-            "startupObjectId": 50300,
+            "startupObjectId": 50323,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "port": 20049,
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }
