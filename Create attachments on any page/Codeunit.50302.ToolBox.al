@@ -8,6 +8,7 @@ codeunit 50302 ISA_ToolBox_AttachDoc
     var
         FieldRef: FieldRef;
         RecNo: Code[20];
+        DocType: Enum "Sales Document Type";
     begin
         case RecRef.Number of
             Database::"Service Header":
@@ -15,6 +16,10 @@ codeunit 50302 ISA_ToolBox_AttachDoc
                     FieldRef := RecRef.Field(3);
                     RecNo := FieldRef.Value;
                     DocumentAttachment.Validate("No.", RecNo);
+
+                    FieldRef := RecRef.Field(1);
+                    DocType := FieldRef.Value;
+                    DocumentAttachment.Validate("Document Type", DocType);
                 end;
         end;
     end;
@@ -26,6 +31,7 @@ codeunit 50302 ISA_ToolBox_AttachDoc
     var
         FieldRef: FieldRef;
         RecNo: Code[20];
+        DocType: Enum "Sales Document Type";
     begin
         case RecRef.Number of
             Database::"Service Header":
@@ -33,6 +39,10 @@ codeunit 50302 ISA_ToolBox_AttachDoc
                     FieldRef := RecRef.Field(3);
                     RecNo := FieldRef.Value;
                     DocumentAttachment.Validate("No.", RecNo);
+
+                    FieldRef := RecRef.Field(1);
+                    DocType := FieldRef.Value;
+                    DocumentAttachment.Validate("Document Type", DocType);
                 end;
 
         end;
