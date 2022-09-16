@@ -1,0 +1,29 @@
+{
+  "id": "7629d424-d0ef-4626-b042-dde0f1862407",
+  "name": "AltrApp Upgraded to V20.4",
+  "publisher": "Saouchi Ilyes - Adactim",
+  "version": "19.3.13.9",
+  "brief": "Altractors SPA Extension",
+  "description": "This extension deploys Altractors business requirements, Dev is reachable through (+213) 05 60 04 99 67",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "https://adactim.com/home/",
+  "url": "https://adactim.com/home/",
+  "logo": "./logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50349
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}
