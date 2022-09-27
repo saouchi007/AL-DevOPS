@@ -82,11 +82,29 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                     end until ISA_SalesComments.Next = 0;
                 end;
 
-                Header.CalcFields(Amount, "Amount Including VAT");
+                Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 AmountCustomer := Header."Amount Including VAT";
-                ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CTS');
+                RepCheck.InitTextVariable();
 
+                //ToolBox.InitTextVariable();
+                //ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CTS');
+
+                WholePart := ROUND(ABS(AmountCustomer), 1, '<');
+                DecimalPart := ABS((ABS(AmountCustomer) - WholePart) * 100);
+
+
+
+                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                AmountIntoWordsIntPart := NoText[1];
+                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                ISA_AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
+
+                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                AmountIntoWordsDecPart := NoText[1];
+                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                ISA_AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
+                
+          Message(ISA_AmountInWords);
             end;
 
         }
@@ -100,14 +118,19 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
         ISA_Customer_ItemNumber: Text;
         ISA_Customer_StatisticalID: Text;
 
-        ISA_AmountInWords: Text[200];
+        ISA_AmountInWords: Text[100];
         AmountCustomer: Decimal;
 
         ISA_SalesComments: Record "Sales Comment Line";
         CommentFetched: Text;
 
+        RepCheck: Report Check;
+        NoText: array[2] of Text[100];
+        AmountIntoWordsIntPart: Text[100];
+        AmountIntoWordsDecPart: Text[100];
 
-
+        WholePart: Integer;
+        DecimalPart: Integer;
 
 }
 

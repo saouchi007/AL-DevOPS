@@ -84,8 +84,25 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
 
                 Header.CalcFields(Amount, "Amount Including VAT");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
-                ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                RepCheck.InitTextVariable();
+
+                //ToolBox.InitTextVariable();
+                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+
+                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
+                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
+
+
+                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                AmountIntoWordsIntPart := NoText[1];
+                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
+
+                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                AmountIntoWordsDecPart := NoText[1];
+                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
+
             end;
         }
     }
@@ -106,4 +123,12 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
         ISA_SalesPersonName: Text;
 
         CommentFetched: Text;
+
+        RepCheck: Report Check;
+        NoText: array[2] of Text[100];
+        AmountIntoWordsIntPart: Text[100];
+        AmountIntoWordsDecPart: Text[100];
+
+        WholePart: Integer;
+        DecimalPart: Integer;
 }

@@ -73,13 +73,34 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
 
                 Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
-                ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                RepCheck.InitTextVariable();
+                //ToolBox.InitTextVariable();
+                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
 
                 AmountExclVatAfterDiscount := Header.Amount - Header."Invoice Discount Amount";
+
+                //IntPart := Format("Amount Including VAT", 0, '<Integer>');
+                //DeciPart := CopyStr(Format("Amount Including VAT", 0, '<Decimals>'), 2, StrLen(Format("Amount Including VAT", 0, '<Decimals>')));
+                                //Message('%1 :\Int : %2\Dec : %3', "Amount Including VAT", WholePart, DecimalPart);
+
+                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
+                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
+
+
+                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                AmountIntoWordsIntPart := NoText[1];
+                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
+
+                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                AmountIntoWordsDecPart := NoText[1];
+                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
+
             end;
         }
     }
+    //AND 0/100
 
 
 
@@ -89,7 +110,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         Company_StatisticalID: Label 'N° Statistique : 0 994 4228 03302 33';
         Company_TradeRegister: Label 'Code Activité : 408301 408406 410321';
         Company_ItemNumber: Label 'Article : 607002 609002 61320';
-        AmountInWords: Text[100];
+        AmountInWords: Text[300];
         // AmountCustomer: Decimal; replaced by StampDutywithDocTotal to add up the SDuty with the doc total 
         ISA_Customer_FiscalID: Text;
         ISA_Customer_TradeRegister: Text;
@@ -98,6 +119,15 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         ISA_SalesPersonName: Text;
         AmountExclVatAfterDiscount: Decimal;
 
+        //************
+        IntPart: Text[300];
+        DeciPart: Text[300];
+        RepCheck: Report Check;
+        NoText: array[2] of Text[300];
+        AmountIntoWordsIntPart: Text[300];
+        AmountIntoWordsDecPart: Text[300];
 
+        WholePart: Integer;
+        DecimalPart: Integer;
 
 }
