@@ -9,14 +9,14 @@
             "server": "http://localhost:8080/",
             "serverInstance": "BC190",
             "authentication": "Windows",
-            "startupObjectId": 9305,
+            "startupObjectId": 27,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "default",
-            "port": 1949,
+            "port": 1905,
             "schemaUpdateMode": "ForceSync"
         }
     ]

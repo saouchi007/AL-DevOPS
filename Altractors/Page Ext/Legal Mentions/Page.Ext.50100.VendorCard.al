@@ -25,7 +25,7 @@ pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
 
                         if Rec.ISA_TradeRegister <> '' then begin
                             Vendors.SetRange(ISA_TradeRegister, Rec.ISA_TradeRegister);
-                            if Vendors.Count > 0 then begin
+                            if Vendors.Count > 1 then begin
                                 TradeRegisterNotification.Message(TradeRegisterNotificationLbl);
                                 TradeRegisterNotification.Scope := NotificationScope::LocalScope;
                                 TradeRegisterNotification.SetData(CurrentTradeRegister, Rec.ISA_TradeRegister);
@@ -50,7 +50,7 @@ pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
 
                         if Rec.ISA_FiscalID <> '' then begin
                             Vendors.SetRange(ISA_FiscalID, Rec.ISA_FiscalID);
-                            if Vendors.Count > 0 then begin
+                            if Vendors.Count > 1 then begin
                                 FiscalIDNotification.Message(FiscalIDNotificationLbl);
                                 FiscalIDNotification.Scope := NotificationScope::LocalScope;
                                 FiscalIDNotification.SetData(CurrentFiscalID, Rec.ISA_FiscalID);
@@ -75,7 +75,7 @@ pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
 
                         if Rec.ISA_StatisticalID <> '' then begin
                             Vendors.SetRange(ISA_StatisticalID, Rec.ISA_StatisticalID);
-                            if Vendors.Count > 0 then begin
+                            if Vendors.Count > 1 then begin
                                 StatisticalIDNotification.Message(StatisticalIDNotificationLbl);
                                 StatisticalIDNotification.Scope := NotificationScope::LocalScope;
                                 StatisticalIDNotification.SetData(CurrentStatisticalID, Rec.ISA_StatisticalID);
@@ -100,7 +100,7 @@ pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
 
                         if Rec.ISA_ItemNumber <> '' then begin
                             Vendors.SetRange(ISA_ItemNumber, Rec.ISA_ItemNumber);
-                            if Vendors.Count > 0 then begin
+                            if Vendors.Count > 1 then begin
                                 ItemNumberNotification.Message(ItemNumberNotificationLbl);
                                 ItemNumberNotification.Scope := NotificationScope::LocalScope;
                                 ItemNumberNotification.SetData(CurrentItemNumber, Rec.ISA_ItemNumber);
@@ -119,7 +119,7 @@ pageextension 50100 ISA_VendorCard_Ext extends "Vendor Card"
         //Message('%1', rec.ISA_TradeRegister);
         Vendor.SetFilter(ISA_TradeRegister, Rec.ISA_TradeRegister);
         //Message('%1', Vendor.Count);
-        if Vendor.Count > 0 then
+        if Vendor.Count > 1 then
             Error(DuplicatEntryLbl, Rec.ISA_TradeRegister);
     end;
 
