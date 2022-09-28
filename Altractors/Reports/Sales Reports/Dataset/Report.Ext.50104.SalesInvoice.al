@@ -73,36 +73,45 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
 
                 Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
-                RepCheck.InitTextVariable();
-                //ToolBox.InitTextVariable();
-                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                //RepCheck.InitTextVariable();
+                ToolBox.InitTextVariable();
+                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
 
                 AmountExclVatAfterDiscount := Header.Amount - Header."Invoice Discount Amount";
-
-                //IntPart := Format("Amount Including VAT", 0, '<Integer>');
-                //DeciPart := CopyStr(Format("Amount Including VAT", 0, '<Decimals>'), 2, StrLen(Format("Amount Including VAT", 0, '<Decimals>')));
+                /*
+                                //IntPart := Format("Amount Including VAT", 0, '<Integer>');
+                                //DeciPart := CopyStr(Format("Amount Including VAT", 0, '<Decimals>'), 2, StrLen(Format("Amount Including VAT", 0, '<Decimals>')));
                                 //Message('%1 :\Int : %2\Dec : %3', "Amount Including VAT", WholePart, DecimalPart);
 
-                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
-                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
+                                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
+                                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
 
 
-                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
-                AmountIntoWordsIntPart := NoText[1];
-                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
-                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
+                                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                                AmountIntoWordsIntPart := NoText[1];
+                                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', '0/100');
 
-                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
-                AmountIntoWordsDecPart := NoText[1];
-                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
-                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
+                                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                                AmountIntoWordsDecPart := NoText[1];
+                                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', '0/100') + ' CENTIMES';
+
+                                ReplaceString(AmountInWords, 'ONE HUNDRED ', 'CENT');
+                */
+                //Message(AmountInWords);
 
             end;
         }
     }
     //AND 0/100
 
-
+    local procedure ReplaceString(String: Text[250]; FindWhat: Text[250]; ReplaceWith: Text[250]) NewString: Text[250]
+    begin
+        WHILE STRPOS(AmountInWords, 'UN CENT') > 0 DO
+            String := DELSTR(String, STRPOS(String, FindWhat)) + ReplaceWith + COPYSTR(String, STRPOS(String, FindWhat) + STRLEN(FindWhat));
+        NewString := String;
+    end;
 
     var
         StampDutywithDocTotal: Decimal;

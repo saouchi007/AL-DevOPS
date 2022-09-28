@@ -84,11 +84,10 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
 
                 Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 AmountCustomer := Header."Amount Including VAT";
-                RepCheck.InitTextVariable();
-
-                //ToolBox.InitTextVariable();
-                //ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CTS');
-
+                //RepCheck.InitTextVariable();
+                ToolBox.InitTextVariable();
+                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
+/*
                 WholePart := ROUND(ABS(AmountCustomer), 1, '<');
                 DecimalPart := ABS((ABS(AmountCustomer) - WholePart) * 100);
 
@@ -97,14 +96,14 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                 RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
                 AmountIntoWordsIntPart := NoText[1];
                 AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
-                ISA_AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
+                ISA_AmountInWords := DelChr(AmountIntoWordsIntPart, '>', '0/100');
 
                 RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
                 AmountIntoWordsDecPart := NoText[1];
                 AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
-                ISA_AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
-                
-          Message(ISA_AmountInWords);
+                ISA_AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', '0/100') + ' CENTIMES';
+                */
+          //Message(ISA_AmountInWords);
             end;
 
         }

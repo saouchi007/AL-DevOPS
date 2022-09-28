@@ -84,25 +84,26 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
 
                 Header.CalcFields(Amount, "Amount Including VAT");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
-                RepCheck.InitTextVariable();
+                //RepCheck.InitTextVariable();
 
-                //ToolBox.InitTextVariable();
-                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                ToolBox.InitTextVariable();
+                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                /*
+                                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
+                                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
 
-                WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
-                DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
 
+                                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                                AmountIntoWordsIntPart := NoText[1];
+                                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', '0/100');
 
-                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
-                AmountIntoWordsIntPart := NoText[1];
-                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
-                AmountInWords := DelChr(AmountIntoWordsIntPart, '>', 'AND 0/100');
-
-                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
-                AmountIntoWordsDecPart := NoText[1];
-                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
-                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', 'AND 0/100') + ' CENTIMES';
-
+                                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                                AmountIntoWordsDecPart := NoText[1];
+                                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                                AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', '0/100') + ' CENTIMES';
+                */
+                // Message(AmountInWords);
             end;
         }
     }
