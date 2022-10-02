@@ -3357,7 +3357,6 @@
                             </Border>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -3400,7 +3399,7 @@
       <Width>17.99107cm</Width>
       <Page>
         <PageHeader>
-          <Height>3.048cm</Height>
+          <Height>4.46617cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
