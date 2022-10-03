@@ -1,7 +1,7 @@
 /// <summary>
-/// PageExtension ISA_SalesOrderList_Ext (ID 50118) extends Record Sales Order List.
+/// PageExtension ISA_PostedSalesInvoice_Ext (ID 50121) extends Record Posted Sales Invoices.
 /// </summary>
-pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
+pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
 {
     layout
     {
