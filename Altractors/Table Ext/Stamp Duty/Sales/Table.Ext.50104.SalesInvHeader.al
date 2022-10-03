@@ -17,6 +17,7 @@ tableextension 50104 ISA_SalesInvHeader_Ext extends "Sales Invoice Header"
             CaptionML = ENU = 'Amount Including Stamp Duty', FRA = 'Montant incluant droit de timbre';
             Editable = false;
         }
+        
     }
 
 }

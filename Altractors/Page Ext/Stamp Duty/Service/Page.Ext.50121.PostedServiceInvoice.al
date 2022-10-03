@@ -1,7 +1,7 @@
 /// <summary>
-/// PageExtension ISA_PostedSalesInvoice_Ext (ID 50121) extends Record Posted Sales Invoices.
+/// PageExtension ISA_PostedServiceInvoice_Ext (ID 50122).
 /// </summary>
-pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
+pageextension 50122 ISA_PostedServiceInvoice_Ext extends "Posted Service Invoices"
 {
     layout
     {
@@ -16,4 +16,5 @@ pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
             }
         }
     }
+
 }

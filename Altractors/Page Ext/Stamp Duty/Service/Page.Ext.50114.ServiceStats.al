@@ -14,6 +14,13 @@ pageextension 50114 ISA_ServiceStats_Ext extends "Service Invoice Statistics"
                 ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
                 CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
             }
+            field(ISA_AmountIncludingStampDuty; Rec.ISA_AmountIncludingStampDuty)
+            {
+                ApplicationArea = All;
+                Visible = true;
+                ToolTipML = ENU = 'Specifies the amount that includes VAT and Stamp duty', FRA = 'Spécifie le montant incluant la TVA et le droit de timbre';
+                CaptionML = ENU = 'Amount Including S.Duty', FRA = 'Montant includant D.Timbre';
+            }
         }
 
         /*addafter("Currency Code")

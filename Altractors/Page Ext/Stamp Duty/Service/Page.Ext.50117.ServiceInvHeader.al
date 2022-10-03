@@ -7,13 +7,6 @@ pageextension 50117 ISA_ServiceInvoiceStats_Ext extends "Posted Service Invoice"
     {
         addafter("Bill-to Contact No.")
         {
-            field(ISA_StampDuty; Rec.ISA_StampDuty)
-            {
-                ApplicationArea = All;
-                Visible = true;
-                ToolTipML = ENU = 'Processes 1% of amount including VAT', FRA = 'Calcule 1% du TTC';
-                CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
-            }
         }
 
 

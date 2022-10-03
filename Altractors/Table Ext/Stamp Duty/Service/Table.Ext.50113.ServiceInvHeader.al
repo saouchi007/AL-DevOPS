@@ -11,5 +11,11 @@ tableextension 50113 ISA_ServiceInvHeader_Ext extends "Service Invoice Header"
             CaptionML = ENU = 'Stamp Duty', FRA = 'Droit de timbre';
             Editable = false;
         }
+        field(50112; ISA_AmountIncludingStampDuty; Decimal)
+        {
+            DataClassification = CustomerContent;
+            CaptionML = ENU = 'Amount Including Stamp Duty', FRA = 'Montant incluant droit de timbre';
+            Editable = false;
+        }
     }
 }

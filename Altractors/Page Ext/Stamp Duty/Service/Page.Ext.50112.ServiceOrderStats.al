@@ -12,6 +12,13 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
                 ApplicationArea = All;
                 Visible = true;
             }
+            field(ISA_AmountIncludingStampDuty; Rec.ISA_AmountIncludingStampDuty)
+            {
+                ApplicationArea = All;
+                Visible = true;
+                ToolTipML = ENU = 'Specifies the amount that includes VAT and Stamp duty', FRA = 'Spécifie le montant incluant la TVA et droit de timbre';
+                CaptionML = ENU = 'Amount Including SDuty', FRA = 'Montant includant DTimbre';
+            }
         }
     }
     trigger OnOpenPage()
@@ -23,6 +30,7 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
             ProcessStampDuty()
         else begin
             Rec.ISA_StampDuty := 0;
+            Rec.ISA_AmountIncludingStampDuty := 0;
             Rec.Modify();
         end;
     end;
@@ -56,6 +64,14 @@ pageextension 50112 ISA_ServiceOrderStats_Ext extends "Service Order Statistics"
         end;
         //Rec.ISA_StampDuty := ServiceLine."Amount Including VAT" * 0.01;
         //TotalAmountIncVAT := ServiceLine."Amount Including VAT";
+
+        if Rec.FindSet then begin
+            //SalesHeader.CalcFields("Amount Including VAT");
+            Rec.ISA_AmountIncludingStampDuty := ServiceLine."Amount Including VAT" + Rec.ISA_StampDuty;
+            Rec.Modify();
+            //Message('%1', SalesLine."Amount Including VAT");
+            //Message('%1\%2\%3', (SalesHeader."Amount Including VAT" + Rec.ISA_StampDuty), SalesHeader."Amount Including VAT", Rec.ISA_StampDuty);
+        end;
     end;
 
 
