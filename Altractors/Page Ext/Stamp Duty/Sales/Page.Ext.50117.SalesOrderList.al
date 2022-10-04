@@ -11,7 +11,7 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
             {
                 ApplicationArea = All;
                 Visible = true;
-                ToolTipML = ENU = 'Specifies the amount that includes VAT and Stamp duty', FRA = 'Spécifie le montant incluant la TVA et le droit de timbre';
+                ToolTipML = ENU = 'Specifies the amount that includes VAT and Stamp duty', FRA = 'Spécifie le montant incluant la TVA et ledroit de timbre';
                 CaptionML = ENU = 'Amount Including S.Duty', FRA = 'Montant includant D.Timbre';
             }
         }

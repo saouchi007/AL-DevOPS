@@ -157,6 +157,15 @@ pageextension 50102 ISA_SalesOrderSubform extends "Sales Order"
             Rec.Modify();
         end;
     end;
+    /*
+        trigger OnOpenPage()
+        var
+            SalesLine: Record "Sales Line";
+        begin
+            SalesLine.SetRange("Document No.", Rec."No.");
+            if SalesLine.FindSet() then
+                Message('%1', SalesLine."No.");
+        end;*/
 }
 
 

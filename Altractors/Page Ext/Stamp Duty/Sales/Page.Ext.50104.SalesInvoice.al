@@ -29,6 +29,33 @@ pageextension 50104 ISA_SalesInvoice_Ext extends "Sales Invoice"
         }*/
         }
     }
+    /*
+        trigger OnAfterGetRecord()
+        var
+            SalesLine: Record "Sales Line";
+            SalesHeader: Record "Sales Header";
+            IsProcessed: Boolean;
+        begin
+            SalesLine.SetRange("Document No.", Rec."No.");
+            SalesHeader.SetRange("No.", Rec."No.");
+            IsProcessed := false;
+
+            if SalesLine.FindSet() or SalesHeader.FindSet() and IsProcessed = false then
+                SalesLine."Amount Including VAT" += SalesHeader.ISA_StampDuty;
+            SalesLine.Modify();
+            IsProcessed := true;
+            Message('%1', SalesLine."Amount Including VAT" + SalesHeader.ISA_StampDuty);
+        end;*/
+
+
+
+
+
+
+
+
+
+
 
 
     trigger OnNewRecord(BelowxRec: Boolean)

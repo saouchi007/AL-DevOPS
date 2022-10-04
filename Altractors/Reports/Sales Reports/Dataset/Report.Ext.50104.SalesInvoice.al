@@ -45,7 +45,10 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             column(AmountExclVatAfterDiscount; AmountExclVatAfterDiscount)
             {
             }
+            column(ISA_InvDisAmount; ISA_InvDisAmount)
+            {
 
+            }
         }
 
 
@@ -56,21 +59,35 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
                 ToolBox: Codeunit ISA_StampDutyProcessor;
+                SalesLine: Record "Sales Line";
+                docType: Enum "Sales Document Type";
+
             begin
                 SalesPerson.Reset();
                 SalesPerson.SetRange(Code, "Salesperson Code");
                 Customer.Reset();
                 Customer.SetRange("No.", "Sell-to Customer No.");
-                if Customer.FindSet or SalesPerson.FindSet then begin
+                Line.Reset();
+                Line.SetRange("Document No.", Header."No.");
+
+
+                /*if SalesLine.FindSet then
+                    Message('%1\%2', Header."No.", SalesLine."Document No.")
+                else
+                    Message('Not found');
+*/
+                if Customer.FindSet or SalesPerson.FindSet or Line.FindSet then begin
                     ISA_Customer_FiscalID := Customer.ISA_FiscalID;
                     ISA_Customer_ItemNumber := Customer.ISA_ItemNumber;
                     ISA_Customer_StatisticalID := Customer.ISA_StatisticalID;
                     ISA_Customer_TradeRegister := Customer.ISA_TradeRegister;
 
                     ISA_SalesPersonName := SalesPerson.Name;
+                    Line.CalcSums("Line Discount Amount");
+                    ISA_InvDisAmount := Line."Line Discount Amount";
+                   // Message('%1', ISA_InvDisAmount);
 
                 end;
-
                 Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 //RepCheck.InitTextVariable();
@@ -127,6 +144,9 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
         ISA_Customer_StatisticalID: Text;
         ISA_SalesPersonName: Text;
         AmountExclVatAfterDiscount: Decimal;
+        ISA_InvDisAmount: Decimal;
+
+
 
         //************
         IntPart: Text[300];
