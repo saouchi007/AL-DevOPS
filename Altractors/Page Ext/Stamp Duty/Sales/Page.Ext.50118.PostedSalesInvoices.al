@@ -3,6 +3,7 @@
 /// </summary>
 pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
 {
+
     layout
     {
         addafter("Amount Including VAT")
@@ -15,7 +16,29 @@ pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
                 CaptionML = ENU = 'Amount Including S.Duty', FRA = 'Montant includant D.Timbre';
             }
         }
+
     }
+    actions
+    {
+        modify(Print)
+        {
+            Visible = false;
+        }
+
+        modify(SendCustom)
+        {
+            Visible = false;
+        }
+        modify(AttachAsPDF)
+        {
+            Visible = false;
+        }
+        modify(Email)
+        {
+            Visible = false;
+        }
+    }
+
 
     trigger OnAfterGetRecord()
     begin
@@ -25,3 +48,4 @@ pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
         end;
     end;
 }
+

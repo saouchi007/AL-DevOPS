@@ -49,6 +49,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             {
 
             }
+
         }
 
 
@@ -85,7 +86,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                     ISA_SalesPersonName := SalesPerson.Name;
                     Line.CalcSums("Line Discount Amount");
                     ISA_InvDisAmount := Line."Line Discount Amount";
-                   // Message('%1', ISA_InvDisAmount);
+                    //Message('%1', ISA_InvDisAmount);
 
                 end;
                 Header.CalcFields(Amount, "Amount Including VAT", "Invoice Discount Amount");
