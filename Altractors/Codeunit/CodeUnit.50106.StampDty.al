@@ -33,6 +33,12 @@ codeunit 50106 ISA_StampDutyProcessor
                 Amount := SalesHeader.ISA_StampDuty; //-5000; //SalesLine.ISA_StampDuty;
                 Description := SalesHeader."Bill-to Name" + ' - ' + SalesHeader."No." + ' - Droit de timbre';
                 GenJnlPostLine.RunWithCheck(GenJnlLine);
+                /*
+                SalesHeader.CalcFields("Amount Including VAT");
+                SalesHeader."Amount Including VAT" += SalesHeader.ISA_StampDuty;
+                SalesHeader.Modify();
+                Message('%1', SalesHeader."Amount Including VAT");
+                */
 
                 InitNewLine(
              SalesHeader."Posting Date", SalesHeader."Document Date", SalesHeader."Posting Description",
