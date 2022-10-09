@@ -17,5 +17,12 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
         }
     }
 
+    trigger OnAfterGetRecord()
+    var
+    begin
+        Rec.CalcFields("Amount Including VAT");
+        Rec."Amount Including VAT" += Rec.ISA_StampDuty;
+        Rec.Modify();
+    end;
 
 }
