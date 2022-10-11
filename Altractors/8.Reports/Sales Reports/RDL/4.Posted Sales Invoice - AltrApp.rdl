@@ -2085,7 +2085,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox28</rd:DefaultName>
-                <Top>0.77424cm</Top>
+                <Top>0.96474cm</Top>
                 <Height>2.26483cm</Height>
                 <Width>11.1646cm</Width>
                 <ZIndex>1</ZIndex>
@@ -2118,7 +2118,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox27</rd:DefaultName>
-                <Top>3.08847cm</Top>
+                <Top>3.27897cm</Top>
                 <Left>8.87512cm</Left>
                 <Height>0.66322cm</Height>
                 <Width>8.81542cm</Width>
@@ -2156,7 +2156,7 @@
               </Textbox>
               <Rectangle Name="Rectangle1">
                 <KeepTogether>true</KeepTogether>
-                <Top>3.74817cm</Top>
+                <Top>3.93867cm</Top>
                 <Left>8.87512cm</Left>
                 <Height>1.58749cm</Height>
                 <Width>8.81542cm</Width>
@@ -2214,7 +2214,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Total HT</Value>
+                                <Value>Total H.T</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -2434,6 +2434,63 @@
                 <TablixCornerRow>
                   <TablixCornerCell>
                     <CellContents>
+                      <Textbox Name="Textbox26">
+                        <CanGrow>true</CanGrow>
+                        <CanShrink>true</CanShrink>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Total TVA</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox26</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>White</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <TopBorder>
+                            <Color>White</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </TopBorder>
+                          <BottomBorder>
+                            <Color>White</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <LeftBorder>
+                            <Color>White</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </LeftBorder>
+                          <RightBorder>
+                            <Color>White</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </RightBorder>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
                       <Textbox Name="Textbox58">
                         <CanGrow>true</CanGrow>
                         <CanShrink>true</CanShrink>
@@ -2493,7 +2550,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.76742cm</Width>
+                  <Width>4.64468cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2510,10 +2567,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style />
+                                  <Style>
+                                    <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox92</rd:DefaultName>
@@ -2556,13 +2617,14 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Last(Fields!TotalNetAmount.Value)</Value>
-                                <Style />
+                                <Value>=Last(Fields!TotalSubTotal.Value)</Value>
+                                <Style>
+                                  <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
+                                </Style>
                               </TextRun>
                               <TextRun>
-                                <Value> DZD</Value>
+                                <Value>  DZD</Value>
                                 <Style>
-                                  <FontWeight>Normal</FontWeight>
                                   <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                 </Style>
                               </TextRun>
@@ -2621,14 +2683,13 @@
                                   <TextRun>
                                     <Value>=First(Fields!ISA_InvDisAmount.Value, "DataSet_Result")</Value>
                                     <Style>
-                                      <Format>n2</Format>
+                                      <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
                                     <Value> DZD</Value>
                                     <Style>
-                                      <FontWeight>Normal</FontWeight>
-                                      <Format>n2</Format>
+                                      <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -2667,14 +2728,12 @@
                                       <TextRun>
                                         <Value>=Last(Fields!TotalNetAmount.Value) - First(Fields!ISA_InvDisAmount.Value, "DataSet_Result")</Value>
                                         <Style>
-                                          <FontWeight>Normal</FontWeight>
                                           <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                         </Style>
                                       </TextRun>
                                       <TextRun>
                                         <Value> DZD</Value>
                                         <Style>
-                                          <FontWeight>Normal</FontWeight>
                                           <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                         </Style>
                                       </TextRun>
@@ -2733,14 +2792,12 @@
                                           <TextRun>
                                             <Value>=First(Fields!ISA_StampDuty.Value, "DataSet_Result")</Value>
                                             <Style>
-                                              <FontWeight>Normal</FontWeight>
                                               <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                             </Style>
                                           </TextRun>
                                           <TextRun>
                                             <Value> DZD</Value>
                                             <Style>
-                                              <FontWeight>Normal</FontWeight>
                                               <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                             </Style>
                                           </TextRun>
@@ -2766,26 +2823,23 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.57354cm</Size>
+                                    <Size>0.6cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox102">
+                                      <Textbox Name="TotalVATAmount3">
                                         <CanGrow>true</CanGrow>
-                                        <CanShrink>true</CanShrink>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=First(Fields!ISA_StampDuty.Value, "DataSet_Result") + Last(Fields!TotalAmountIncludingVAT.Value)</Value>
+                                                <Value>=Last(Fields!TotalVATAmount.Value)</Value>
                                                 <Style>
-                                                  <FontWeight>Normal</FontWeight>
                                                   <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                                 </Style>
                                               </TextRun>
                                               <TextRun>
                                                 <Value> DZD</Value>
                                                 <Style>
-                                                  <FontWeight>Normal</FontWeight>
                                                   <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                                 </Style>
                                               </TextRun>
@@ -2795,40 +2849,85 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox102</rd:DefaultName>
+                                        <rd:DefaultName>TotalVATAmount</rd:DefaultName>
+                                        <ZIndex>9</ZIndex>
                                         <Style>
                                           <Border>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
+                                            <Color>LightGrey</Color>
+                                            <Style>None</Style>
                                           </Border>
-                                          <TopBorder>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
-                                            <Width>1pt</Width>
-                                          </TopBorder>
-                                          <BottomBorder>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
-                                            <Width>1pt</Width>
-                                          </BottomBorder>
-                                          <LeftBorder>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
-                                            <Width>1pt</Width>
-                                          </LeftBorder>
-                                          <RightBorder>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
-                                            <Width>1pt</Width>
-                                          </RightBorder>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>5pt</PaddingLeft>
+                                          <PaddingRight>5pt</PaddingRight>
                                         </Style>
                                       </Textbox>
                                     </CellContents>
                                   </TablixHeader>
+                                  <TablixMembers>
+                                    <TablixMember>
+                                      <TablixHeader>
+                                        <Size>0.57354cm</Size>
+                                        <CellContents>
+                                          <Textbox Name="Textbox102">
+                                            <CanGrow>true</CanGrow>
+                                            <CanShrink>true</CanShrink>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=First(Fields!ISA_StampDuty.Value, "DataSet_Result") + Last(Fields!TotalAmountIncludingVAT.Value)</Value>
+                                                    <Style>
+                                                      <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value> DZD</Value>
+                                                    <Style>
+                                                      <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox102</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>White</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>White</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>White</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>White</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>White</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixHeader>
+                                    </TablixMember>
+                                  </TablixMembers>
                                 </TablixMember>
                               </TablixMembers>
                             </TablixMember>
@@ -2849,10 +2948,11 @@
                     </GroupExpressions>
                   </Group>
                   <TablixHeader>
-                    <Size>3.84692cm</Size>
+                    <Size>3.89934cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox90">
                         <CanGrow>true</CanGrow>
+                        <CanShrink>true</CanShrink>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -2886,9 +2986,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <Top>8.72073cm</Top>
-            <Left>11.25038cm</Left>
-            <Height>3.01384cm</Height>
-            <Width>6.61434cm</Width>
+            <Left>9.18821cm</Left>
+            <Height>3.61384cm</Height>
+            <Width>8.54403cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
