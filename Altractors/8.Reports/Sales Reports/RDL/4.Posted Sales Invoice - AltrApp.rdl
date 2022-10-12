@@ -2838,7 +2838,7 @@
                                                 </Style>
                                               </TextRun>
                                               <TextRun>
-                                                <Value> DZD</Value>
+                                                <Value>DZD</Value>
                                                 <Style>
                                                   <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                                 </Style>

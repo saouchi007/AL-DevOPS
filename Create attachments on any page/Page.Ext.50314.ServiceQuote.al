@@ -7,16 +7,14 @@ pageextension 50314 ISA_ServiceQuote_Ext extends "Service Quote"
     {
         addfirst(factboxes)
         {
-            part("Documents Attachment"; "Document Attachment Factbox")
+            part("Attached Documents"; "Document Attachment Factbox")
             {
                 ApplicationArea = All;
                 Caption = 'Attachments';
-                SubPageLink = "Table ID" = const(5900),
-                              "No." = field("No."),
-                              "Document Type" = field("Document Type");
-                Visible = true;
+                SubPageLink = "Table ID" = CONST(5900),
+                              "No." = FIELD("No."),
+                              "Document Type" = FIELD("Document Type");
             }
         }
     }
-
 }

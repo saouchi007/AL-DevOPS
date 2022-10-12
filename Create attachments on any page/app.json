@@ -1,6 +1,6 @@
 {
   "id": "69196467-8de2-42c4-b0c4-0bcd3c948ac1",
-  "name": "Create attachments on any page",
+  "name": "File Mgmt on Service Quote",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "20.0.0.0",
+  "application": "19.0.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -22,8 +22,11 @@
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
   },
-  "runtime": "9.0"
+  "runtime": "8.0",
+  "features": [
+    "NoImplicitWith"
+  ]
 }
