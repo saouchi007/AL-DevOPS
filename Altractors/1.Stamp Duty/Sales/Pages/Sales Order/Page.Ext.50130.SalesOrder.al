@@ -1,26 +1,13 @@
 /// <summary>
-/// PageExtension ISA_SalesOrderList_Ext (ID 50118) extends Record Sales Order List.
+/// PageExtension ISA_SalesOrder_Ext (ID 50130) extends Record MyTargetPage.
 /// </summary>
-pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
+pageextension 50130 ISA_SalesOrder_Ext extends "Sales Order"
 {
-    layout
-    {
-        addafter("Amount Including VAT")
-        {
-            field(ISA_AmountIncludingStampDuty; Rec.ISA_AmountIncludingStampDuty)
-            {
-                ApplicationArea = All;
-                Visible = true;
-                ToolTipML = ENU = 'Specifies the amount that includes VAT and Stamp duty', FRA = 'Spécifie le montant incluant la TVA et ledroit de timbre';
-                CaptionML = ENU = 'Amount Including S.Duty', FRA = 'Montant includant D.Timbre';
-            }
-        }
-    }
-
     actions
     {
         modify(Post)
         {
+
             trigger OnBeforeAction()
             var
                 SalRec: Record "Sales & Receivables Setup";
@@ -33,8 +20,9 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
 
             end;
         }
-        modify("Post &Batch")
+        modify(PostAndNew)
         {
+
             trigger OnBeforeAction()
             var
                 SalRec: Record "Sales & Receivables Setup";
@@ -49,6 +37,7 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
         }
         modify(PostAndSend)
         {
+
             trigger OnBeforeAction()
             var
                 SalRec: Record "Sales & Receivables Setup";
@@ -61,8 +50,24 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
 
             end;
         }
-        modify("Preview Posting")
+        modify(PreviewPosting)
         {
+
+            trigger OnBeforeAction()
+            var
+                SalRec: Record "Sales & Receivables Setup";
+            begin
+                SalRec.Get();
+                if Rec."Payment Method Code" = SalRec.ISA_StampDutyPymtMethodsCode then begin
+                    if Rec.ISA_StampDuty = 0 then
+                        Error('Veuillez cliquer sur ''Commande > Statistiques'' afin de calculer le D.Timbre avant de valider');
+                end;
+
+            end;
+        }
+        modify(PagePostedSalesPrepaymentInvoices)
+        {
+
             trigger OnBeforeAction()
             var
                 SalRec: Record "Sales & Receivables Setup";
@@ -76,11 +81,5 @@ pageextension 50118 ISA_SalesOrderList_Ext extends "Sales Order List"
             end;
         }
     }
-    /*trigger OnAfterGetRecord() // used to refresh ISA_AmountIncludingStampDuty on the Sales order list
-    begin
-        Rec.CalcFields("Amount Including VAT");
-        Rec."Amount Including VAT" += Rec.ISA_StampDuty;
-        Rec.Modify();
-    end;*/
 
 }
