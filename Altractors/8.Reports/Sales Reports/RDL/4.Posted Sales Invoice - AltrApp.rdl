@@ -2055,7 +2055,7 @@
                         <Style />
                       </TextRun>
                       <TextRun>
-                        <Value>=Fields!PaymentTermsDescription.Value</Value>
+                        <Value>=Fields!DueDate.Value</Value>
                         <Style />
                       </TextRun>
                     </TextRuns>

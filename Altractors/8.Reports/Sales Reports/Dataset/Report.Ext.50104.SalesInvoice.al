@@ -59,7 +59,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             var
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
-                ToolBox: Codeunit ISA_ToolBox;
+                ToolBox: Report ISA_Check;
                 SalesLine: Record "Sales Line";
                 docType: Enum "Sales Document Type";
 
@@ -93,8 +93,9 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                 StampDutywithDocTotal := Header."Amount Including VAT" + Header.ISA_StampDuty;
                 //RepCheck.InitTextVariable();
                 ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
-
+                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                ToolBox.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
+                AmountInWords := NoText[1];
                 AmountExclVatAfterDiscount := Header.Amount - Header."Invoice Discount Amount";
                 /*
                                 //IntPart := Format("Amount Including VAT", 0, '<Integer>');
