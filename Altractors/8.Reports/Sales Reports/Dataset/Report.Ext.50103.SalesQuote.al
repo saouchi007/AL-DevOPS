@@ -59,7 +59,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
             trigger OnAfterAfterGetRecord()
             var
                 Customer: Record Customer;
-                ToolBox: Codeunit ISA_ToolBox;
+                ToolBox: Report ISA_Check;
                 ISA_SalesComments: Record "Sales Comment Line";
 
             begin
@@ -86,24 +86,26 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                 AmountCustomer := Header."Amount Including VAT";
                 //RepCheck.InitTextVariable();
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
-/*
-                WholePart := ROUND(ABS(AmountCustomer), 1, '<');
-                DecimalPart := ABS((ABS(AmountCustomer) - WholePart) * 100);
+                ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
+                ISA_AmountInWords := NoText[1];
+                //ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
+                /*
+                                WholePart := ROUND(ABS(AmountCustomer), 1, '<');
+                                DecimalPart := ABS((ABS(AmountCustomer) - WholePart) * 100);
 
 
 
-                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
-                AmountIntoWordsIntPart := NoText[1];
-                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
-                ISA_AmountInWords := DelChr(AmountIntoWordsIntPart, '>', '0/100');
+                                RepCheck.FormatNoText(NoText, Round(WholePart, 0.01), '');
+                                AmountIntoWordsIntPart := NoText[1];
+                                AmountIntoWordsIntPart := DelChr(AmountIntoWordsIntPart, '=', '*');
+                                ISA_AmountInWords := DelChr(AmountIntoWordsIntPart, '>', '0/100');
 
-                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
-                AmountIntoWordsDecPart := NoText[1];
-                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
-                ISA_AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', '0/100') + ' CENTIMES';
-                */
-          //Message(ISA_AmountInWords);
+                                RepCheck.FormatNoText(NoText, Round(DecimalPart, 1), '');
+                                AmountIntoWordsDecPart := NoText[1];
+                                AmountIntoWordsDecPart := DelChr(AmountIntoWordsDecPart, '=', '*');
+                                ISA_AmountInWords += ' ET ' + DelChr(AmountIntoWordsDecPart, '>', '0/100') + ' CENTIMES';
+                                */
+                //Message(ISA_AmountInWords);
             end;
 
         }

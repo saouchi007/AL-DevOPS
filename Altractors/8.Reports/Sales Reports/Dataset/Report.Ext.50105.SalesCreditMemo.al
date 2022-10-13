@@ -56,7 +56,7 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
             var
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
-                ToolBox: Codeunit ISA_ToolBox;
+                ToolBox: Report ISA_Check;
                 ISA_SalesComments: Record "Sales Comment Line";
 
             begin
@@ -87,7 +87,9 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
                 //RepCheck.InitTextVariable();
 
                 ToolBox.InitTextVariable();
-                AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
+                ToolBox.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
+                AmountInWords := NoText[1];
+                //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
                 /*
                                 WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
                                 DecimalPart := ABS((ABS(StampDutywithDocTotal) - WholePart) * 100);
