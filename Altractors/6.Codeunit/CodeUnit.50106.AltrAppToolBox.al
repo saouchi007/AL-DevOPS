@@ -146,7 +146,7 @@ codeunit 50106 ISA_ToolBox
 
 
 
-    /*--------------------------------------------------------- Transfer Stamp Duty and Amount Including SDuty GLEntries with Sales Order ----------------------------------------------*/
+    /*--------------------------------------------------------- Transfer Stamp Duty and Amount Including SDuty GLEntries with Service Order ----------------------------------------------*/
 
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Posting Journals Mgt.", 'OnAfterPostCustomerEntry', '', true, true)]
@@ -177,7 +177,7 @@ codeunit 50106 ISA_ToolBox
                 "Account No." := ServiceHeader."Bill-to Customer No.";
                 CopyFromServiceHeader(ServiceHeader);
 
-                "Document Type" := "Document Type"::Invoice;
+                //"Document Type" := "Document Type"::Invoice;
                 Amount := ServiceHeader.ISA_StampDuty;
                 Description := ServiceHeader."Bill-to Name" + ' - ' + ServiceHeader."No." + ' - Droit de timbre';
                 "System-Created Entry" := true;
@@ -194,7 +194,7 @@ codeunit 50106 ISA_ToolBox
                 "Account No." := SalesAndRec.ISA_StampDuty_GLA;
                 CopyFromServiceHeader(ServiceHeader);
 
-                "Document Type" := "Document Type"::Invoice;
+                //"Document Type" := "Document Type"::Invoice;
                 Amount := ServiceHeader.ISA_StampDuty * -1;
                 Description := ServiceHeader."Bill-to Name" + ' - ' + ServiceHeader."No." + ' - Droit de timbre';
                 "System-Created Entry" := true;

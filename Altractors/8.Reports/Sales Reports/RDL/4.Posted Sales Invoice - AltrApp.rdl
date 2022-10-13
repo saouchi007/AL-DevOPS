@@ -2442,7 +2442,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Total TVA</Value>
+                                <Value>Total TVA (19%)</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -2988,7 +2988,7 @@
             <Top>8.72073cm</Top>
             <Left>9.18821cm</Left>
             <Height>3.61384cm</Height>
-            <Width>8.54403cm</Width>
+            <Width>8.54402cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
