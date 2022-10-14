@@ -18,7 +18,7 @@ pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
         }
     }
 
-    trigger OnAfterGetRecord()
+    /*trigger OnAfterGetRecord()
     begin
         if (Rec."Remaining Amount" > 0) or (Rec.Closed = false) then begin
             Rec."Remaining Amount" += Rec.ISA_StampDuty;
@@ -26,6 +26,6 @@ pageextension 50121 ISA_PostedSalesInvoice_Ext extends "Posted Sales Invoices"
         Rec."Amount Including VAT" += Rec.ISA_StampDuty;
         Rec.Modify();
         Commit();
-    end;
+    end;*/
 }
 

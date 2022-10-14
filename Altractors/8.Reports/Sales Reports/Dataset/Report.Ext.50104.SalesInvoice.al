@@ -59,7 +59,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
             var
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
-                ToolBox: Report ISA_Check;
+                ToolBox: Codeunit ISA_ToolBox;
                 SalesLine: Record "Sales Line";
                 docType: Enum "Sales Document Type";
 

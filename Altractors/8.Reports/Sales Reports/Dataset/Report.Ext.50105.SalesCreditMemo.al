@@ -56,7 +56,7 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
             var
                 Customer: Record Customer;
                 SalesPerson: Record "Salesperson/Purchaser";
-                ToolBox: Report ISA_Check;
+                ToolBox: Codeunit ISA_ToolBox;
                 ISA_SalesComments: Record "Sales Comment Line";
 
             begin

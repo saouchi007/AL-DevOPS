@@ -59,7 +59,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
             trigger OnAfterAfterGetRecord()
             var
                 Customer: Record Customer;
-                ToolBox: Report ISA_Check;
+                ToolBox: Codeunit ISA_ToolBox;
                 ISA_SalesComments: Record "Sales Comment Line";
 
             begin

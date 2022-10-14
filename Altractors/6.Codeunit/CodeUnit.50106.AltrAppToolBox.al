@@ -274,7 +274,7 @@ codeunit 50106 ISA_ToolBox
     /// <summary>
     /// InitTextVariable.
     /// </summary>
-    procedure InitTextVariable()
+    procedure InitTextVariable_Old()
     begin
         OnesText[1] := 'UN';
         OnesText[2] := 'DEUX';
@@ -450,6 +450,183 @@ codeunit 50106 ISA_ToolBox
         Page.Run(27, Vendors);
     end;
     //*********************************************************************************************************
+    /// <summary>
+    /// InitTextVariable.
+    /// </summary>
+    procedure InitTextVariable()
+    begin
+        OnesText[1] := Text032;
+        OnesText[2] := Text033;
+        OnesText[3] := Text034;
+        OnesText[4] := Text035;
+        OnesText[5] := Text036;
+        OnesText[6] := Text037;
+        OnesText[7] := Text038;
+        OnesText[8] := Text039;
+        OnesText[9] := Text040;
+        OnesText[10] := Text041;
+        OnesText[11] := Text042;
+        OnesText[12] := Text043;
+        OnesText[13] := Text044;
+        OnesText[14] := Text045;
+        OnesText[15] := Text046;
+        OnesText[16] := Text047;
+        OnesText[17] := Text048;
+        OnesText[18] := Text049;
+        OnesText[19] := Text050;
+
+        TensText[1] := '';
+        TensText[2] := Text051;
+        TensText[3] := Text052;
+        TensText[4] := Text053;
+        TensText[5] := Text054;
+        TensText[6] := Text055;
+        TensText[7] := Text056;
+        TensText[8] := Text057;
+        TensText[9] := Text058;
+
+        ExponentText[1] := '';
+        ExponentText[2] := Text059;
+        ExponentText[3] := Text060;
+        ExponentText[4] := Text061;
+    end;
+
+    procedure FormatNoText(var NoText: array[2] of Text[80]; No: Decimal; CurrencyCode: Code[10])
+    begin
+        FormatNoTextFR(NoText, No, CurrencyCode);
+    end;
+
+    procedure FormatNoTextFR(var NoText: array[2] of Text[80]; No: Decimal; CurrencyCode: Code[10])
+    var
+        PrintExponent: Boolean;
+        Ones: Integer;
+        Tens: Integer;
+        Hundreds: Integer;
+        Exponent: Integer;
+        NoTextIndex: Integer;
+    begin
+        Clear(NoText);
+        NoTextIndex := 1;
+        NoText[1] := '';
+
+        if No < 1 then
+            AddToNoText(NoText, NoTextIndex, PrintExponent, Text026)
+        else
+            for Exponent := 4 downto 1 do begin
+                PrintExponent := false;
+                Ones := No div Power(1000, Exponent - 1);
+                Hundreds := Ones div 100;
+                Tens := (Ones mod 100) div 10;
+                Ones := Ones mod 10;
+
+                if Hundreds = 1 then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text027)
+                else
+                    if Hundreds > 1 then begin
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Hundreds]);
+                        if (Tens * 10 + Ones) = 0 then
+                            AddToNoText(NoText, NoTextIndex, PrintExponent, Text027 + 'S')
+                        else
+                            AddToNoText(NoText, NoTextIndex, PrintExponent, Text027);
+                    end;
+
+                FormatTens(NoText, NoTextIndex, PrintExponent, Exponent, Hundreds, Tens, Ones);
+
+                if PrintExponent and (Exponent > 1) then
+                    if ((Hundreds * 100 + Tens * 10 + Ones) > 1) and (Exponent <> 2) then
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, ExponentText[Exponent] + 'S')
+                    else
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, ExponentText[Exponent]);
+
+                No := No - (Hundreds * 100 + Tens * 10 + Ones) * Power(1000, Exponent - 1);
+            end;
+
+        if CurrencyCode = '' then
+            AddToNoText(NoText, NoTextIndex, PrintExponent, Text10800)
+        else begin
+            Currency.Get(CurrencyCode);
+            AddToNoText(NoText, NoTextIndex, PrintExponent, UpperCase(Currency.Description));
+        end;
+
+        No := No * 100;
+        Ones := No mod 10;
+        Tens := No div 10;
+        FormatTens(NoText, NoTextIndex, PrintExponent, Exponent, Hundreds, Tens, Ones);
+
+        if (CurrencyCode = '') or (CurrencyCode = 'FRF') then
+            case true of
+                No = 1:
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text10801);
+                No > 1:
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text10801 + 'S');
+            end;
+    end;
+
+    procedure FormatTens(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; Exponent: Integer; Hundreds: Integer; Tens: Integer; Ones: Integer)
+    begin
+        case Tens of
+            9:
+                begin
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text057);
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones + 10]);
+                end;
+            8:
+                if Ones = 0 then
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text057 + 'S')
+                else begin
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text057);
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
+                end;
+            7:
+                begin
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text055);
+                    if Ones = 1 then
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, Text028);
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones + 10]);
+                end;
+            2:
+                begin
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, Text051);
+                    if Ones > 0 then begin
+                        if Ones = 1 then
+                            AddToNoText(NoText, NoTextIndex, PrintExponent, Text028);
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
+                    end;
+                end;
+            1:
+                AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Tens * 10 + Ones]);
+            0:
+                begin
+                    if Ones > 0 then
+                        if (Ones = 1) and (Hundreds < 1) and (Exponent = 2) then
+                            PrintExponent := true
+                        else
+                            AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
+                end;
+            else begin
+                AddToNoText(NoText, NoTextIndex, PrintExponent, TensText[Tens]);
+                if Ones > 0 then begin
+                    if Ones = 1 then
+                        AddToNoText(NoText, NoTextIndex, PrintExponent, 'ET');
+                    AddToNoText(NoText, NoTextIndex, PrintExponent, OnesText[Ones]);
+                end;
+            end;
+        end;
+    end;
+
+    local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30])
+    begin
+        PrintExponent := true;
+
+        while StrLen(NoText[NoTextIndex] + ' ' + AddText) > MaxStrLen(NoText[1]) do begin
+            NoTextIndex := NoTextIndex + 1;
+            if NoTextIndex > ArrayLen(NoText) then
+                Error(Text029, AddText);
+        end;
+
+        NoText[NoTextIndex] := DelChr(NoText[NoTextIndex] + ' ' + AddText, '<');
+    end;
+
     var
         SrcCode: Code[10];
         SrcCodeSetup: Record "Source Code Setup";
@@ -459,8 +636,8 @@ codeunit 50106 ISA_ToolBox
 
         AmountCustomer: Decimal;
         ISA_SalesComments: Record "Sales Comment Line";
-        OnesText: array[20] of Text[3000];
-        TensText: array[10] of Text[3000];
+        //OnesText: array[20] of Text[3000];
+        //TensText: array[10] of Text[3000];
         ThousText: array[10] of Text[3000];
         ISA_AmountInWords: Text[3000];
         DecimalInWords: Text[3000];
@@ -468,5 +645,134 @@ codeunit 50106 ISA_ToolBox
         WholePart: Integer;
         DecimalPart: Integer;
 
+        Text000: Label 'Preview is not allowed.';
+        Text001: Label 'Last Check No. must be filled in.';
+        Text002: Label 'Filters on %1 and %2 are not allowed.';
+        Text003: Label 'XXXXXXXXXXXXXXXX';
+        Text004: Label 'must be entered.';
+        Text005: Label 'The Bank Account and the General Journal Line must have the same currency.';
+        Text008: Label 'Both Bank Accounts must have the same currency.';
+        Text010: Label 'XXXXXXXXXX';
+        Text011: Label 'XXXX';
+        Text012: Label 'XX.XXXXXXXXXX.XXXX';
+        Text013: Label '%1 already exists.';
+        Text014: Label 'Check for %1 %2';
+        Text016: Label 'In the Check report, One Check per Vendor and Document No.\must not be activated when Applies-to ID is specified in the journal lines.';
+        Text019: Label 'Total';
+        Text020: Label 'The total amount of check %1 is %2. The amount must be positive.';
+        Text021: Label 'VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID VOID';
+        Text022: Label 'NON-NEGOTIABLE';
+        Text023: Label 'Test print';
+        Text024: Label 'XXXX.XX';
+        Text025: Label 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+        Text026: Label 'ZERO';
+        Text027: Label 'CENT';
+        Text028: Label 'ET';
+        Text029: Label '%1 results in a written number that is too long.';
+        Text030: Label ' is already applied to %1 %2 for customer %3.';
+        Text031: Label ' is already applied to %1 %2 for vendor %3.';
+        Text032: Label 'UN';
+        Text033: Label 'DEUX';
+        Text034: Label 'TROIS';
+        Text035: Label 'QUATRE';
+        Text036: Label 'CINQ';
+        Text037: Label 'SIX';
+        Text038: Label 'SEPT';
+        Text039: Label 'HUIT';
+        Text040: Label 'NEUF';
+        Text041: Label 'DIX';
+        Text042: Label 'ONZE';
+        Text043: Label 'DOUZE';
+        Text044: Label 'TREIZE';
+        Text045: Label 'QUATORZE';
+        Text046: Label 'QUINZE';
+        Text047: Label 'SEIZE';
+        Text048: Label 'DIX-SEPT';
+        Text049: Label 'DIX-HUIT';
+        Text050: Label 'DIX-NEUF';
+        Text051: Label 'VINGT';
+        Text052: Label 'TRENTE';
+        Text053: Label 'QUARANTE';
+        Text054: Label 'CINQUANTE';
+        Text055: Label 'SOIXANTE';
+        Text056: Label 'SOIXANTE-DIX';
+        Text057: Label 'QUATRE-VINGT';
+        Text058: Label 'QUATRE-VINGT';
+        Text059: Label 'MILLE';
+        Text060: Label 'MILLION';
+        Text061: Label 'MILLIARD';
+        CompanyInfo: Record "Company Information";
+        CurrencyExchangeRate: Record "Currency Exchange Rate";
+        SalesPurchPerson: Record "Salesperson/Purchaser";
+        GenJnlLine2: Record "Gen. Journal Line";
+        GenJnlLine3: Record "Gen. Journal Line";
+        Cust: Record Customer;
+        CustLedgEntry: Record "Cust. Ledger Entry";
+        Vend: Record Vendor;
+        VendLedgEntry: Record "Vendor Ledger Entry";
+        BankAcc: Record "Bank Account";
+        BankAcc2: Record "Bank Account";
+        CheckLedgEntry: Record "Check Ledger Entry";
+        Currency: Record Currency;
+        GLSetup: Record "General Ledger Setup";
+        Employee: Record Employee;
+        EmployeeLedgerEntry: Record "Employee Ledger Entry";
+        FormatAddr: Codeunit "Format Address";
+        CheckManagement: Codeunit CheckManagement;
+        CompanyAddr: array[8] of Text[100];
+        CheckToAddr: array[8] of Text[100];
+        OnesText: array[20] of Text[30];
+        TensText: array[10] of Text[30];
+        ExponentText: array[5] of Text[30];
+        BalancingType: Enum "Gen. Journal Account Type";
+        BalancingNo: Code[20];
+        CheckNoText: Text[30];
+        CheckDateText: Text[30];
+        CheckAmountText: Text[30];
+        DescriptionLine: array[2] of Text[80];
+        DocNo: Text[30];
+        ExtDocNo: Text[35];
+        VoidText: Text[30];
+        LineAmount: Decimal;
+        LineDiscount: Decimal;
+        TotalLineAmount: Decimal;
+        TotalLineDiscount: Decimal;
+        RemainingAmount: Decimal;
+        CurrentLineAmount: Decimal;
+        UseCheckNo: Code[20];
+        FoundLast: Boolean;
+        ReprintChecks: Boolean;
+        TestPrint: Boolean;
+        FirstPage: Boolean;
+        OneCheckPrVendor: Boolean;
+        FoundNegative: Boolean;
+        AddedRemainingAmount: Boolean;
+        ApplyMethod: Option Payment,OneLineOneEntry,OneLineID,MoreLinesOneEntry;
+        ChecksPrinted: Integer;
+        HighestLineNo: Integer;
+        PreprintedStub: Boolean;
+        TotalText: Text[10];
+        DocDate: Date;
+        JournalPostingDate: Date;
+        i: Integer;
+        CurrencyCode2: Code[10];
+        NetAmount: Text[30];
+        LineAmount2: Decimal;
+        Text063: Label 'Net Amount %1';
+        Text064: Label '%1 must not be %2 for %3 %4.';
+        Text065: Label 'Subtotal';
+        Text10800: Label 'DINARS';
+        Text10801: Label 'CENTIME';
+        CheckNoTextCaptionLbl: Label 'Check No.';
+        LineAmountCaptionLbl: Label 'Net Amount';
+        LineDiscountCaptionLbl: Label 'Discount';
+        AmountCaptionLbl: Label 'Amount';
+        DocNoCaptionLbl: Label 'Document No.';
+        DocDateCaptionLbl: Label 'Document Date';
+        CurrencyCodeCaptionLbl: Label 'Currency Code';
+        YourDocNoCaptionLbl: Label 'Your Document No.';
+        TransportCaptionLbl: Label 'Transport';
+        BlockedEmplForCheckErr: Label 'You cannot print check because employee %1 is blocked due to privacy.', Comment = '%1 - Employee no.';
+        AlreadyAppliedToEmployeeErr: Label ' is already applied to %1 %2 for employee %3.', Comment = '%1 = Document type, %2 = Document No., %3 = Employee No.';
 
 }
