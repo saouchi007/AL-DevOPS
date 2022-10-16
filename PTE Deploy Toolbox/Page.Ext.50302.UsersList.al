@@ -55,6 +55,22 @@ pageextension 50302 ISA_UsersList_Ext extends "Users"
                     end;
                 end;
             }
+            action(ActiveSessions)
+            {
+                ApplicationArea = All;
+                Image = Account;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                Caption = 'Active Sessions';
+                trigger OnAction()
+                var 
+                ActiveSession : Page ISA_ActiveSessionList;
+                begin
+                    ActiveSession.RunModal();
+                end;
+            }
         }
     }
 }
