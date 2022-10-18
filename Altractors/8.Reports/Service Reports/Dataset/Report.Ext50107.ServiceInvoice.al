@@ -130,12 +130,13 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
         {
             trigger OnAfterAfterGetRecord()
             var
-                ToolBox: Codeunit ISA_ToolBox;
+                ToolBox: Report ISA_Check;
             begin
                 "Service Invoice Line".CalcSums("Amount Including VAT");
                 AmountCustomer := "Service Invoice Line"."Amount Including VAT" + "Service Invoice Header".ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
+                ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
+                ISA_AmountInWords := NoText[1];
             end;
         }
     }
@@ -148,6 +149,7 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
 
         ISA_AmountInWords: Text[100];
         AmountCustomer: Decimal;
+        NoText: array[2] of Text[100];
 
         ISA_SalesPersonName: Text;
         ISA_CustomerName: Text;

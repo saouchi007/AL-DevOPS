@@ -122,12 +122,13 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
         {
             trigger OnAfterAfterGetRecord()
             var
-                ToolBox: Codeunit ISA_ToolBox;
+                ToolBox: Report ISA_Check;
             begin
                 "Service Line".CalcSums("Amount Including VAT");
                 AmountCustomer := "Service Line"."Amount Including VAT" + ISA_StampDuty;
                 ToolBox.InitTextVariable();
-                ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
+                ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
+                ISA_AmountInWords := NoText[1];
             end;
         }
     }
@@ -140,6 +141,7 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
 
         ISA_AmountInWords: Text[100];
         AmountCustomer: Decimal;
+        NoText: array[2] of Text[100];
 
         ISA_SalesComments: Record "Sales Comment Line";
         ISA_SalesPersonName: Text;

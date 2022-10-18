@@ -2617,7 +2617,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Last(Fields!TotalSubTotal.Value)</Value>
+                                <Value>=Last(Fields!TotalNetAmount.Value) + First(Fields!ISA_InvDisAmount.Value, "DataSet_Result")</Value>
                                 <Style>
                                   <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                 </Style>
@@ -2726,7 +2726,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Last(Fields!TotalNetAmount.Value) - First(Fields!ISA_InvDisAmount.Value, "DataSet_Result")</Value>
+                                        <Value>=Last(Fields!TotalNetAmount.Value)</Value>
                                         <Style>
                                           <Format>=First(Fields!RemainingAmountFormat.Value, "DataSet_Result")</Format>
                                         </Style>
