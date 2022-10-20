@@ -95,7 +95,7 @@ reportextension 50104 ISA_SalesInvoice extends "Standard Sales - Invoice"
                 ToolBox.InitTextVariable();
                 //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
                 ToolBox.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
-                AmountInWords := NoText[1];
+                AmountInWords := NoText[1] + ' ' + NoText[2];
                 AmountExclVatAfterDiscount := Header.Amount - Header."Invoice Discount Amount";
                 /*
                                 //IntPart := Format("Amount Including VAT", 0, '<Integer>');

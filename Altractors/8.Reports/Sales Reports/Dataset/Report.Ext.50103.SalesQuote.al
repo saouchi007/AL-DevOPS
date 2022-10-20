@@ -87,7 +87,7 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
                 //RepCheck.InitTextVariable();
                 ToolBox.InitTextVariable();
                 ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
-                ISA_AmountInWords := NoText[1];
+                ISA_AmountInWords := NoText[1] + ' ' + NoText[2];
                 //ISA_AmountInWords := ToolBox.NumberInWords(Round(AmountCustomer, 0.01), 'DINARS', 'CENTIMES');
                 /*
                                 WholePart := ROUND(ABS(AmountCustomer), 1, '<');
@@ -119,14 +119,14 @@ reportextension 50103 ISA_SalesQuote_Ext extends "Standard Sales - Quote"
         ISA_Customer_ItemNumber: Text;
         ISA_Customer_StatisticalID: Text;
 
-        ISA_AmountInWords: Text[100];
+        ISA_AmountInWords: Text[300];
         AmountCustomer: Decimal;
 
         ISA_SalesComments: Record "Sales Comment Line";
         CommentFetched: Text;
 
         RepCheck: Report Check;
-        NoText: array[2] of Text[100];
+        NoText: array[2] of Text[300];
         AmountIntoWordsIntPart: Text[100];
         AmountIntoWordsDecPart: Text[100];
 

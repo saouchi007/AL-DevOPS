@@ -88,7 +88,7 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
 
                 ToolBox.InitTextVariable();
                 ToolBox.FormatNoText(NoText, Round(StampDutywithDocTotal, 0.01), '');
-                AmountInWords := NoText[1];
+                AmountInWords := NoText[1] + ' ' + NoText[2];
                 //AmountInWords := ToolBox.NumberInWords(Round(StampDutywithDocTotal, 0.01), 'DINARS', 'CENTIMES');
                 /*
                                 WholePart := ROUND(ABS(StampDutywithDocTotal), 1, '<');
@@ -128,7 +128,7 @@ reportextension 50105 ISA_SalesCreditMemo extends "Standard Sales - Credit Memo"
         CommentFetched: Text;
 
         RepCheck: Report Check;
-        NoText: array[2] of Text[100];
+        NoText: array[2] of Text[300];
         AmountIntoWordsIntPart: Text[100];
         AmountIntoWordsDecPart: Text[100];
 
