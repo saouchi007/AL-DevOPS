@@ -1,0 +1,32 @@
+{
+  "id": "cd315abd-ba63-4b7f-9846-060e94c09358",
+  "name": "Display the decimal value as a percentage",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50349
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "8.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
