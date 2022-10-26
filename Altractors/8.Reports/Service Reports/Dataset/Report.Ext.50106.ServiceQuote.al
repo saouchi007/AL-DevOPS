@@ -129,7 +129,6 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
                 ToolBox.InitTextVariable();
                 ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
                 ISA_AmountInWords := NoText[1] + ' ' + NoText[2];
-                ;
             end;
         }
     }
