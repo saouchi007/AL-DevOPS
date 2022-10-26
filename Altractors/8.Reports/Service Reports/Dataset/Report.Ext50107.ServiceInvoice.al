@@ -136,7 +136,7 @@ reportextension 50107 ISA_ServiceInvoice_Ext extends "Service - Invoice"
                 AmountCustomer := "Service Invoice Line"."Amount Including VAT" + "Service Invoice Header".ISA_StampDuty;
                 ToolBox.InitTextVariable();
                 ToolBox.FormatNoText(NoText, Round(AmountCustomer, 0.01), '');
-                ISA_AmountInWords := NoText[1];
+                ISA_AmountInWords := NoText[1] + ' ' + NoText[2];
             end;
         }
     }
