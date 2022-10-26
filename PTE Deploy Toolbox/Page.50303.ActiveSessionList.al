@@ -8,7 +8,6 @@ page 50303 ISA_ActiveSessionList
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Active Session";
-    Permissions = tabledata "Active Session" = rimd;
     DeleteAllowed = true;
 
     layout

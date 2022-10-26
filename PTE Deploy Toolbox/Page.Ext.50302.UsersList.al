@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension ISA_UsersList_Ext (ID 50302).
 /// </summary>
-pageextension 50302 ISA_UsersList_Ext extends "Users"
+pageextension 50306 ISA_UsersList_Ext extends "Users"
 {
     actions
     {
@@ -65,10 +65,27 @@ pageextension 50302 ISA_UsersList_Ext extends "Users"
                 PromotedOnly = true;
                 Caption = 'Active Sessions';
                 trigger OnAction()
-                var 
-                ActiveSession : Page ISA_ActiveSessionList;
+                var
+                    ActiveSession: Page ISA_ActiveSessionList;
                 begin
                     ActiveSession.RunModal();
+                end;
+            }
+            action(UserGroupPlan)
+            {
+                ApplicationArea = All;
+                Image = UserCertificate;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                Caption = 'User Group by Plan';
+
+                trigger OnAction()
+                var
+                    UserGroupPlan: Page "User Group by Plan";
+                begin
+                    UserGroupPlan.Run();
                 end;
             }
         }
