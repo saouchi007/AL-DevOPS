@@ -139,9 +139,9 @@ reportextension 50106 ISA_ServiceQuote_Ext extends "Service Quote"
         ISA_Customer_ItemNumber: Text;
         ISA_Customer_StatisticalID: Text;
 
-        ISA_AmountInWords: Text[100];
+        ISA_AmountInWords: Text[300];
         AmountCustomer: Decimal;
-        NoText: array[2] of Text[100];
+        NoText: array[2] of Text[300];
 
         ISA_SalesComments: Record "Sales Comment Line";
         ISA_SalesPersonName: Text;
