@@ -3,7 +3,7 @@
 /// </summary>
 page 50302 ISAExcel
 {
-    PageType = Card;
+    PageType = ListPart;
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = ISAExcel;
@@ -56,6 +56,7 @@ page 50302 ISAExcel
                     LastRow: Integer;
                     ExcelTools: Codeunit ISA_Codeunit;
                 begin
+                    Data.DeleteAll();
                     if UploadIntoStream('Hand over the excel file !', '', '', FileName, Ins) then begin
                         Buffer.OpenBookStream(Ins, 'Sheet1');
                         Buffer.ReadSheet();
@@ -72,8 +73,6 @@ page 50302 ISAExcel
                             Data.Decimal_Data := ExcelTools.GetDecimal(Buffer, 7, Row);
                             Data.Insert();
                         end;
-
-                        Message(Format(Buffer));
                     end;
                 end;
             }
