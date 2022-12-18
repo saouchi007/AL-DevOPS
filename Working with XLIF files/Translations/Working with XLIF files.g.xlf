@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Working with XLIF files">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 4078586871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ISA Book</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4078586871 - Field 2842729223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Author</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Field Author - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4078586871 - Field 3902073686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hardcover</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Field Hardcover - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4078586871 - Field 949215307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Field No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4078586871 - Field 2407638772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Field PageCount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4078586871 - Field 329424276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Title</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ISA_Book - Field Title - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Book Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Method 716454850 - NamedType 1632487345" maxwidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dev translation for %1</source>
+          <note from="Developer" annotates="general" priority="2">%1 is the extension name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Method OnOpenPage - NamedType OpenMsgLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Control 2842729223 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Author field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Control Author - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Control 3902073686 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Hardcover field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Control Hardcover - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Control 2407638772 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Page Count field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Control PageCount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Control 949215307 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Control No - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2272272595 - Control 329424276 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Title field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookCard - Control Title - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Book List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Control 2842729223 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Author field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Control Author - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Control 3902073686 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Hardcover field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Control Hardcover - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Control 949215307 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Control No - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Control 2407638772 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Page Count field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Control PageCount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1789784801 - Control 329424276 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Title field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ISA_BookList - Control Title - Property ToolTip</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
