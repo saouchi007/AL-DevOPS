@@ -1,0 +1,40 @@
+{
+  "id": "1bbf0744-3f65-44c6-b780-8e7158519901",
+  "name": "New Impl for interface",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "85d217ef-297e-4b30-913e-593c41a2a529",
+      "name": "USE INTERFACES",
+      "publisher": "Default publisher",
+      "version": "1.0.0.0"
+    }
+  ],
+    
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 50300,
+      "to": 50449
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
